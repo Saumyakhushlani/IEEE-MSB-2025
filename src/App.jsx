@@ -1,10 +1,10 @@
-import InfiniteImageMarquee from './components/InfiniteImageMarquee'
+import Gallery from './components/InfiniteImageMarquee';
 import Footer from './components/Footer';
 import Sponsors from './components/Sponsors';
 export default function App() {
   return (
     <div>
-      {/* <InfiniteImageMarquee/> */}
+      <Gallery/>
       <Sponsors/>
       <Footer/>
     </div>
