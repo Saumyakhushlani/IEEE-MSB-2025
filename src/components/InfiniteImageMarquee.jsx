@@ -18,56 +18,52 @@ const InfiniteImageMarquee = () => {
         { id: 8, src: '/Events/aarambh/Aarambh24_eighth.jpg', alt: 'Aarambh Eighth' },
         { id: 9, src: '/Events/aarambh/Aarambh24_ninth.jpg', alt: 'Aarambh Ninth' },
 
-        // Samwaad
         { id: 10, src: '/Events/samwaad/Samwaad25_first.jpg', alt: 'Samwaad First' },
         { id: 11, src: '/Events/samwaad/Samwaad25_second.jpg', alt: 'Samwaad Second' },
         { id: 12, src: '/Events/samwaad/Samwaad25_third.jpg', alt: 'Samwaad Third' },
-        { id: 13, src: '/Events/samwaad/Samwaad25_fourth.jpg', alt: 'Samwaad Fourth' },
-        { id: 14, src: '/Events/samwaad/Samwaad25_fifth.jpg', alt: 'Samwaad Fifth' },
-        { id: 15, src: '/Events/samwaad/Samwaad25_sixth.jpg', alt: 'Samwaad Sixth' },
-        { id: 16, src: '/Events/samwaad/Samwaad25_seventh.jpg', alt: 'Samwaad Seventh' },
-        { id: 17, src: '/Events/samwaad/Samwaad25_eighth.jpg', alt: 'Samwaad Eighth' },
-        { id: 18, src: '/Events/samwaad/Samwaad25_ninth.jpg', alt: 'Samwaad Ninth' },
+        { id: 13, src: '/Events/samwaad/Samwad25_fourth.jpg', alt: 'Samwaad Fourth' },
+        { id: 14, src: '/Events/samwaad/Samwad25_fifth.jpg', alt: 'Samwaad Fifth' },
+        { id: 15, src: '/Events/samwaad/Samwad25_sixth.jpg', alt: 'Samwaad Sixth' },
+        { id: 16, src: '/Events/samwaad/Samwad25_seventh.jpg', alt: 'Samwaad Seventh' },
+        { id: 17, src: '/Events/samwaad/Samwad25_eighth.jpg', alt: 'Samwaad Eighth' },
+        { id: 18, src: '/Events/samwaad/Samwad25_ninth.jpg', alt: 'Samwaad Ninth' },
 
-        // SCEECS
-        { id: 19, src: '/Events/sceecs/SCEECS24_1.jpeg', alt: 'SCEECS 1' },
-        { id: 20, src: '/Events/sceecs/SCEECS24_2.jpeg', alt: 'SCEECS 2' },
-        { id: 21, src: '/Events/sceecs/SCEECS24_4.jpeg', alt: 'SCEECS 4' },
-        { id: 22, src: '/Events/sceecs/SCEECS24_5.jpeg', alt: 'SCEECS 5' },
-        { id: 23, src: '/Events/sceecs/SCEECS24_6.jpeg', alt: 'SCEECS 6' },
-        { id: 24, src: '/Events/sceecs/SCEECS24_7.jpeg', alt: 'SCEECS 7' },
-        { id: 25, src: '/Events/sceecs/SCEECS24_8.jpeg', alt: 'SCEECS 8' },
-        { id: 26, src: '/Events/sceecs/SCEECS24_9.jpeg', alt: 'SCEECS 9' },
+        { id: 19, src: '/Events/sceecs/SCEECS24_1.JPG', alt: 'SCEECS 1' },
+        { id: 20, src: '/Events/sceecs/SCEECS24_2.JPG', alt: 'SCEECS 2' },
+        { id: 21, src: '/Events/sceecs/SCEECS24_4.JPG', alt: 'SCEECS 4' },
+        { id: 22, src: '/Events/sceecs/SCEECS24_5.JPG', alt: 'SCEECS 5' },
+        { id: 23, src: '/Events/sceecs/SCEECS24_6.JPG', alt: 'SCEECS 6' },
+        { id: 24, src: '/Events/sceecs/SCEECS24_7.JPG', alt: 'SCEECS 7' },
+        { id: 25, src: '/Events/sceecs/SCEECS24_8.JPG', alt: 'SCEECS 8' },
+        { id: 26, src: '/Events/sceecs/SCEECS24_9.JPG', alt: 'SCEECS 9' },
     ];
 
-    const row1Images = images.slice(0, 9);   // Aarambh
-    const row2Images = images.slice(9, 18);  // Samwaad
-    const row3Images = images.slice(18, 27); // SCEECS
+    const row1Images = images.slice(0, 9);
+    const row2Images = images.slice(9, 18);
+    const row3Images = images.slice(18, 27);
 
     const handleImageClick = (image) => {
         setSelectedImage(image);
         setIsModalOpen(true);
     };
 
-    const MarqueeRow = ({ images, direction = 'left', speed = 50 }) => {
-        const duplicatedImages = [...images, ...images];
+    const MarqueeRow = ({ images, direction = "left", speed = 50 }) => {
+        const duplicatedImages = [...images, ...images]; // double array
 
         return (
             <div className="overflow-hidden py-4">
                 <motion.div
-                    className="flex gap-6 overflow-hidden"
+                    className="flex gap-6"
                     animate={{
-                        x: direction === 'left'
-                            ? [0, -100 * images.length]
-                            : [-100 * images.length, 0]
+                        x:
+                            direction === "left"
+                                ? ["0%", "-100%"] 
+                                : ["-100%", "0%"],
                     }}
                     transition={{
-                        x: {
-                            repeat: Infinity,
-                            repeatType: 'loop',
-                            duration: speed,
-                            ease: 'linear'
-                        }
+                        duration: speed,
+                        ease: "linear",
+                        repeat: Infinity,
                     }}
                 >
                     {duplicatedImages.map((image, index) => (
@@ -81,7 +77,7 @@ const InfiniteImageMarquee = () => {
                             <img
                                 src={image.src}
                                 alt={image.alt}
-                                className="w-72 h-40 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                className="w-92 h-58 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                             />
                         </motion.div>
                     ))}

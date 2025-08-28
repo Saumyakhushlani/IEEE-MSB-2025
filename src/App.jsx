@@ -1,7 +1,10 @@
+import InfiniteImageMarquee from './components/InfiniteImageMarquee'
+import Footer from './components/Footer';
 export default function App() {
   return (
     <div>
-      Hello from Team IEEE-MSB!
+      {/* <InfiniteImageMarquee/> */}
+      <Footer/>
     </div>
   );
 }
