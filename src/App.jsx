@@ -1,7 +1,9 @@
+import InfiniteImageMarquee from "./components/InfiniteImageMarquee";
+
 export default function App() {
   return (
-    <div>
-      Hello from Team IEEE-MSB!
+    <div className="bg-amber-200">
+      <InfiniteImageMarquee />
     </div>
   );
 }
