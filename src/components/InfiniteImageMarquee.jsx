@@ -108,10 +108,13 @@ const InfiniteImageMarquee = () => {
                 </h1>
             </div>
 
-            <div className="space-y-8">
+            <div className="flex flex-col justify-center items-center">
+                <div className='text-center text-3xl bg-gradient-to-br from-indigo-500 rounded via-blue-700 to-cyan-600  font-semibold my-3 px-4 py-2 text-white w-max'>AARAMBH</div>
                 <MarqueeRow images={row1Images} direction="left" speed={40} />
+                <div className='text-center text-3xl bg-gradient-to-br from-indigo-500 rounded via-blue-700 to-cyan-600  font-semibold my-3 px-4 py-2 text-white w-max'>SAMWAAD</div>
                 <MarqueeRow images={row2Images} direction="right" speed={45} />
-                <MarqueeRow images={row3Images} direction="left" speed={50} />
+                <div className='text-center text-3xl bg-gradient-to-br from-indigo-500 rounded via-blue-700 to-cyan-600  font-semibold my-3 px-4 py-2 text-white w-max'>SCEECS</div>
+                {/* <MarqueeRow images={row3Images} direction="left" speed={50} /> */}
             </div>
 
             <AnimatePresence>
