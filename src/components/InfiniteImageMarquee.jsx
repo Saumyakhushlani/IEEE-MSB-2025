@@ -65,8 +65,6 @@ const Gallery = () => {
                         src={img.src}
                         alt={img.alt}
                         onClick={() => {
-                            setSelectedEvent(img.event);
-                            setActiveImage(img.src);
                             setIsModalOpen(true);
                         }}
                         className="md:w-84 w-60 md:h-54 h-40 object-cover rounded-lg shadow-lg cursor-pointer"
@@ -85,8 +83,6 @@ const Gallery = () => {
                         src={img.src}
                         alt={img.alt}
                         onClick={() => {
-                            setSelectedEvent(img.event);
-                            setActiveImage(img.src);
                             setIsModalOpen(true);
                         }}
                         className="md:w-84 w-60 md:h-54 h-40 object-cover rounded-lg shadow-lg cursor-pointer"
@@ -112,7 +108,10 @@ const Gallery = () => {
                         >
                             <button
                                 className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-                                onClick={() => setIsModalOpen(false)}
+                                onClick={() => {
+                                    setIsModalOpen(false);
+                                    setSelectedEvent(null); 
+                                }}
                             >
                                 <X />
                             </button>
@@ -121,45 +120,53 @@ const Gallery = () => {
                                 Our <span className="text-blue-500">Events</span>
                             </div>
 
-                            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
-                                {Object.keys(eventImages).map((event) => (
-                                    <button
-                                        key={event}
-                                        onClick={() => {
-                                            setSelectedEvent(event);
-                                            setActiveImage(null);
-                                        }}
-                                        className={`px-4 sm:px-6 py-2 rounded-full font-semibold shadow-md transition-all ${selectedEvent === event
-                                                ? "bg-gradient-to-r from-indigo-500 via-blue-600 to-cyan-500 text-white scale-105"
-                                                : "bg-gray-200 text-black hover:bg-gray-300"
-                                            }`}
-                                    >
-                                        {event}
-                                    </button>
-                                ))}
-                            </div>
+                            {selectedEvent && (
+                                <button
+                                    className="flex items-center gap-2 px-4 py-2 mb-4 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                                    onClick={() => setSelectedEvent(null)}
+                                >
+                                    ← Back to Events
+                                </button>
+                            )}
 
-                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 mb-6">
-                                {eventImages[selectedEvent].map((img) => (
-                                    <motion.img
-                                        key={img.id}
-                                        src={img.src}
-                                        alt={img.alt}
-                                        className={`w-full h-36 sm:h-48 object-cover rounded-lg cursor-pointer border-2 ${activeImage === img.src
-                                                ? "border-blue-500"
-                                                : "border-transparent"
-                                            }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-                                ))}
-                            </div>
+                            {!selectedEvent && (
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+                                    {Object.entries(eventImages).map(([event, images]) => (
+                                        <motion.div
+                                            key={event}
+                                            className="cursor-pointer"
+                                            onClick={() => setSelectedEvent(event)}
+                                            whileHover={{ scale: 1.05 }}
+                                        >
+                                            <img
+                                                src={images[0].src} 
+                                                alt={event}
+                                                className="w-full md:h-40 h-50 sm:h-56 object-cover rounded-lg"
+                                            />
+                                            <div className="text-center font-semibold mt-2">{event}</div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            )}
 
-                            
+                            {selectedEvent && (
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+                                    {eventImages[selectedEvent].map((img) => (
+                                        <motion.img
+                                            key={img.id}
+                                            src={img.src}
+                                            alt={img.alt}
+                                            className="w-full h-40 sm:h-56 object-cover rounded-lg cursor-pointer"
+                                            whileHover={{ scale: 1.05 }}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
 
         </div>
     );
