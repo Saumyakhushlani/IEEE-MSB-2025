@@ -2,9 +2,11 @@ import Navbar from "./components/Navbar/Navbar";
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import recapVideo from './assets/Videos/recap-2025.mp4'
+import {Toaster} from 'react-hot-toast'
 import {createBrowserRouter,RouterProvider,useLocation} from 'react-router-dom'
 import About from './pages/About'
 import Team from './pages/Team'
+import Contact from './pages/Contact'
 import { div } from "framer-motion/client";
 
 
@@ -173,6 +175,13 @@ const router = createBrowserRouter([
       <Navbar/>
       <Team/>
     </div>
+  },
+  {
+    path:'contact',
+    element:<div>
+      <Navbar />
+      <Contact />
+    </div>
   }
 ])
 
@@ -180,6 +189,7 @@ function app(){
   return(
  <div>
     <RouterProvider router={router}></RouterProvider>
+    <Toaster position="top-center" reverseOrder={false} />
   </div>
   )
 }

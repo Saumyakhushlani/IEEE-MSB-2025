@@ -22,7 +22,7 @@ const AboutHero = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          Innovating for a Better Tomorrow
+          Advancing Technology for Humanity
         </motion.h1>
 
         <motion.p
