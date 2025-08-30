@@ -1,4 +1,8 @@
 import Navbar from "./components/Navbar/Navbar";
+import Gallery from './components/InfiniteImageMarquee';
+import Footer from './components/Footer';
+import Sponsors from './components/Sponsors';
+import { Events } from './components/Events';
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import recapVideo from './assets/Videos/recap-2025.mp4'
@@ -64,18 +68,7 @@ Minima ea quisquam eveniet corrupti! Unde, a officiis. Placeat magnam fuga, eum 
 Facilis a omnis mollitia quia! Reprehenderit, nulla minus suscipit numquam odio nihil ipsam dolor accusantium similique autem soluta sed eius quod impedit provident maxime repudiandae molestias praesentium deleniti minima cumque!
 Fugit ut vel ipsum dicta, expedita omnis, sequi earum iusto porro aliquam, consequatur id corporis aperiam error soluta. Quas commodi modi dolores laboriosam. Voluptatibus, fugit porro nemo quis minus itaque.
 Nobis, magni nulla quasi laboriosam excepturi inventore perferendis vel modi eos quas aperiam dignissimos doloribus esse officia corrupti laborum neque quod dolorem ab alias doloremque. Enim, earum. Autem, iure nisi!
-Eligendi eveniet sunt natus ullam dolore tenetur illum velit maxime rem voluptates aut, eos iure vero id iste, corrupti cum sapiente dignissimos? Saepe quisquam assumenda magni quasi rem, id esse?
-Facilis fuga nobis quaerat molestias ipsa rerum, laborum repellat necessitatibus eos libero amet a quidem modi magnam eaque natus quia quod assumenda similique recusandae eum et laudantium illo vel. Repellendus.
-Quo quam maxime cupiditate tenetur omnis aliquid aliquam eum voluptas atque, at dicta quibusdam illum nemo? Maxime laboriosam, modi est corporis vero rem ut voluptas ab nesciunt tempore asperiores vel.
-Pariatur non minima obcaecati totam consequuntur nulla cupiditate odio rem voluptatem soluta? Eveniet sint aspernatur officia, aperiam quis amet provident tempore voluptates at repudiandae quae minima doloremque, illum expedita nihil!
-Ratione, cum fuga quaerat similique ipsa voluptates quibusdam porro placeat, itaque eius aliquam quasi nostrum aut quia eveniet ut quisquam. Quia at adipisci, aliquam fugit voluptatibus labore sint voluptates quaerat.
-Repudiandae laboriosam illo inventore alias vel velit similique eius amet molestias est aut doloribus tempore, magnam provident iusto dolore minus libero magni. Adipisci molestias officiis accusantium cumque possimus at sed?
-Ipsam voluptatibus labore earum, laudantium nulla ea iusto repudiandae dolorum numquam. Cupiditate, voluptatem? Error, dolorem facere hic aliquid nobis dolore rerum suscipit, fuga libero distinctio cupiditate atque impedit earum perspiciatis!
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolore facilis quo ratione quasi odit consequuntur doloremque repudiandae nihil corrupti iure, beatae est expedita quia exercitationem nobis, cum ipsam adipisci.
-Molestias recusandae nobis aspernatur totam magnam quia soluta est, tenetur saepe at alias facere officiis expedita nam iusto cupiditate? Maxime doloremque delectus blanditiis quia rerum fugit molestias ad cupiditate dolorem!
-Nulla nihil eos aliquid reprehenderit illo, rem aperiam voluptas quae recusandae repudiandae officia molestias mollitia perspiciatis deserunt. Error, qui? Reprehenderit earum impedit minus eos quas nemo delectus eveniet doloribus fuga!
-Similique alias quia aperiam, dicta velit aliquid eaque nam, ducimus non doloremque necessitatibus itaque voluptatem iusto unde animi iste nemo amet ex quae sapiente sunt facere quis quos sequi. Saepe.
-Aliquid tempore suscipit numquam quo cumque alias nam earum! Nobis ipsam in cum unde quibusdam dicta nulla nostrum non sit sapiente? Dolor necessitatibus nesciunt quaerat enim aperiam! Ex, nisi culpa?
+Eculpa?
 
       {/* About section */}
       <section className="bg-gray-950 text-white mt-[8rem]">
@@ -152,10 +145,14 @@ Aliquid tempore suscipit numquam quo cumque alias nam earum! Nobis ipsam in cum 
           </div>
         </motion.div>
       </section>
+
+<Events/>
+      <Gallery/>
+      <Sponsors/>
+      <Footer/>
     </motion.div>
     </AnimatePresence>
-  );
-}
+
 
 const router = createBrowserRouter([
   {
