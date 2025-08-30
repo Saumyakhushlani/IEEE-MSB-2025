@@ -23,7 +23,7 @@ const TeamHero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
+          className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.6 }}
