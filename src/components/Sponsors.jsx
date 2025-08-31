@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const sponsors = [
   { id: 1, src: "/sponsors/kadam.jpg", alt: "Kadam" },
