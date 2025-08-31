@@ -1,0 +1,237 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { toast } from 'react-hot-toast'
+import { useForm } from "react-hook-form"
+import contactHeroImage from '../assets/images/contactHeroImage.jpg'
+import ContactUsimage from '../assets/images/ContactUsImage.jpg'
+import { MapPin, Mail } from 'lucide-react'
+
+const Contact = () => {
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors, isSubmitting },
+    } = useForm()
+
+    function onSubmit(data) {
+        console.log(data);
+        const scriptUrl="https://script.google.com/macros/s/AKfycbwf99mMR2aUEIzEMMTtvc56E_Cy1AlITthl1iK_IA7N687kfhhwiqt0xNxIWIhKxi_L/exec";
+
+        fetch(scriptUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body:(`Name=${data.name}&Email=${data.email}&Phone=${data.phone}&Subject=${data.subject}&Message=${data.message}`),
+  })
+    .then((response) => {
+      console.log(response);
+      toast.success("Message Sent Successfully!");
+      reset();
+    })
+    .catch((err) => {
+      console.error("Error:", err);
+      toast.error("Failed to send message. Please try again later.");
+    });
+    }
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}>
+
+            {/* Hero image */}
+            <section className="relative w-full h-[80vh] flex items-center justify-center text-center bg-gray-900">
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img
+                        src={contactHeroImage}
+                        alt="Team Background"
+                        className="w-full h-full object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 bg-black/60" />
+                </div>
+
+                {/* Content */}
+                <motion.div
+                    className="relative z-10 max-w-3xl px-4 sm:px-6 lg:px-8"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <motion.h1
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
+                        initial={{ scale: 0.9 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        Contact <span className="text-blue-600">Us</span>
+                    </motion.h1>
+                </motion.div>
+            </section>
+
+            {/* Contact Form Section */}
+            <section className="bg-gray-950 text-white py-16 px-6 md:px-12 lg:px-20">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    {/* Left Image with Animation */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="flex justify-center"
+                    >
+                        <img
+                            src={ContactUsimage}
+                            alt="Contact Us"
+                            className="rounded-xl shadow-lg"
+                        />
+                    </motion.div>
+
+                    {/* Right Form */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="bg-gray-900 p-8 rounded-xl shadow-lg"
+                    >
+                        <h2 className="text-3xl font-bold mb-2">Get in touch</h2>
+                        <p className="text-gray-400 mb-8">
+                            Reach Out To Us
+                        </p>
+
+                        <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+                            <div>
+                                <input
+                                    placeholder='Name'
+                                    className={errors.name ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
+                                    {...register("name",
+                                        {
+                                            required: true,
+                                        })} />
+                            </div>
+
+                            <div>
+                                <input
+                                    placeholder='Email'
+                                    className={errors.email ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
+                                    {...register("email",
+                                        {
+                                            required: true,
+                                        })} />
+                            </div>
+
+                            <div>
+                                <input
+                                    placeholder='Phone'
+                                    className={errors.phone ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
+                                    {...register("phone",
+                                        {
+                                            required: true,
+                                        })} />
+                            </div>
+
+                            <div>
+                                <input
+                                    placeholder='Subject'
+                                    className={errors.subject ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
+                                    {...register("subject", { required: true })} />
+                            </div>
+
+                            <div>
+                              <textarea 
+                              placeholder='Message'
+                              className={errors.message ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
+                              {...register("message", { required: true })} >
+                              </textarea>
+                            </div>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="w-full bg-blue-600 py-3 rounded-md font-semibold text-white"
+                                type='submit'
+                                disabled={isSubmitting}>
+                                    Send Message
+                            </motion.button>
+                        </form>
+
+                        
+                    </motion.div>
+                </div>
+            </section>
+
+             <section className="bg-gray-950 text-white py-16 px-6 md:px-12 lg:px-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Side Map */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="rounded-xl overflow-hidden shadow-lg"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.6883136856673!2d77.40527465101373!3d23.21802691474579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42ef566fe395%3A0xcd068348cdaaf336!2sFaculty%20Guest%20House!5e0!3m2!1sen!2sin!4v1663624428201!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            allowFullScreen=""
+            loading="lazy"
+            className="w-full h-[350px] md:h-[450px] rounded-lg border-0"
+          ></iframe>
+        </motion.div>
+
+        {/* Right Side Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gray-900 p-8 rounded-xl shadow-lg"
+        >
+          <h4 className="text-blue-600 font-semibold uppercase tracking-wide">
+            Quick Contact
+          </h4>
+          <h2 className="text-3xl font-bold mt-2 mb-4">
+            Need Help? Contact Us
+          </h2>
+          <p className="text-gray-400 mb-8">
+            We will try to be available to you at the earliest.
+          </p>
+
+          {/* Location */}
+          <div className="flex items-start gap-4 mb-6">
+            <div className="bg-gray-800 p-3 rounded-md">
+              <MapPin className="text-blue-600 w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Our Location:</h3>
+              <p className="text-gray-300">
+                MANIT Bhopal, M.P. 462003, India
+              </p>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div className="flex items-start gap-4">
+            <div className="bg-gray-800 p-3 rounded-md">
+              <Mail className="text-blue-600 w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Email:</h3>
+              <p className="text-gray-300">ieeentib@gmail.com</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+        </motion.div>
+    )
+}
+
+export default Contact
