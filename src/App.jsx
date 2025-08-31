@@ -152,7 +152,8 @@ Eculpa?
       <Footer/>
     </motion.div>
     </AnimatePresence>
-
+  )
+}
 
 const router = createBrowserRouter([
   {
