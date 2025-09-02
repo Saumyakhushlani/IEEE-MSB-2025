@@ -2,6 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import AboutHero from '../components/AboutComponents/Abouthero'
 import InfoCard from '../components/AboutComponents/InfoCard'
+import Footer from '../components/Footer'
 import { useRef, useEffect, useState } from 'react'
 import aboutWrapper_1 from '../assets/images/aboutWrapper_1.jpg'
 import aboutWrapper_2 from '../assets/images/aboutWrapper_2.jpg'
@@ -87,7 +88,7 @@ const About = () => {
 
                     {/* Left Text Section */}
                     <div>
-                        <p className="text-blue-600 font-semibold mb-2">About Us</p>
+                        <p className="text-blue-500 font-semibold mb-2">About Us</p>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                             Driving innovation and <br /> future success.
                         </h2>
@@ -104,7 +105,7 @@ const About = () => {
                             initial={{ width: 0 }}
                             animate={isInView ? { width: "100%" } : {}}
                             transition={{ duration: 2, ease: "easeInOut" }}
-                            className="h-1 bg-blue-700 rounded"
+                            className="h-1 bg-blue-500 rounded"
                         />
                     </div>
 
@@ -149,6 +150,8 @@ const About = () => {
                     />
                 ))}
             </div>
+
+            <Footer />
         </motion.div>
     )
 }

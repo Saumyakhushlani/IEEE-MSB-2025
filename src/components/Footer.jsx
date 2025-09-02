@@ -7,7 +7,7 @@ const Footer = () => {
     "relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full";
 
   return (
-    <div className="overflow-y-hidden">
+    <div className="overflow-y-hidden mt-12">
       <motion.footer
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,11 +44,11 @@ const Footer = () => {
               <h4 className="text-lg font-semibold">Quick Links</h4>
               <ul className="space-y-2 text-white/80">
                 <li><a href="/" className={linkHover}>Home</a></li>
-                <li><a href="/" className={linkHover}>About</a></li>
+                <li><a href="/about" className={linkHover}>About</a></li>
                 <li><a href="/" className={linkHover}>Events</a></li>
-                <li><a href="/" className={linkHover}>Team</a></li>
+                <li><a href="/team" className={linkHover}>Team</a></li>
                 <li><a href="/" className={linkHover}>Alumni</a></li>
-                <li><a href="/" className={linkHover}>Contact Us</a></li>
+                <li><a href="/contact" className={linkHover}>Contact Us</a></li>
               </ul>
             </motion.div>
 
