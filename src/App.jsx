@@ -11,7 +11,7 @@ import {createBrowserRouter,RouterProvider,useLocation} from 'react-router-dom'
 import About from './pages/About'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
-import { div } from "framer-motion/client";
+import Alumni from "./components/Alumni";
 
 
 function Home() {
@@ -179,6 +179,12 @@ const router = createBrowserRouter([
     element:<div>
       <Navbar />
       <Contact />
+    </div>
+  },
+  {
+    path:'alumni',
+    element:<div>
+      <Alumni />
     </div>
   }
 ])
