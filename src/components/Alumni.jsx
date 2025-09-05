@@ -1489,81 +1489,96 @@ const Alumni = () => {
                 ]
         }
     ]
-    // Handle alumni row click
     const handleAlumniClick = (alumni) => {
         setSelectedAlumni(alumni)
         setShowModal(true)
     }
 
-    // Close modal
     const closeModal = () => {
         setShowModal(false)
         setSelectedAlumni(null)
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-12 px-4">
+        <div className={`min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-4 `}>
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                        Our Alumni
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mb-6">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                        </svg>
+                    </div>
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                        Our <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Alumni</span>
                     </h1>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Meet the brilliant minds who have been part of IEEE MSB and are now making their mark in the world
+                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Meet the brilliant minds who have been part of IEEE MSB and are now making their mark in the world of technology and innovation
                     </p>
                 </div>
 
-                {/* Alumni Tables by Year */}
-                <div className="space-y-12">
+                <div className="space-y-16">
                     {alumniData.map((yearData) => (
-                        <div key={yearData.year} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                            {/* Year Header */}
-                            <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6">
-                                <h2 className="text-3xl font-bold text-white">
-                                    Batch of {yearData.year}
-                                </h2>
-                                <p className="text-blue-100 mt-2">
-                                    {yearData.members.length} members
-                                </p>
+                        <div key={yearData.year} className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                          
+                            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-8 py-8 relative overflow-hidden">
+                                <div className="absolute inset-0 bg-black opacity-10"></div>
+                                <div className="relative z-10">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h2 className="text-4xl font-bold text-white mb-2">
+                                                Batch of {yearData.year}
+                                            </h2>
+                                            <p className="text-blue-100 text-lg">
+                                                {yearData.members.length} distinguished members
+                                            </p>
+                                        </div>
+                                        <div className="hidden md:block">
+                                            <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                                <span className="text-2xl font-bold text-blue-600">{yearData.year}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            {/* Mobile Card View */}
-                            <div className="block sm:hidden p-4 space-y-4">
+                            <div className="block sm:hidden p-6 space-y-4">
                                 {yearData.members.map((alumni, index) => (
                                     <div 
                                         key={index}
-                                        className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                                        className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
                                     >
                                         <div className="flex items-center space-x-4">
                                             <div className="flex-shrink-0">
-                                                <img
-                                                    className="h-16 w-16 rounded-full object-cover border-2 border-gray-200"
-                                                    src={alumni.image}
-                                                    alt={alumni.name}
-                                                    onError={(e) => {
-                                                        e.target.src = '/Alumini/sample.jpg'
-                                                    }}
-                                                />
+                                                <div className="relative">
+                                                    <img
+                                                        className="h-20 w-20 rounded-full object-cover border-4 border-white shadow-lg"
+                                                        src={alumni.image}
+                                                        alt={alumni.name}
+                                                        onError={(e) => {
+                                                            e.target.src = '/Alumini/sample.jpg'
+                                                        }}
+                                                    />
+                                                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 rounded-full border-2 border-white"></div>
+                                                </div>
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <h3 className="text-lg font-semibold text-gray-900 truncate">
+                                                <h3 className="text-lg font-bold text-gray-900 truncate">
                                                     {alumni.name}
                                                 </h3>
-                                                <p className="text-sm text-blue-600 font-medium truncate">
+                                                <p className="text-sm text-blue-600 font-semibold truncate">
                                                     {alumni.post}
                                                 </p>
                                                 <p className="text-sm text-gray-600 truncate">
                                                     {alumni.branch}
                                                 </p>
-                                                <p className="text-xs text-gray-500 truncate mt-1">
+                                                <p className="text-xs text-gray-500 truncate mt-1 leading-relaxed">
                                                     {alumni.currentDesignation}
                                                 </p>
                                             </div>
                                             <div className="flex-shrink-0">
                                                 <button
                                                     onClick={() => handleAlumniClick(alumni)}
-                                                    className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm transition-colors duration-200 flex items-center gap-2"
+                                                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                                 >
                                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -1577,73 +1592,73 @@ const Alumni = () => {
                                 ))}
                             </div>
 
-                            {/* Desktop Table View */}
                             <div className="hidden sm:block w-full">
                                 <table className="w-full table-fixed">
-                                    <thead className="bg-gray-50">
+                                    <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
                                         <tr>
-                                            <th className="w-20 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Photo
                                             </th>
-                                            <th className="w-40 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-40 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Name
                                             </th>
-                                            <th className="w-36 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-36 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Post
                                             </th>
-                                            <th className="w-20 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Branch
                                             </th>
-                                            <th className="w-48 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-48 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Current Role
                                             </th>
-                                            <th className="w-32 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th className="w-32 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
                                                 Action
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
+                                    <tbody className="bg-white divide-y divide-gray-100">
                                         {yearData.members.map((alumni, index) => (
                                             <tr 
                                                 key={index}
-                                                className="hover:bg-gray-50 transition-colors duration-200"
+                                                className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300 group"
                                             >
-                                                <td className="px-4 py-3">
-                                                    <div className="h-16 w-16">
+                                                <td className="px-6 py-4">
+                                                    <div className="h-20 w-20 relative">
                                                         <img
-                                                            className="h-16 w-16 rounded-full object-cover border-2 border-gray-200"
+                                                            className="h-20 w-20 rounded-full object-cover border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                                                             src={alumni.image}
                                                             alt={alumni.name}
                                                             onError={(e) => {
                                                                 e.target.src = '/Alumini/sample.jpg'
                                                             }}
                                                         />
+                                                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 rounded-full border-2 border-white group-hover:bg-blue-700 transition-colors duration-300"></div>
                                                     </div>
                                                 </td>
-                                                <td className="px-4 py-3">
-                                                    <div className="text-sm font-medium text-gray-900 truncate">
+                                                <td className="px-6 py-4">
+                                                    <div className="text-base font-bold text-gray-900 truncate group-hover:text-blue-900 transition-colors duration-300">
                                                         {alumni.name}
                                                     </div>
                                                 </td>
-                                                <td className="px-4 py-3">
-                                                    <div className="text-sm text-blue-600 font-semibold truncate">
+                                                <td className="px-6 py-4">
+                                                    <div className="text-sm text-blue-600 font-semibold truncate group-hover:text-blue-700 transition-colors duration-300">
                                                         {alumni.post}
                                                     </div>
                                                 </td>
-                                                <td className="px-4 py-3">
-                                                    <div className="text-sm text-gray-900 truncate">
+                                                <td className="px-6 py-4">
+                                                    <div className="text-sm text-gray-700 font-medium truncate">
                                                         {alumni.branch}
                                                     </div>
                                                 </td>
-                                                <td className="px-4 py-3">
-                                                    <div className="text-sm text-gray-900 truncate">
+                                                <td className="px-6 py-4">
+                                                    <div className="text-sm text-gray-600 truncate leading-relaxed">
                                                         {alumni.currentDesignation}
                                                     </div>
                                                 </td>
-                                                <td className="px-4 py-3">
+                                                <td className="px-6 py-4">
                                                     <button
                                                         onClick={() => handleAlumniClick(alumni)}
-                                                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors duration-200 flex items-center gap-2"
+                                                        className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                                     >
                                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -1662,80 +1677,93 @@ const Alumni = () => {
                 </div>
             </div>
 
-            {/* Modal */}
             {showModal && selectedAlumni && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-2 sm:p-4 z-50">
-                    <div className="bg-white rounded-xl sm:rounded-2xl w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl h-[95vh] sm:h-auto max-h-[95vh] flex flex-col">
-                        {/* Close Button */}
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all duration-200 z-10"
-                        >
-                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-
-                        {/* Modal Content */}
-                        <div className="flex-1 flex flex-col sm:flex-row overflow-hidden">
-                            {/* Image Section */}
-                            <div className="flex-shrink-0 p-4 sm:p-6">
-                                <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto">
+                <div className="fixed inset-0 backdrop-blur-md backdrop-blur-2xl flex items-center justify-center p-4 z-50">
+                    <div className="bg-white rounded-2xl w-full max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] flex flex-col shadow-2xl border border-gray-200 relative overflow-hidden">
+                        
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 relative">
+                            <div className="absolute inset-0 bg-black opacity-10"></div>
+                            <div className="relative z-10 flex items-center justify-between">
+                                <h3 className="text-xl font-bold text-white">Alumni Profile</h3>
+                                <button
+                                    onClick={closeModal}
+                                    className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 hover:text-gray-900 rounded-full p-2 transition-all duration-200 shadow-lg"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+                            <div className="flex-shrink-0 p-6 lg:p-8">
+                                <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto relative">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl transform rotate-3"></div>
                                     <img
                                         src={selectedAlumni.image}
                                         alt={selectedAlumni.name}
-                                        className="w-full h-full object-cover rounded-lg sm:rounded-xl shadow-lg"
+                                        className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white"
                                         onError={(e) => {
                                             e.target.src = '/Alumini/sample.jpg'
                                         }}
                                     />
+                                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
                                 </div>
                             </div>
 
-                            {/* Details Section */}
-                            <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
-                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3">
-                                    {selectedAlumni.name}
-                                </h2>
-                                <p className="text-blue-600 text-lg sm:text-xl lg:text-2xl font-semibold mb-4 sm:mb-6">
-                                    {selectedAlumni.post}
-                                </p>
-                                
-                                <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-                                    <div className="flex items-start">
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 mr-3 sm:mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                        </svg>
-                                        <div>
-                                            <span className="text-base sm:text-lg font-semibold text-gray-700">Branch:</span>
-                                            <p className="text-base sm:text-lg text-gray-600 mt-1">{selectedAlumni.branch}</p>
+                            <div className="flex-1 p-6 lg:p-8 overflow-y-auto">
+                                <div className="space-y-6">
+                                    <div>
+                                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                                            {selectedAlumni.name}
+                                        </h2>
+                                        <p className="text-blue-600 text-xl lg:text-2xl font-semibold">
+                                            {selectedAlumni.post}
+                                        </p>
+                                    </div>
+                                    
+                                    <div className="space-y-3">
+                                        <div className="flex items-start space-x-4">
+                                            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-bold text-gray-900 mb-1">Branch</h3>
+                                                <p className="text-gray-600 text-lg">{selectedAlumni.branch}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="flex items-start space-x-4">
+                                            <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-bold text-gray-900 mb-1">Current Role</h3>
+                                                <p className="text-gray-600 text-lg leading-relaxed">{selectedAlumni.currentDesignation}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     
-                                    <div className="flex items-start">
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 mr-3 sm:mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
-                                        </svg>
-                                        <div>
-                                            <span className="text-base sm:text-lg font-semibold text-gray-700">Current Role:</span>
-                                            <p className="text-base sm:text-lg text-gray-600 mt-1 break-words">{selectedAlumni.currentDesignation}</p>
+                                    {selectedAlumni.linkedin && selectedAlumni.linkedin !== '#' && (
+                                        <div className="">
+                                            <a
+                                                href={selectedAlumni.linkedin}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                            >
+                                                <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                                </svg>
+                                                View LinkedIn Profile
+                                            </a>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
-                                
-                                {selectedAlumni.linkedin && selectedAlumni.linkedin !== '#' && (
-                                    <a
-                                        href={selectedAlumni.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-base sm:text-lg font-semibold w-full sm:w-auto justify-center"
-                                    >
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                        </svg>
-                                        View LinkedIn Profile
-                                    </a>
-                                )}
                             </div>
                         </div>
                     </div>
