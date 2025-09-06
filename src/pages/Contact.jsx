@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'react-hot-toast'
 import { useForm } from "react-hook-form"
+import Footer from '../components/Footer'
 import contactHeroImage from '../assets/images/contactHeroImage.jpg'
 import ContactUsimage from '../assets/images/ContactUsImage.jpg'
 import { MapPin, Mail } from 'lucide-react'
@@ -229,6 +230,8 @@ const Contact = () => {
         </motion.div>
       </div>
     </section>
+
+    <Footer />
 
         </motion.div>
     )

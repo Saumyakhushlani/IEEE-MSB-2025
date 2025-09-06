@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import TeamHero from '../components/TeamComponents/TeamHero'
 import TeamImg from '../components/TeamComponents/TeamImg'
+import Footer from '../components/Footer'
 import MobileTeamImg from '../components/TeamComponents/MobileTeamImg'
 
 const Team = () => {
@@ -36,7 +37,7 @@ const Team = () => {
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
                     className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
-                >Faculty <span className='text-blue-600'>Team</span></motion.h1>
+                >Faculty <span className='text-blue-500'>Team</span></motion.h1>
 
                 {/* All the images */}
                 <section className="w-full">
@@ -72,7 +73,7 @@ const Team = () => {
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
                     className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
-                >Final <span className='text-blue-600'>Year</span></motion.h1>
+                >Final <span className='text-blue-500'>Year</span></motion.h1>
 
                 {/* All the images */}
                 <section className="w-full">
@@ -143,7 +144,7 @@ const Team = () => {
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
                     className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
-                >Pre-Final <span className='text-blue-600'>Year</span></motion.h1>
+                >Pre-Final <span className='text-blue-500'>Year</span></motion.h1>
 
                 {/* All the images */}
                 <section className="w-full">
@@ -214,6 +215,8 @@ const Team = () => {
                     </motion.div>
                 </section>
             </motion.div>
+
+            <Footer />
         </motion.div>
     )
 }

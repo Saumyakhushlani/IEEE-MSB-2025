@@ -45,7 +45,7 @@ function Home() {
   return (
     <AnimatePresence mode="wait">
     <motion.div 
-    className="bg-gray-950 mb-5"
+    className="bg-gray-950"
         key={location.pathname}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ Nobis, magni nulla quasi laboriosam excepturi inventore perferendis vel modi eos
 Eculpa?
 
       {/* About section */}
-      <section className="bg-gray-950 text-white mt-[8rem]">
+      <section className="bg-gray-950 text-white my-[8rem]">
         {/* Top content */}
         <motion.h1 
         className="text-center font-bold text-4xl sm:text-5xl md:text-7xl"
@@ -79,7 +79,7 @@ Eculpa?
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         >  
-          About <span className="text-blue-600">Us</span>
+          About <span className="text-blue-500">Us</span>
           </motion.h1>
 
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 md:py-20">
