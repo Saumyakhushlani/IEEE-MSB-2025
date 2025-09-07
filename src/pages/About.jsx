@@ -2,10 +2,9 @@ import React from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import AboutHero from '../components/AboutComponents/Abouthero'
 import InfoCard from '../components/AboutComponents/InfoCard'
+import { ImageCarousel } from '../components/AboutComponents/ImageCaraousel'
+import Footer from '../components/Footer'
 import { useRef, useEffect, useState } from 'react'
-import aboutWrapper_1 from '../assets/images/aboutWrapper_1.jpg'
-import aboutWrapper_2 from '../assets/images/aboutWrapper_2.jpg'
-import aboutWrapper_3 from '../assets/images/aboutWrapper_3.jpg'
 import infoCardLogo1 from '../assets/Images/infoCardLogo_1.png'
 import infoCardLogo2 from '../assets/Images/infoCardLogo_2.png'
 import infoCardLogo3 from '../assets/Images/infoCardLogo_3.png'
@@ -13,36 +12,6 @@ import infoCardLogo4 from '../assets/Images/infoCardLogo_4.png'
 import { i } from 'framer-motion/client'
 
 const About = () => {
-    const [current, setCurrent] = useState(0);
-    const [containerWidth, setContainerWidth] = useState(0);
-
-    // Image array for carousel
-    const images = [
-        aboutWrapper_1,
-        aboutWrapper_2,
-        aboutWrapper_3
-    ];
-
-    // Auto-slide every 1 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % images.length);
-        }, 1000);
-        return () => clearInterval(interval);
-    }, [images.length]);
-
-
-    // Update container width on resize
-    useEffect(() => {
-        const updateWidth = () => {
-            if (containerRef.current) {
-                setContainerWidth(containerRef.current.offsetWidth);
-            }
-        };
-        updateWidth();
-        window.addEventListener("resize", updateWidth);
-        return () => window.removeEventListener("resize", updateWidth);
-    }, []);
 
     // For line animation when in view
     const lineRef = useRef(null);
@@ -87,7 +56,7 @@ const About = () => {
 
                     {/* Left Text Section */}
                     <div>
-                        <p className="text-blue-600 font-semibold mb-2">About Us</p>
+                        <p className="text-blue-500 font-semibold mb-2">About Us</p>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                             Driving innovation and <br /> future success.
                         </h2>
@@ -104,35 +73,13 @@ const About = () => {
                             initial={{ width: 0 }}
                             animate={isInView ? { width: "100%" } : {}}
                             transition={{ duration: 2, ease: "easeInOut" }}
-                            className="h-1 bg-blue-700 rounded"
+                            className="h-1 bg-blue-500 rounded"
                         />
                     </div>
 
                     {/* Right Image Carousel */}
-                    <div
-                        ref={containerRef}
-                        className="overflow-hidden rounded-xl shadow-lg w-full"
-                    >
-                        <motion.div
-                            className="flex"
-                            animate={{ x: `-${current * containerWidth}px` }}
-                            transition={{ duration: 0.5, ease: "easeInOut" }}
-                            style={{ width: `${images.length * 100}%` }}
-                        >
-                            {images.map((img, i) => (
-                                <div
-                                    key={i}
-                                    className="flex-shrink-0"
-                                    style={{ width: containerWidth }}
-                                >
-                                    <img
-                                        src={img}
-                                        alt={`Slide ${i}`}
-                                        className="w-full h-72 md:h-96 object-cover"
-                                    />
-                                </div>
-                            ))}
-                        </motion.div>
+                   <div className="mb-12">
+                         <ImageCarousel />
                     </div>
 
                 </div>
@@ -149,6 +96,8 @@ const About = () => {
                     />
                 ))}
             </div>
+
+            <Footer />
         </motion.div>
     )
 }
