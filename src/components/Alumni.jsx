@@ -1500,7 +1500,7 @@ const Alumni = () => {
     }
 
     return (
-        <div className={`min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-4 `}>
+        <div className={`min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 py-16 px-4 `}>
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mb-6">
@@ -1508,17 +1508,17 @@ const Alumni = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                         </svg>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight">
                         Our <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Alumni</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                         Meet the brilliant minds who have been part of IEEE MSB and are now making their mark in the world of technology and innovation
                     </p>
                 </div>
 
                 <div className="space-y-16">
                     {alumniData.map((yearData) => (
-                        <div key={yearData.year} className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div key={yearData.year} className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all duration-300">
                           
                             <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-8 py-8 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-black opacity-10"></div>
@@ -1545,13 +1545,13 @@ const Alumni = () => {
                                 {yearData.members.map((alumni, index) => (
                                     <div 
                                         key={index}
-                                        className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                                        className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.01]"
                                     >
                                         <div className="flex items-center space-x-4">
                                             <div className="flex-shrink-0">
                                                 <div className="relative">
                                                     <img
-                                                        className="h-20 w-20 rounded-full object-cover border-4 border-white shadow-lg"
+                                                        className="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
                                                         src={alumni.image}
                                                         alt={alumni.name}
                                                         onError={(e) => {
@@ -1562,16 +1562,16 @@ const Alumni = () => {
                                                 </div>
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <h3 className="text-lg font-bold text-gray-900 truncate">
+                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white truncate">
                                                     {alumni.name}
                                                 </h3>
                                                 <p className="text-sm text-blue-600 font-semibold truncate">
                                                     {alumni.post}
                                                 </p>
-                                                <p className="text-sm text-gray-600 truncate">
+                                                <p className="text-sm text-gray-600 dark:text-gray-300 truncate">
                                                     {alumni.branch}
                                                 </p>
-                                                <p className="text-xs text-gray-500 truncate mt-1 leading-relaxed">
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-1 leading-relaxed">
                                                     {alumni.currentDesignation}
                                                 </p>
                                             </div>
@@ -1594,49 +1594,49 @@ const Alumni = () => {
 
                             <div className="hidden sm:block w-full">
                                 <table className="w-full table-fixed">
-                                    <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
+                                    <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
                                         <tr>
-                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Photo
                                             </th>
-                                            <th className="w-40 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-40 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Name
                                             </th>
-                                            <th className="w-36 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-36 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Post
                                             </th>
-                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Branch
                                             </th>
-                                            <th className="w-48 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-48 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Current Role
                                             </th>
-                                            <th className="w-32 px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">
+                                            <th className="w-32 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                                                 Action
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-100">
+                                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-100 dark:divide-gray-800">
                                         {yearData.members.map((alumni, index) => (
                                             <tr 
                                                 key={index}
-                                                className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300 group"
+                                                className="hover:bg-gradient-to-r hover:bg-gray-700 transition-all duration-300 group"
                                             >
                                                 <td className="px-6 py-4">
                                                     <div className="h-20 w-20 relative">
                                                         <img
-                                                            className="h-20 w-20 rounded-full object-cover border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                                                            className="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"
                                                             src={alumni.image}
                                                             alt={alumni.name}
                                                             onError={(e) => {
                                                                 e.target.src = '/Alumini/sample.jpg'
                                                             }}
                                                         />
-                                                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 rounded-full border-2 border-white group-hover:bg-blue-700 transition-colors duration-300"></div>
+                                                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 rounded-full border-2 border-white dark:border-gray-900 group-hover:bg-blue-700 transition-colors duration-300"></div>
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-base font-bold text-gray-900 truncate group-hover:text-blue-900 transition-colors duration-300">
+                                                    <div className="text-base font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-900 dark:group-hover:text-blue-300 transition-colors duration-300">
                                                         {alumni.name}
                                                     </div>
                                                 </td>
@@ -1646,12 +1646,12 @@ const Alumni = () => {
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-sm text-gray-700 font-medium truncate">
+                                                    <div className="text-sm text-gray-700 dark:text-gray-300 font-medium truncate">
                                                         {alumni.branch}
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-sm text-gray-600 truncate leading-relaxed">
+                                                    <div className="text-sm text-gray-600 dark:text-gray-400 truncate leading-relaxed">
                                                         {alumni.currentDesignation}
                                                     </div>
                                                 </td>
@@ -1679,7 +1679,7 @@ const Alumni = () => {
 
             {showModal && selectedAlumni && (
                 <div className="fixed inset-0 backdrop-blur-md backdrop-blur-2xl flex items-center justify-center p-4 z-50">
-                    <div className="bg-white rounded-2xl w-full max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] flex flex-col shadow-2xl border border-gray-200 relative overflow-hidden">
+                    <div className="bg-white dark:bg-gray-900 rounded-2xl w-full max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] flex flex-col shadow-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden">
                         
                         <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 relative">
                             <div className="absolute inset-0 bg-black opacity-10"></div>
@@ -1687,7 +1687,7 @@ const Alumni = () => {
                                 <h3 className="text-xl font-bold text-white">Alumni Profile</h3>
                                 <button
                                     onClick={closeModal}
-                                    className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 hover:text-gray-900 rounded-full p-2 transition-all duration-200 shadow-lg"
+                                    className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-200 dark:hover:text-white rounded-full p-2 transition-all duration-200 shadow-lg"
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1698,23 +1698,23 @@ const Alumni = () => {
                         <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
                             <div className="flex-shrink-0 p-6 lg:p-8">
                                 <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto relative">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl transform rotate-3"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl transform rotate-3"></div>
                                     <img
                                         src={selectedAlumni.image}
                                         alt={selectedAlumni.name}
-                                        className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white"
+                                        className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white dark:border-gray-900 transition-transform duration-300 ease-out hover:scale-105"
                                         onError={(e) => {
                                             e.target.src = '/Alumini/sample.jpg'
                                         }}
                                     />
-                                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
+                                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
                                 </div>
                             </div>
 
                             <div className="flex-1 p-6 lg:p-8 overflow-y-auto">
                                 <div className="space-y-6">
                                     <div>
-                                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                                             {selectedAlumni.name}
                                         </h2>
                                         <p className="text-blue-600 text-xl lg:text-2xl font-semibold">
@@ -1724,26 +1724,26 @@ const Alumni = () => {
                                     
                                     <div className="space-y-3">
                                         <div className="flex items-start space-x-4">
-                                            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center">
                                                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                                 </svg>
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900 mb-1">Branch</h3>
-                                                <p className="text-gray-600 text-lg">{selectedAlumni.branch}</p>
+                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Branch</h3>
+                                                <p className="text-gray-600 dark:text-gray-300 text-lg">{selectedAlumni.branch}</p>
                                             </div>
                                         </div>
                                         
                                         <div className="flex items-start space-x-4">
-                                            <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                            <div className="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/40 rounded-xl flex items-center justify-center">
                                                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
                                                 </svg>
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900 mb-1">Current Role</h3>
-                                                <p className="text-gray-600 text-lg leading-relaxed">{selectedAlumni.currentDesignation}</p>
+                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Current Role</h3>
+                                                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">{selectedAlumni.currentDesignation}</p>
                                             </div>
                                         </div>
                                     </div>

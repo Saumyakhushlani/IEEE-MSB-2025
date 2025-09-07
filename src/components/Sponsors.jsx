@@ -23,14 +23,14 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section className="w-full py-16 bg-gray-50 relative">
+    <section className="w-full py-16 bg-gray-50 dark:bg-neutral-950 relative">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
+          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12"
         >
           Our <span className="text-blue-600">Sponsors</span>
         </motion.h2>
@@ -43,7 +43,7 @@ const Sponsors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center p-2 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+              className="flex items-center justify-center p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
             >
               <img
                 src={sponsor.src}
@@ -60,11 +60,11 @@ const Sponsors = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 border border-blue-100 dark:border-gray-700">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Interested in Sponsoring?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Join our community of forward-thinking organizations and help shape the future together
             </p>
             <motion.button
