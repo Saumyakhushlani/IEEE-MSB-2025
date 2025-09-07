@@ -11,13 +11,16 @@ import {createBrowserRouter,RouterProvider,useLocation} from 'react-router-dom'
 import About from './pages/About'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
-import { div } from "framer-motion/client";
+import { useState } from "react";
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
 
 function Home() {
   const location=useLocation();
   const videoRef = useRef(null);
   const hasStarted = useRef(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   // Autoplay video when visible
   useEffect(() => {
@@ -42,10 +45,33 @@ function Home() {
     return () => observer.disconnect();
   }, []);
 
+    const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  const enterFullscreen = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.requestFullscreen) {
+      videoRef.current.requestFullscreen();
+    }
+  };
+
   return (
     <AnimatePresence mode="wait">
     <motion.div 
-    className="bg-gray-950"
+    className="bg-[#060507] overflow-hidden"
         key={location.pathname}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,7 +97,7 @@ Nobis, magni nulla quasi laboriosam excepturi inventore perferendis vel modi eos
 Eculpa?
 
       {/* About section */}
-      <section className="bg-gray-950 text-white my-[8rem]">
+      <section className="bg-[#060507] text-white my-[8rem]">
         {/* Top content */}
         <motion.h1 
         className="text-center font-bold text-4xl sm:text-5xl md:text-7xl"
@@ -126,24 +152,46 @@ Eculpa?
 
         {/* Video */}
         <motion.div
-          className="max-w-6xl mx-auto px-6 md:px-8 "
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, amount: 0.35 }}
-        >
-          <div className="rounded-2xl overflow-hidden shadow-xl">
-            <video
-              ref={videoRef}
-              src={recapVideo}
-              muted
-              loop
-              playsInline
-              className="w-full max-h-[90vh] object-contain bg-gray-950 rounded-2xl"
-              controls={false}
-            />
-          </div>
-        </motion.div>
+      className="max-w-6xl mx-auto px-6 md:px-8"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.35 }}
+    >
+      <div className="relative rounded-2xl overflow-hidden shadow-xl bg-[#060507]">
+        <video
+          ref={videoRef}
+          src={recapVideo}
+          muted={isMuted}
+          loop
+          playsInline
+          className="w-full max-h-[90vh] object-contain rounded-2xl"
+          controls={false}
+        />
+        {/* Custom Controls */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-black/50 px-4 py-2 rounded-full">
+          <button
+            onClick={togglePlay}
+            className="text-white hover:scale-110 transition"
+          >
+            {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+          </button>
+          <button
+            onClick={toggleMute}
+            className="text-white hover:scale-110 transition"
+          >
+            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+          </button>
+          <button
+            onClick={enterFullscreen}
+            className="text-white hover:scale-110 transition"
+          >
+            <Maximize size={20} />
+          </button>
+        </div>
+      </div>
+    </motion.div>
+
       </section>
 
 <Events/>

@@ -5,10 +5,10 @@ import { div } from "framer-motion/client";
 const TeamImg = ({ img, name, post }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const width = 370;
-  const height = 370;
+  const width = 340;
+  const height = 340;
   const circleSize = Math.min(width, height);
-  const borderWidth = circleSize * 0.15;
+  const borderWidth = circleSize * 0.08;
   const centerX = circleSize / 2;
   const centerY = circleSize / 2;
   const textRadius = centerX - borderWidth / 2;
@@ -78,7 +78,7 @@ const TeamImg = ({ img, name, post }) => {
 
       {/* Inner Image */}
       <motion.div
-        className="absolute rounded-full overflow-hidden shadow-lg border-4 border-background"
+        className="absolute rounded-full overflow-hidden shadow-lg border-4 flex justify-center items-center border-background"
         style={{
           width: circleSize - borderWidth,
           height: circleSize - borderWidth,
@@ -90,7 +90,7 @@ const TeamImg = ({ img, name, post }) => {
         <motion.img
           src={img}
           alt={`${name} - ${post}`}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`w-[340px] h-[340px] transition-opacity duration-500 ${
             isHovered ? "opacity-20" : "opacity-100"
           }`}
         />

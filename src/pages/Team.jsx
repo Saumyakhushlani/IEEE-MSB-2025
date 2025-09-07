@@ -60,7 +60,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-2 gap-4 md:hidden">
+                        className="grid grid-cols-2 justify-items-center gap-4 md:hidden">
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Dheeraj_Agrawal_sir.jpg' name="Dr. Dheeraj Kumar Agarwal" post="Branch Counsellor" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/VijayBhaskarSemwal.jpg' name="Dr. Vijay Bhaskar Semwal" post="Faculty Co-Coordinator (CSE)" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/priyankapaliwal.jpg' name="Dr. Priyanka Paliwal" post="Faculty Co-Coordinator (EE)" /></motion.div>
@@ -83,7 +83,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="hidden md:grid grid-cols-4 gap-6">
+                        className="hidden md:grid grid-cols-4 gap-6 justify-items-center">
                         <motion.div variants={item}><TeamImg img='/public/team/vedant.jpg' name="Vedant Jaiswal" post="Chairperson" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Yashika.jpg' name="Yashika Lawani" post="Vice Chair Admin" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/vvk.jpg' name="Vivek Kumar" post="Vice Chair Finance" /></motion.div>
@@ -104,7 +104,9 @@ const Team = () => {
                         <motion.div variants={item}><TeamImg img='/public/team/Padmasri.JPG' name="Pallagani Padamsri" post="Technical Coordinator-CSE" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/saurya.jpg' name="Saurya Singh" post="Technical Coordinator-ECE" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Shivashish .jpg' name="Shivashish Chaurasiya" post="Technical Coordinator-EE" /></motion.div>
-                        <motion.div variants={item}><TeamImg img='/public/team/Soumya .jpg' name="Soumya Sridhi" post="Head-Membership Drive" /></motion.div>
+                        <div className="col-span-4 flex justify-center">
+                             <motion.div variants={item}><TeamImg img='/public/team/Soumya .jpg' name="Soumya Sridhi" post="Head-Membership Drive" /></motion.div>
+                        </div>
                     </motion.div>
 
                     {/* Mobile + Tablet grid */}
@@ -113,7 +115,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-2 gap-4 md:hidden">
+                        className="grid grid-cols-2 justify-items-center gap-4 md:hidden">
                         <motion.div variants={item}><MobileTeamImg img='/public/team/vedant.jpg' name="Vedant Jaiswal" post="Chairperson" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Yashika.jpg' name="Yashika Lawani" post="Vice Chair Admin" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/vvk.jpg' name="Vivek Kumar" post="Vice Chair Finance" /></motion.div>
@@ -134,7 +136,9 @@ const Team = () => {
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Padmasri.JPG' name="Pallagani Padamsri" post="Technical Coordinator-CSE" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/saurya.jpg' name="Saurya Singh" post="Technical Coordinator-ECE" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Shivashish .jpg' name="Shivashish Chaurasiya" post="Technical Coordinator-EE" /></motion.div>
+                        <div className="col-span-2 flex justify-center">
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Soumya .jpg' name="Soumya Sridhi" post="Head-Membership Drive" /></motion.div>
+                        </div>
                     </motion.div>
                 </section>
             </motion.div>
@@ -187,7 +191,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-2 gap-4 md:hidden">
+                        className="grid grid-cols-2 justify-items-center gap-4 md:hidden">
                         <motion.div variants={item}><MobileTeamImg img='/public/team/saurabh.jpg' name="Saurabh Yadav" post="General Secretary" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Ayush.jpeg' name="Ayush Kumar" post="Finance Secretary" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/dhanvi.jpg' name="Dhanvi Shah" post="WIE Secretary" /></motion.div>
