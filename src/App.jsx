@@ -81,6 +81,7 @@ function Home() {
       {/* Navbar */}
       <Navbar />
 
+{/* Home section */}
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis saepe maxime voluptatem. Magnam, in? Nobis quidem vitae, dolorem autem exercitationem cum atque odit molestiae reprehenderit dolorum. Hic itaque quas qui.
 Numquam, soluta, ipsum reiciendis iste deserunt odio molestias accusantium at maiores voluptatum corporis, iure vel ad amet nostrum fuga eveniet cumque voluptate aspernatur labore sed illo. Eligendi sequi quidem officia.
 Officia, voluptatem doloribus totam architecto corporis earum deserunt molestias minima esse tempore quis aliquid perferendis ducimus fugiat saepe dicta et asperiores quisquam odit consequatur aut exercitationem nobis cum explicabo. Expedita.
