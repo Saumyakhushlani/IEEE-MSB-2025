@@ -12,7 +12,7 @@ const Alumni = () => {
                     name: "Tilak Mangal",
                     branch: "CSE",
                     post: "Chairperson",
-                    currentDesignation: "Upcoming Summer Intern at Deutsche Bank",
+                    currentDesignation: "Graduate Analyst at Deutsche Bank ",
                     linkedin: "https://www.linkedin.com/in/tilak-mangal-768855241/",
                     image: "/Alumini/2025_batch/Tilak.jpg"
                 },
@@ -20,7 +20,7 @@ const Alumni = () => {
                     name: "Rohaan Khan",
                     branch: "EE",
                     post: "Vice Chairperson Finance",
-                    currentDesignation: "Upcoming MTS at ZL technologies",
+                    currentDesignation: "MTS at ZL technologies",
                     linkedin: "https://www.linkedin.com/in/rohaan-khan-334135244/",
                     image: "/Alumini/2025_batch/IMG_20230504_103227 - Rohaan khan.jpg"
                 },
@@ -28,7 +28,7 @@ const Alumni = () => {
                     name: "Ayush Verma",
                     branch: "ECE",
                     post: "Vice Chairperson Admin",
-                    currentDesignation: "Upcoming Associate Data Engineer at Gramener",
+                    currentDesignation: "Associate Data Science Engineer at Gramener ",
                     linkedin: "https://www.linkedin.com/in/ayush-kr-verma-2b986922b/",
                     image: "/Alumini/2025_batch/1683175437356 - Ayush Verma.jpg"
                 },
@@ -36,7 +36,7 @@ const Alumni = () => {
                     name: "Vaishnavi Gupta",
                     branch: "CSE",
                     post: "WIE Chairperson",
-                    currentDesignation: "SDE Intern'25 at Porter",
+                    currentDesignation: "SDE-1 at Porter",
                     linkedin: "https://www.linkedin.com/in/vaishnavi-gupta-74a885241/",
                     image: "/Alumini/2025_batch/IMG_20230506_162452 - Vaishnavi Gupta.jpg"
                 },
@@ -44,7 +44,7 @@ const Alumni = () => {
                     name: "Shubh Srivastava",
                     branch: "MME",
                     post: "Aarambh Coordinator",
-                    currentDesignation: "Operations Manager Intern at Amazon",
+                    currentDesignation: "Data Science at Piramal Finance",
                     linkedin: "https://www.linkedin.com/in/shubh-s/",
                     image: "/Alumini/2025_batch/1681426647154 - Shubh Shrivastava.jpeg"
                 },
@@ -52,7 +52,7 @@ const Alumni = () => {
                     name: "Jatin Saraf",
                     branch: "CSE",
                     post: "Event Coordinator",
-                    currentDesignation: "DE Intern at Sigmoid",
+                    currentDesignation: "SDE at Sigmoid ",
                     linkedin: "https://www.linkedin.com/in/jatin-saraf-209307225/",
                     image: "/Alumini/2025_batch/IMG_20230312_022324_479 - Jatin Saraf.jpg"
                 },
@@ -60,7 +60,7 @@ const Alumni = () => {
                     name: "Deepanshu Jain",
                     branch: "CSE",
                     post: "Convener",
-                    currentDesignation: "Software Developer Intern at InfoEdge",
+                    currentDesignation: "Software Developer at InfoEdge",
                     linkedin: "https://www.linkedin.com/in/deepanshu-jain-90831b208/",
                     image: "/Alumini/2025_batch/website_photo - Deepanshu Jain.jpg"
                 },
@@ -76,7 +76,7 @@ const Alumni = () => {
                     name: "Anumolu Yoktha Rosaiah",
                     branch: "CSE",
                     post: "Head-Logistics and Operations",
-                    currentDesignation: "N/A",
+                    currentDesignation: "Technology Trainee at NSE India",
                     linkedin: "https://www.linkedin.com/in/anumolu-rosaiah/",
                     image: "/Alumini/2025_batch/Anumolu.jpg"
                 },
@@ -100,7 +100,7 @@ const Alumni = () => {
                     name: "Naved Sheikh",
                     branch: "EE",
                     post: "Technical Head",
-                    currentDesignation: "Digital Technology Intern at GE Vernova",
+                    currentDesignation: "Software Engineering Specialist at GE Vernova ",
                     linkedin: "https://www.linkedin.com/in/naved-sheikh/",
                     image: "/Alumini/2025_batch/IMG_4464 - Naved Sheikh.jpeg"
                 },
@@ -124,7 +124,7 @@ const Alumni = () => {
                     name: "Swastik khare",
                     branch: "Mechanical",
                     post: "Head video editing",
-                    currentDesignation: "Algorithm Development Intern at Reach Technologies",
+                    currentDesignation: "Algorithm Development Intern at Reach Technologies ",
                     linkedin: "https://www.linkedin.com/in/swastikkhare10/",
                     image: "/Alumini/2025_batch/IMG_20230507_004736 - The Youtube Guy.jpg"
                 },
@@ -140,7 +140,7 @@ const Alumni = () => {
                     name: "Chitransh Dubey",
                     branch: "EE",
                     post: "Head-PR and Promotions",
-                    currentDesignation: "Upcoming GET at Reliance",
+                    currentDesignation: "GET at RIL DMD",
                     linkedin: "https://www.linkedin.com/in/chitransh-dubey-7b96b424a/",
                     image: "/Alumini/2025_batch/IMG_20220921_223316 - Chitransh Dubey.jpg"
                 },
@@ -156,7 +156,7 @@ const Alumni = () => {
                     name: "Nitesh Kumar Gond",
                     branch: "EE",
                     post: "Head-Membership drive",
-                    currentDesignation: "Intern Trainee at NCL Singrauli",
+                    currentDesignation: "Gradute Engineering Trainee at Avaada Energy",
                     linkedin: "https://www.linkedin.com/in/nitesh-kumar-a9625b246/",
                     image: "/Alumini/2025_batch/IMG-20230125-WA0000 - nitesh kumar.jpg"
                 }

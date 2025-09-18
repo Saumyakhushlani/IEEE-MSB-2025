@@ -4,7 +4,7 @@ import aboutheroimage from '../../assets/images/aboutHeroImage.jpg' // dummy ima
 
 const TeamHero = () => {
   return (
-    <section className="relative w-full h-[80vh] flex items-center justify-center text-center bg-gray-900">
+    <section className="relative w-full h-[100vh] flex items-center justify-center text-center bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
