@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import contactHeroImage from '../assets/images/contactHeroImage.jpg'
 import ContactUsimage from '../assets/images/ContactUsImage.jpg'
 import { MapPin, Mail } from 'lucide-react'
+import {useSelector} from 'react-redux'
 
 const Contact = () => {
     const {
@@ -35,139 +36,202 @@ const Contact = () => {
     });
     }
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}>
+    const mode = useSelector((state) => state.theme.mode);
+return (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.6 }}
+  >
+    {/* Hero image */}
+    <section
+      className={`relative w-full h-[80vh] flex items-center justify-center text-center ${
+        mode === "dark" ? "bg-black" : "bg-white"
+      }`}
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={contactHeroImage}
+          alt="Team Background"
+          className="w-full h-full object-cover opacity-70"
+        />
+        <div
+          className={`absolute inset-0 ${
+            mode === "dark" ? "bg-black/60" : "bg-white/60"
+          }`}
+        />
+      </div>
 
-            {/* Hero image */}
-            <section className="relative w-full h-[80vh] flex items-center justify-center text-center bg-gray-900">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <img
-                        src={contactHeroImage}
-                        alt="Team Background"
-                        className="w-full h-full object-cover opacity-70"
-                    />
-                    <div className="absolute inset-0 bg-black/60" />
-                </div>
+      {/* Content */}
+      <motion.div
+        className="relative z-10 max-w-3xl px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.h1
+          className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${
+            mode === "dark" ? "text-white" : "text-black"
+          }`}
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          Contact <span className="text-blue-600">Us</span>
+        </motion.h1>
+      </motion.div>
+    </section>
 
-                {/* Content */}
-                <motion.div
-                    className="relative z-10 max-w-3xl px-4 sm:px-6 lg:px-8"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <motion.h1
-                        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
-                        initial={{ scale: 0.9 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Contact <span className="text-blue-600">Us</span>
-                    </motion.h1>
-                </motion.div>
-            </section>
-
-            {/* Contact Form Section */}
-            <section className="bg-gray-950 text-white py-16 px-6 md:px-12 lg:px-20">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                    {/* Left Image with Animation */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="flex justify-center"
-                    >
-                        <img
-                            src={ContactUsimage}
-                            alt="Contact Us"
-                            className="rounded-xl shadow-lg"
-                        />
-                    </motion.div>
-
-                    {/* Right Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="bg-gray-900 p-8 rounded-xl shadow-lg"
-                    >
-                        <h2 className="text-3xl font-bold mb-2">Get in touch</h2>
-                        <p className="text-gray-400 mb-8">
-                            Reach Out To Us
-                        </p>
-
-                        <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
-                            <div>
-                                <input
-                                    placeholder='Name'
-                                    className={errors.name ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
-                                    {...register("name",
-                                        {
-                                            required: true,
-                                        })} />
-                            </div>
-
-                            <div>
-                                <input
-                                    placeholder='Email'
-                                    className={errors.email ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
-                                    {...register("email",
-                                        {
-                                            required: true,
-                                        })} />
-                            </div>
-
-                            <div>
-                                <input
-                                    placeholder='Phone'
-                                    className={errors.phone ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
-                                    {...register("phone",
-                                        {
-                                            required: true,
-                                        })} />
-                            </div>
-
-                            <div>
-                                <input
-                                    placeholder='Subject'
-                                    className={errors.subject ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
-                                    {...register("subject", { required: true })} />
-                            </div>
-
-                            <div>
-                              <textarea 
-                              placeholder='Message'
-                              className={errors.message ? "border-red-500 border-4" : "w-full p-3 rounded-md bg-gray-800 text-white focus:ring-2 focus:ring-blue-600 outline-none"}
-                              {...register("message", { required: true })} >
-                              </textarea>
-                            </div>
-
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="w-full bg-blue-600 py-3 rounded-md font-semibold text-white"
-                                type='submit'
-                                disabled={isSubmitting}>
-                                    Send Message
-                            </motion.button>
-                        </form>
-
-                        
-                    </motion.div>
-                </div>
-            </section>
-
-             <section className="bg-gray-950 text-white py-16 px-6 md:px-12 lg:px-20">
+    {/* Contact Form Section */}
+    <section
+      className={`py-16 px-6 md:px-12 lg:px-20 ${
+        mode === "dark" ? "bg-gray-950 text-white" : "bg-gray-100 text-black"
+      }`}
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+        {/* Left Image with Animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <img
+            src={ContactUsimage}
+            alt="Contact Us"
+            className="rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        {/* Right Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className={`p-8 rounded-xl shadow-lg ${
+            mode === "dark" ? "bg-gray-900" : "bg-white"
+          }`}
+        >
+          <h2 className="text-3xl font-bold mb-2">Get in touch</h2>
+          <p
+            className={`mb-8 ${
+              mode === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
+            Reach Out To Us
+          </p>
+
+          <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <input
+                placeholder="Name"
+                className={
+                  errors.name
+                    ? "border-red-500 border-4"
+                    : `w-full p-3 rounded-md focus:ring-2 focus:ring-blue-600 outline-none ${
+                        mode === "dark"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-200 text-black"
+                      }`
+                }
+                {...register("name", {
+                  required: true,
+                })}
+              />
+            </div>
+
+            <div>
+              <input
+                placeholder="Email"
+                className={
+                  errors.email
+                    ? "border-red-500 border-4"
+                    : `w-full p-3 rounded-md focus:ring-2 focus:ring-blue-600 outline-none ${
+                        mode === "dark"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-200 text-black"
+                      }`
+                }
+                {...register("email", {
+                  required: true,
+                })}
+              />
+            </div>
+
+            <div>
+              <input
+                placeholder="Phone"
+                className={
+                  errors.phone
+                    ? "border-red-500 border-4"
+                    : `w-full p-3 rounded-md focus:ring-2 focus:ring-blue-600 outline-none ${
+                        mode === "dark"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-200 text-black"
+                      }`
+                }
+                {...register("phone", {
+                  required: true,
+                })}
+              />
+            </div>
+
+            <div>
+              <input
+                placeholder="Subject"
+                className={
+                  errors.subject
+                    ? "border-red-500 border-4"
+                    : `w-full p-3 rounded-md focus:ring-2 focus:ring-blue-600 outline-none ${
+                        mode === "dark"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-200 text-black"
+                      }`
+                }
+                {...register("subject", { required: true })}
+              />
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Message"
+                className={
+                  errors.message
+                    ? "border-red-500 border-4"
+                    : `w-full p-3 rounded-md focus:ring-2 focus:ring-blue-600 outline-none ${
+                        mode === "dark"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-200 text-black"
+                      }`
+                }
+                {...register("message", { required: true })}
+              ></textarea>
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full bg-blue-600 py-3 rounded-md font-semibold text-white"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Send Message
+            </motion.button>
+          </form>
+        </motion.div>
+      </div>
+    </section>
+
+    <section
+      className={`py-16 px-6 md:px-12 lg:px-20 ${
+        mode === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Map */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -192,7 +256,9 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gray-900 p-8 rounded-xl shadow-lg"
+          className={`p-8 rounded-xl shadow-lg ${
+            mode === "dark" ? "bg-gray-900" : "bg-white"
+          }`}
         >
           <h4 className="text-blue-600 font-semibold uppercase tracking-wide">
             Quick Contact
@@ -200,18 +266,28 @@ const Contact = () => {
           <h2 className="text-3xl font-bold mt-2 mb-4">
             Need Help? Contact Us
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p
+            className={`mb-8 ${
+              mode === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             We will try to be available to you at the earliest.
           </p>
 
           {/* Location */}
           <div className="flex items-start gap-4 mb-6">
-            <div className="bg-gray-800 p-3 rounded-md">
+            <div
+              className={`p-3 rounded-md ${
+                mode === "dark" ? "bg-gray-800" : "bg-gray-200"
+              }`}
+            >
               <MapPin className="text-blue-600 w-6 h-6" />
             </div>
             <div>
               <h3 className="text-lg font-semibold">Our Location:</h3>
-              <p className="text-gray-300">
+              <p
+                className={mode === "dark" ? "text-gray-300" : "text-gray-700"}
+              >
                 MANIT Bhopal, M.P. 462003, India
               </p>
             </div>
@@ -219,12 +295,20 @@ const Contact = () => {
 
           {/* Email */}
           <div className="flex items-start gap-4">
-            <div className="bg-gray-800 p-3 rounded-md">
+            <div
+              className={`p-3 rounded-md ${
+                mode === "dark" ? "bg-gray-800" : "bg-gray-200"
+              }`}
+            >
               <Mail className="text-blue-600 w-6 h-6" />
             </div>
             <div>
               <h3 className="text-lg font-semibold">Email:</h3>
-              <p className="text-gray-300">ieeentib@gmail.com</p>
+              <p
+                className={mode === "dark" ? "text-gray-300" : "text-gray-700"}
+              >
+                ieeentib@gmail.com
+              </p>
             </div>
           </div>
         </motion.div>
@@ -232,9 +316,9 @@ const Contact = () => {
     </section>
 
     <Footer />
+  </motion.div>
+);
 
-        </motion.div>
-    )
 }
 
 export default Contact

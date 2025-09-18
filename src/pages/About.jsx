@@ -9,10 +9,10 @@ import infoCardLogo1 from '../assets/Images/infoCardLogo_1.png'
 import infoCardLogo2 from '../assets/Images/infoCardLogo_2.png'
 import infoCardLogo3 from '../assets/Images/infoCardLogo_3.png'
 import infoCardLogo4 from '../assets/Images/infoCardLogo_4.png'
+import {useSelector} from 'react-redux'
 import { i } from 'framer-motion/client'
 
 const About = () => {
-
     // For line animation when in view
     const lineRef = useRef(null);
     const containerRef = useRef(null);
@@ -41,65 +41,96 @@ const About = () => {
             text: "IEEE in our country is a proliferating labyrinthine network of members, colleges and universities, divided into regions, unified by a unanimous intention. India is fragmented into 11 IEEE sections which are further divided into subsections, for optimum functioning. Bombay section is one the most dynamic sections of our country and works efficaciously towards the constructive growth of its members.",
         },
     ];
-    return (
-        <motion.div
-            className='bg-black'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}>
 
-            <AboutHero />
+   const mode = useSelector((state) => state.theme.mode);
+return (
+    <motion.div
+        className={`${
+            mode === "dark"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+        }`}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.6 }}>
 
-            <div className="bg-black text-white py-16 px-6 md:px-12 lg:px-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <AboutHero />
 
-                    {/* Left Text Section */}
-                    <div>
-                        <p className="text-blue-500 font-semibold mb-2">About Us</p>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                            Driving innovation and <br /> future success.
-                        </h2>
-                        <p className="text-gray-300 leading-relaxed mb-8">
-                            IEEE MANIT Student Branch is committed to advancing technology for
-                            humanity. Through collaboration, innovation, and knowledge-sharing,
-                            we empower students to create solutions that matter and shape a
-                            brighter tomorrow.
-                        </p>
+        <div
+            className={`${
+                mode === "dark"
+                    ? "bg-black text-white"
+                    : "bg-white text-black"
+            } py-16 px-6 md:px-12 lg:px-20`}
+        >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                        {/* Animated Line */}
-                        <motion.div
-                            ref={lineRef}
-                            initial={{ width: 0 }}
-                            animate={isInView ? { width: "100%" } : {}}
-                            transition={{ duration: 2, ease: "easeInOut" }}
-                            className="h-1 bg-blue-500 rounded"
-                        />
-                    </div>
+                {/* Left Text Section */}
+                <div>
+                    <p
+                        className={`${
+                            mode === "dark" ? "text-blue-400" : "text-blue-600"
+                        } font-semibold mb-2`}
+                    >
+                        About Us
+                    </p>
+                    <h2
+                        className={`${
+                            mode === "dark" ? "text-white" : "text-gray-900"
+                        } text-3xl md:text-4xl lg:text-5xl font-bold mb-6`}
+                    >
+                        Driving innovation and <br /> future success.
+                    </h2>
+                    <p
+                        className={`${
+                            mode === "dark"
+                                ? "text-gray-300"
+                                : "text-gray-700"
+                        } leading-relaxed mb-8`}
+                    >
+                        IEEE MANIT Student Branch is committed to advancing
+                        technology for humanity. Through collaboration,
+                        innovation, and knowledge-sharing, we empower students to
+                        create solutions that matter and shape a brighter
+                        tomorrow.
+                    </p>
 
-                    {/* Right Image Carousel */}
-                   <div className="mb-12">
-                         <ImageCarousel />
-                    </div>
+                    {/* Animated Line */}
+                    <motion.div
+                        ref={lineRef}
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: "100%" } : {}}
+                        transition={{ duration: 2, ease: "easeInOut" }}
+                        className={`h-1 rounded ${
+                            mode === "dark" ? "bg-blue-400" : "bg-blue-600"
+                        }`}
+                    />
+                </div>
 
+                {/* Right Image Carousel */}
+                <div className="mb-12">
+                    <ImageCarousel />
                 </div>
             </div>
+        </div>
 
-            {/* info cards */}
-            <div className="px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                {data.map((item, index) => (
-                    <InfoCard
-                        key={index}
-                        logo={item.logo}
-                        heading={item.heading}
-                        text={item.text}
-                    />
-                ))}
-            </div>
+        {/* info cards */}
+        <div className="px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {data.map((item, index) => (
+                <InfoCard
+                    key={index}
+                    logo={item.logo}
+                    heading={item.heading}
+                    text={item.text}
+                />
+            ))}
+        </div>
 
-            <Footer />
-        </motion.div>
-    )
+        <Footer />
+    </motion.div>
+);
+
 }
 
 export default About

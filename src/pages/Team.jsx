@@ -4,9 +4,9 @@ import TeamHero from '../components/TeamComponents/TeamHero'
 import TeamImg from '../components/TeamComponents/TeamImg'
 import Footer from '../components/Footer'
 import MobileTeamImg from '../components/TeamComponents/MobileTeamImg'
+import {useSelector} from 'react-redux'
 
 const Team = () => {
-
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -22,9 +22,10 @@ const Team = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
     };
 
+    const mode = useSelector((state) => state.theme.mode);
     return (
         <motion.div
-            className='bg-gray-950 overflow-hidden'
+            className={`${mode==='dark' ? "bg-black" : "bg-white"} overflow-hidden`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -36,7 +37,7 @@ const Team = () => {
             {/* faculty team */}
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
-                    className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
+                    className={`text-center mb-8 ${mode==='dark' ? "text-white" : "text-black"} font-bold text-2xl sm:text-4xl md:text-5xl`}
                 >Faculty <span className='text-blue-500'>Team</span></motion.h1>
 
                 {/* All the images */}
@@ -72,7 +73,7 @@ const Team = () => {
             {/* final year team */}
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
-                    className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
+                    className={`text-center mb-8 ${mode==='dark' ? "text-white" : "text-black"} font-bold text-2xl sm:text-4xl md:text-5xl`}
                 >Final <span className='text-blue-500'>Year</span></motion.h1>
 
                 {/* All the images */}
@@ -147,7 +148,7 @@ const Team = () => {
             {/* Pre-final year team */}
             <motion.div className='mt-[5rem] mb-[4rem]'>
                 <motion.h1
-                    className="text-center mb-8 text-white font-bold text-2xl sm:text-4xl md:text-5xl"
+                    className={`text-center mb-8 ${mode==='dark' ? "text-white" : "text-black"} font-bold text-2xl sm:text-4xl md:text-5xl`}
                 >Pre-Final <span className='text-blue-500'>Year</span></motion.h1>
 
                 {/* All the images */}

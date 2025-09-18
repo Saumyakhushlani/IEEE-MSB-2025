@@ -1,5 +1,6 @@
 import React from "react";
 import CircularTestimonials from "./Circular-testimonial";
+import {useSelector} from 'react-redux'
 
 const testimonials = [
   {
@@ -27,11 +28,22 @@ const testimonials = [
 
 
 
-export const Events = () => (
-  <section>
-
-        <div className="bg-[#060507] text-white text-6xl text-center font-bold pt-6">Our <span className="text-blue-500">Events</span></div>
-    <div className="bg-[#060507] md:p-16 py-4 px-2 min-h-[300px] flex flex-wrap gap-6 items-center justify-center relative">
+ const Events = () => {
+  const mode = useSelector((state) => state.theme.mode);
+  return(
+<section>
+    <div
+      className={`text-6xl text-center font-bold pt-6 ${
+        mode === "dark" ? "bg-[#060507] text-white" : "bg-white text-gray-900"
+      }`}
+    >
+      Our <span className="text-blue-500">Events</span>
+    </div>
+    <div
+      className={`md:p-16 py-4 px-2 min-h-[300px] flex flex-wrap gap-6 items-center justify-center relative ${
+        mode === "dark" ? "bg-[#060507]" : "bg-gray-50"
+      }`}
+    >
       <div
         className="items-center justify-center relative flex"
         style={{ maxWidth: "1024px" }}
@@ -56,4 +68,8 @@ export const Events = () => (
       </div>
     </div>
   </section>
-);
+  )
+  
+}
+
+export default Events
