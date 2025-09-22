@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const AboutHero = () => {
   return (
     <section
-      className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] flex items-center justify-center text-center text-white"
+      className="relative h-[70vh] sm:h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white"
       style={{
         backgroundImage: `url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80")`,
         backgroundSize: "cover",
