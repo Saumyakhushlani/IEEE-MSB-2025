@@ -11,8 +11,12 @@ import {createBrowserRouter,RouterProvider,useLocation} from 'react-router-dom'
 import About from './pages/About'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
+
+import Alumni from "./components/Alumni";
+
 import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
+
 
 
 function Home() {
@@ -227,6 +231,12 @@ const router = createBrowserRouter([
     element:<div>
       <Navbar />
       <Contact />
+    </div>
+  },
+  {
+    path:'alumni',
+    element:<div>
+      <Alumni />
     </div>
   }
 ])
