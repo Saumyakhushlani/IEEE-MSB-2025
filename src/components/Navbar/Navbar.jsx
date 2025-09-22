@@ -4,8 +4,9 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import MobileAndTab from "./MobileAndTab";
 import msbLogo from "../../assets/images/msb-logo.png";
 import { useEffect } from "react";
-import {Link} from 'react-scroll'
+import ThemeBtn from "../ThemeBtn";
 import {NavLink} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 const navItems = [
     { name: "Home", to: "/" },
@@ -60,6 +61,7 @@ export default function Navbar() {
         show: { opacity: 1, y: 0 },
     };
 
+    const mode = useSelector((state) => state.theme.mode);
     return (
         <nav className={`fixed top-0 left-0 w-full z-50 shadow-md transition-colors duration-500 ${scrollUp ? "bg-transparent" : "bg-white/20 backdrop-blur-md"
             }`}>
@@ -82,7 +84,7 @@ export default function Navbar() {
 
                 {/* Desktop Links */}
                 <motion.ul
-                    className="hidden md:flex space-x-6 text-white font-medium"
+                    className={`hidden md:flex space-x-10 ${mode==='dark' ? "text-white" : "text-black"} font-medium`}
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
@@ -103,7 +105,7 @@ export default function Navbar() {
                                     <ChevronDown size={16} className="ml-1 z-10" />
 
                                     {/* Background effect */}
-                                    <span className="absolute inset-0 bg-[rgba(255,255,255,0.1)] rounded-2xl"></span>
+                                    <span className={`absolute inset-0 ${mode==='dark' ? "bg-[rgba(255,255,255,0.1)]" : "bg-[rgba(0,0,0,0.1)]"} rounded-2xl`}></span>
                                     <span className="absolute bottom-0 left-0 w-full h-0 bg-blue-600 transition-all duration-300 group-hover:h-full rounded-2xl"></span>
                                 </motion.div>
 
@@ -137,12 +139,20 @@ export default function Navbar() {
                                 <NavLink to={item.to} className="relative z-10">
                                     {item.name}
                                 </NavLink>
-                                <span className="absolute inset-0 bg-[rgba(255,255,255,0.1)] rounded-2xl"></span>
+                                <span className={`absolute inset-0 ${mode==='dark' ? "bg-[rgba(255,255,255,0.1)]" : "bg-[rgba(0,0,0,0.1)]"} rounded-2xl`}></span>
                                 <span className="absolute bottom-0 left-0 w-full h-0 bg-blue-600 transition-all duration-300 group-hover:h-full rounded-2xl"></span>
                             </motion.li>
                         )
                     )}
                 </motion.ul>
+
+                    <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="hidden lg:inline-block absolute right-4 top-4">
+                    <ThemeBtn/>
+                    </motion.div>
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden relative w-8 h-8">
@@ -152,7 +162,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute top-0 right-0 z-50 text-white hover:text-blue-700 duration-150"
+                        className={`absolute top-0 right-0 z-50 ${mode==='dark' ? "text-white" : "text-black"} hover:text-blue-700 duration-150`}
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
