@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { toast } from 'react-hot-toast'
 import { useForm } from "react-hook-form"
 import Footer from '../components/Footer'
-import contactHeroImage from '../assets/images/contactHeroImage.jpg'
+import Navbar from '../components/Navbar/Navbar'
 import ContactUsimage from '../assets/images/ContactUsImage.jpg'
 import { MapPin, Mail } from 'lucide-react'
 import {useSelector} from 'react-redux'
@@ -43,51 +43,60 @@ return (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.6 }}
+    className={`min-h-screen ${
+      mode === "dark" 
+        ? "bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" 
+        : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
+    }`}
   >
-    {/* Hero image */}
-    <section
-      className={`relative w-full h-[80vh] flex items-center justify-center text-center ${
-        mode === "dark" ? "bg-black" : "bg-white"
-      }`}
-    >
+    <Navbar />
+    
+    {/* Hero image - Full Screen */}
+    <section className="relative w-full h-screen flex items-center justify-center text-center">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={contactHeroImage}
-          alt="Team Background"
-          className="w-full h-full object-cover opacity-70"
+          src="/Events/sceecs/SCEECS24_1.JPG"
+          alt="Contact Background"
+          className="w-full h-full object-cover"
         />
         <div
           className={`absolute inset-0 ${
-            mode === "dark" ? "bg-black/60" : "bg-white/60"
+            mode === "dark" ? "bg-black/60" : "bg-black/40"
           }`}
         />
       </div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-3xl px-4 sm:px-6 lg:px-8"
+        className="relative z-10 max-w-4xl px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${
-            mode === "dark" ? "text-white" : "text-black"
-          }`}
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Contact <span className="text-blue-600">Us</span>
+          Contact <span className="text-blue-400">Us</span>
         </motion.h1>
+        <motion.p
+          className="text-xl sm:text-2xl text-gray-200 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Get in touch with IEEE MSB Student Branch. We're here to help and connect with you.
+        </motion.p>
       </motion.div>
     </section>
 
     {/* Contact Form Section */}
     <section
       className={`py-16 px-6 md:px-12 lg:px-20 ${
-        mode === "dark" ? "bg-gray-950 text-white" : "bg-gray-100 text-black"
+        mode === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -228,7 +237,7 @@ return (
 
     <section
       className={`py-16 px-6 md:px-12 lg:px-20 ${
-        mode === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"
+        mode === "dark" ? "bg-gray-800 text-white" : "bg-gray-50 text-black"
       }`}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
