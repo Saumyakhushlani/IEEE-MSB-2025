@@ -9,12 +9,13 @@ import recapVideo from './assets/Videos/recap-2025.mp4'
 import {Toaster} from 'react-hot-toast'
 import {createBrowserRouter,RouterProvider,useLocation} from 'react-router-dom'
 import About from './pages/About'
+import Aarambh from "./pages/Aarambh";
+import Sceecs from "./pages/Sceecs";
+import Samwad from "./pages/Samwad";
 import Team from './pages/Team'
 import Contact from './pages/Contact'
 import ThemeBtn from "./components/ThemeBtn";
-
 import Alumni from "./components/Alumni";
-
 import { useState } from "react";
 import {useSelector} from 'react-redux'
 import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
@@ -242,7 +243,29 @@ const router = createBrowserRouter([
   {
     path:'alumni',
     element:<div>
+      <Navbar/>
       <Alumni />
+    </div>
+  },
+  {
+    path:'aarambh',
+    element:<div>
+      <Navbar/>
+      <Aarambh/>
+    </div>
+  },
+  {
+    path:'sceecs',
+    element:<div>
+      <Navbar/>
+      <Sceecs/>
+    </div>
+  },
+  {
+    path:'samwad',
+    element:<div>
+      <Navbar/>
+      <Samwad/>
     </div>
   }
 ])
