@@ -1,28 +1,33 @@
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const AboutHero = () => {
+  const mode = useSelector((state) => state.theme.mode);
+  
   return (
     <section
       className="relative h-[70vh] sm:h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white"
       style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80")`,
+        backgroundImage: `url("/Events/sceecs/SCEECS24_1.JPG")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className={`absolute inset-0 ${
+        mode === "dark" ? "bg-black/60" : "bg-black/40"
+      }`}></div>
 
       {/* Content */}
-      <div className="relative max-w-3xl px-4">
+      <div className="relative max-w-4xl px-4">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          Advancing Technology for Humanity
+          Empowering Tomorrow's Innovators
         </motion.h1>
 
         <motion.p
@@ -32,9 +37,9 @@ const AboutHero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          IEEE MANIT Student Branch is driven by the mission to advance technology for
-           humanity. We bring together students, researchers, and innovators to learn, 
-           collaborate, and create impactful solutions that shape the future.
+          IEEE MANIT Student Branch fosters a community of passionate engineers and researchers 
+          dedicated to advancing technology for humanity. Through collaborative learning, 
+          innovative projects, and professional development, we shape the future of engineering.
         </motion.p>
       </div>
     </section>
