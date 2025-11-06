@@ -5,6 +5,9 @@ import EventVideoCarousel from "../components/VideoCaraousel";
 import Speaker from '../components/Speaker'
 import {useSelector} from 'react-redux'
 import { div } from "framer-motion/client";
+import Lottie from 'lottie-react'
+import samwadOne from '../../Samwad-1.json';
+import samwadTwo from '../../Samwad-2.json'
 
 const Samwad = () => {
 
@@ -80,10 +83,6 @@ const Samwad = () => {
     ]
 
     // Duplicate images for seamless loop
-    const duplicatedImages = [...speakerImages, ...speakerImages];
-
-    const marqueeText = "IEEE MSB • IEEE MSB • IEEE MSB • ";
-    const duplicatedText = marqueeText + marqueeText + marqueeText;
     const mode = useSelector((state) => state.theme.mode);
 
     return (
@@ -92,116 +91,245 @@ const Samwad = () => {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.6 }}
-    className={`w-full pt-[1.5rem] md:pt-[5rem] overflow-hidden ${mode==='light'?'bg-white':'bg-black'}`}>
+    className={`w-full pt-[5rem] sm:pt-[6rem] md:pt-[8rem] overflow-hidden ${mode==='light'?'bg-white':'bg-black'}`}>
+    
 
-    {/* Tilted Image Wrapper Section */}
-    <div className="relative mb-12 mt-[6rem] md:mb-20">
+    {/* tab and pc section */}
+      <section className={`pt-20 hidden sm:block px-4 md:px-12 lg:px-16 ${mode === 'light' ? 'bg-white' : 'bg-black'} `}>
+        <div className="mx-auto flex flex-col gap-4">
+          {/* Animated Heading */}
+          <div className="flex items-center">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[145px] lg:h-[300px] hover:border-4 hover:border-gray-500 duration-300 rounded-xl"
+              src="/eventPage/samwad/eventpage-1.JPG"
+            />
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[145px] lg:h-[300px] hover:border-4 hover:border-blue-500 duration-300 rounded-xl relative sm:left-[1rem] lg:left-[5rem]"
+              src="/eventPage/samwad/eventpage-5.jpg"
+            />
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[145px] lg:h-[300px] hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[10rem]"
+              src="/eventPage/samwad/eventpage-2.jpg"
+            />
+          </div>
 
-        <div className="relative mt-[6rem] -rotate-3 overflow-hidden">
-            <motion.div
-                className="flex gap-2 md:gap-3"
-                animate={{
-                    x: [0, "-50%"],
-                }}
-                transition={{
-                    x: {
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 20,
-                        ease: "linear",
-                    },
-                }}
-            >
-                {duplicatedImages.map((img, index) => (
-                    <div
-                        key={index}
-                        className="flex-shrink-0 w-48 h-32 sm:w-60 sm:h-40 md:w-72 md:h-48 lg:w-80 lg:h-56"
-                    >
-                        <img
-                            src={img}
-                            alt={`Speaker ${(index % speakerImages.length) + 1}`}
-                            className="w-full h-full object-cover rounded-lg shadow-2xl"
-                        />
-                    </div>
-                ))}
-            </motion.div>
-        </div>
-    </div>
-
-    {/* Moving Text Strip Section */}
-    <div
-        className={`relative overflow-hidden py-6 md:py-8 ${mode==='light'?'bg-white':'bg-black'}`}
-    >
-        <motion.div
-            className="flex whitespace-nowrap"
-            animate={{
-                x: [0, "-50%"],
-            }}
-            transition={{
-                x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 10,
-                    ease: "linear",
-                },
-            }}
-        >
-            <span className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider ${mode==='light'?'text-black':'text-white'}`}>
-                {duplicatedText}
-            </span>
-        </motion.div>
-    </div>
-
-    <section className={`py-20 px-6 md:px-12 lg:px-20 ${mode==='light'?'bg-white':'bg-black'}`}>
-        <div className="max-w-4xl mx-auto">
-            {/* Animated Heading */}
-            <motion.div
-                className="text-center mb-12"
+          <div className="flex items-center">
+            <div className="flex flex-col items-start relative sm:bottom-[10rem] lg:bottom-[8rem]">
+              <motion.div
+                className="mt-[12rem]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
-            >
-                <h1 className={`text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-widest mb-6 ${mode==='light'?'text-black':'text-white'}`}>SAMWAD</h1>
+              >
+                <h1 className={`text-3xl sm:text-4xl md:text-7xl font-bold tracking-widest mb-6 ${mode === 'light' ? 'text-black' : 'text-white'}`}>Samwad</h1>
                 <motion.div
-                    className="h-1 mx-auto bg-blue-500"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    viewport={{ once: true }}
-                    style={{ originX: 0 }}
+                  className="h-1 bg-blue-600"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                  style={{ originX: 0 }}
                 />
-            </motion.div>
+              </motion.div>
 
-            {/* Event Description Paragraphs */}
-            <div className="space-y-6">
-                {paragraphs.map((paragraph, index) => (
-                    <motion.p
+              <div className="my-12">
+                <div className="flex flex-col justify-between items-center">
+                  <div className="space-y-6 self-start sm:max-w-[25rem] lg:max-w-4xl">
+                    {paragraphs.map((paragraph, index) => (
+                      <motion.p
                         key={index}
-                        className={`text-[13px] md:text-lg leading-relaxed text-center lg:text-center md:text-center ${mode==='light'?'text-gray-800':'text-gray-300'}`}
+                        className={`sm:text-[11px] lg:text-sm text-left ${mode === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{
-                            duration: 0.6,
-                            ease: "easeOut",
-                            delay: index * 0.15,
+                          duration: 0.6,
+                          ease: "easeOut",
+                          delay: index * 0.15,
                         }}
                         viewport={{ once: true }}
-                    >
+                      >
                         {paragraph}
-                    </motion.p>
-                ))}
+                      </motion.p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
+
+
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[250px] lg:h-[450px] hover:border-4 hover:border-green-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[12rem] bottom-[3rem]"
+              src="/eventPage/samwad/eventpage-7.jpg"
+            />
+          </div>
+
+          <div className="flex items-center">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[135px] lg:h-[300px] hover:border-4 hover:border-red-500 duration-300 rounded-xl relative sm:bottom-[12rem] lg:bottom-[6rem]"
+              src="/eventPage/samwad/eventpage-4.jpg"
+            />
+
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[135px] lg:h-[300px] hover:border-4 hover:border-yellow-500 duration-300 rounded-xl relative sm:left-[4rem] lg:left-[12rem] sm:bottom-[12rem] lg:bottom-[6rem]"
+              src="/eventPage/samwad/eventpage-3.jpg"
+            />
+
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[135px] lg:h-[350px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl relative sm:left-[9rem] lg:left-[22rem] sm:bottom-[14rem] lg:bottom-[6rem]"
+              src="/eventPage/samwad/eventpage-6.jpg"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
 
-    <EventVideoCarousel />
+
+
+
+{/* mobile section */}
+       <section className={`pt-20 sm:hidden px-4 md:px-12 lg:px-16 ${mode === 'light' ? 'bg-white' : 'bg-black'} `}>
+        <div className="mx-auto flex flex-col items-center">
+          {/* Animated Heading */}
+          <div className="flex items-center">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[180px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl"
+              src="/eventPage/samwad/eventpage-1.JPG"
+            />
+          </div>
+
+          <div className="flex items-center">
+            <div className="flex flex-col items-center relative bottom-[8rem]">
+              <motion.div
+                className="mt-[12rem]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <h1 className={`text-2xl sm:text-4xl md:text-7xl font-bold tracking-widest mb-6 ${mode === 'light' ? 'text-black' : 'text-white'}`}>Samwad</h1>
+                <motion.div
+                  className="h-1 bg-blue-600"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                  style={{ originX: 0 }}
+                />
+              </motion.div>
+
+              <div className="my-12">
+                <div className="flex flex-col justify-between items-center">
+                  <div className="space-y-6">
+                    {paragraphs.map((paragraph, index) => (
+                      <motion.p
+                        key={index}
+                        className={`text-[8px] text-center ${mode === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.6,
+                          ease: "easeOut",
+                          delay: index * 0.15,
+                        }}
+                        viewport={{ once: true }}
+                      >
+                        {paragraph}
+                      </motion.p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="flex items-center">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="h-[135px]hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative bottom-[6rem]"
+              src="/eventPage/samwad/eventpage-2.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+
+    <EventVideoCarousel
+     eventVideos = {[
+  {
+    id: 1,
+    title: "Neha Agarwal",
+    videoUrl:
+      "/vids/samwad1.mp4",
+    thumbnailUrl:
+      "/vids/samwad1_thumbnail.png",
+  },
+  {
+    id: 2,
+    title: "Samwad'24",
+    videoUrl:
+      "/vids/samwad2.mp4",
+    thumbnailUrl:
+      "/vids/samwad2_thumbnail.png",
+  },
+  {
+    id: 3,
+    title: "Striver",
+    videoUrl:
+      "/vids/samwad3.mp4",
+    thumbnailUrl:
+      "/vids/samwad3_thumbnail.png",
+  },
+  {
+    id: 4,
+    title: "Striver",
+    videoUrl:
+      "/vids/samwad4.mp4",
+    thumbnailUrl:
+      "/vids/samwad4_thumbnail.png",
+  },
+]} />
 
     {/* Past speakers */}
-    <motion.div className='mt-[5rem] mb-[4rem] flex flex-col items-center'>
+    <motion.div className='mt-[5rem] mb-[4rem] flex flex-col items-center mx-4'>
         <motion.h1
-            className={`text-center mb-12 font-bold text-3xl sm:text-4xl md:text-5xl ${mode==='light'?'text-black':'text-white'}`}
+            className={`text-center mb-12 font-bold text-2xl sm:text-4xl md:text-5xl ${mode==='light'?'text-black':'text-white'}`}
         >Past <span className='text-blue-500'>Speakers</span></motion.h1>
 
         <motion.div
@@ -209,7 +337,7 @@ const Samwad = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{amount: 0.2 }}
-                className="grid justify-items-centeritems-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1.5rem] md:gap-[3rem]">
+                className="grid justify-items-center items-center grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-[1rem] md:gap-[3rem]">
             {pastSpeakers.map((speaker)=>( 
                 <motion.div key={speaker.id} variants={item}>
                     <Speaker image={speaker.src} name={speaker.name} role={speaker.designation} mode={mode}/>
@@ -230,7 +358,7 @@ const Samwad = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-8"
             >
-                <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${mode==='light'?'text-blue-500':'text-blue-500'}`}>
+                <h2 className={`text-2xl md:text-4xl font-bold mb-2 ${mode==='light'?'text-blue-500':'text-blue-500'}`}>
                     Glimpses of Samwad'25
                 </h2>
                 <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
@@ -283,8 +411,6 @@ const ImageCard = ({ image, index }) => {
           </h3>
         </div>
 
-        {/* Corner Accent */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-blue-600 border-l-[40px] border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </motion.div>
   );

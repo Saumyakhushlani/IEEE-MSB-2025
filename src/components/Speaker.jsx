@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Speaker = ({image,name,role}) => {
   return (
     <motion.div
-      className="relative h-[20rem] w-[16rem] overflow-hidden rounded-2xl group hover:scale-105 hover:border-2 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-600 duration-300 cursor-pointer"
+      className="relative h-[18rem] w-[14rem] overflow-hidden rounded-2xl group hover:scale-105 hover:border-2 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-600 duration-300 cursor-pointer"
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Background Image */}
