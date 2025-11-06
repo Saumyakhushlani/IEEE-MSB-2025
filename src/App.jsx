@@ -15,6 +15,7 @@ import Samwad from "./pages/Samwad";
 import Team from './pages/Team'
 import Contact from './pages/Contact'
 import ThemeBtn from "./components/ThemeBtn";
+import ShuffleHero from "./components/ShuffleHero";
 import Alumni from "./components/Alumni";
 import { useState } from "react";
 import {useSelector} from 'react-redux'
@@ -91,21 +92,7 @@ return (
       <Navbar />
 
       {/* Home section */}
-      <p className={`${mode==='dark' ? "text-black" : "text-white"}`}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis saepe maxime voluptatem. Magnam, in? Nobis quidem vitae, dolorem autem exercitationem cum atque odit molestiae reprehenderit dolorum. Hic itaque quas qui.
-      Numquam, soluta, ipsum reiciendis iste deserunt odio molestias accusantium at maiores voluptatum corporis, iure vel ad amet nostrum fuga eveniet cumque voluptate aspernatur labore sed illo. Eligendi sequi quidem officia.
-      Officia, voluptatem doloribus totam architecto corporis earum deserunt molestias minima esse tempore quis aliquid perferendis ducimus fugiat saepe dicta et asperiores quisquam odit consequatur aut exercitationem nobis cum explicabo. Expedita.
-      Sed, cumque. Ut non eveniet odit. Veritatis, ut ipsa, vero voluptatum voluptatibus labore dolore fugit excepturi asperiores eaque quae nulla nam libero earum error, dolorum doloremque rem laborum odio inventore.
-      Commodi sunt voluptatum quae reprehenderit atque corporis voluptate minima, dolorum quisquam natus sint esse error porro cumque, odio distinctio voluptas eius architecto asperiores autem rerum voluptatem recusandae animi suscipit! Mollitia.
-      Vero, iste commodi rerum blanditiis incidunt nobis reiciendis eveniet voluptates vitae sit dolorum tempore laudantium eaque illum at quis recusandae cupiditate enim voluptatem aspernatur! Cupiditate itaque ducimus eaque accusamus autem?
-      Blanditiis, sequi. Aut nesciunt quasi nihil est minima, enim quibusdam doloremque repudiandae molestiae explicabo harum perspiciatis deserunt iste consequuntur quo recusandae dolor, totam natus hic laboriosam laudantium voluptatem accusantium doloribus.
-      Necessitatibus in ipsam blanditiis repellendus temporibus numquam optio sunt ipsa quaerat labore explicabo eveniet pariatur quod deleniti, a alias possimus? Cum, consequuntur magnam aut modi voluptatum laboriosam officiis eveniet voluptate.
-      Rerum praesentium facere aspernatur omnis ad placeat, laborum, rem similique ex mollitia a vero deserunt quas odit aperiam? Voluptatibus recusandae sed sit inventore tenetur quidem et, facere voluptatem itaque adipisci.
-      Minima ea quisquam eveniet corrupti! Unde, a officiis. Placeat magnam fuga, eum reiciendis veritatis tempora odio excepturi, ipsam maxime tempore molestias mollitia hic delectus? Quisquam voluptatibus placeat recusandae iure corrupti.
-      Facilis a omnis mollitia quia! Reprehenderit, nulla minus suscipit numquam odio nihil ipsam dolor accusantium similique autem soluta sed eius quod impedit provident maxime repudiandae molestias praesentium deleniti minima cumque!
-      Fugit ut vel ipsum dicta, expedita omnis, sequi earum iusto porro aliquam, consequatur id corporis aperiam error soluta. Quas commodi modi dolores laboriosam. Voluptatibus, fugit porro nemo quis minus itaque.
-      Nobis, magni nulla quasi laboriosam excepturi inventore perferendis vel modi eos quas aperiam dignissimos doloribus esse officia corrupti laborum neque quod dolorem ab alias doloremque. Enim, earum. Autem, iure nisi!
-      Eculpa?</p> 
+      <ShuffleHero />
 
       {/* About section */}
       <section className={`${mode === 'dark' ? 'bg-[#060507] text-white' : 'bg-white text-black'} my-[8rem]`}>

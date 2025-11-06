@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import Navbar from './Navbar/Navbar'
+import Footer from './Footer'
 
 const Alumni = () => {
     const [selectedAlumni, setSelectedAlumni] = useState(null)
     const [showModal, setShowModal] = useState(false)
+    const mode = useSelector((state) => state.theme.mode)
 
     const alumniData = [
         {
@@ -1500,7 +1504,13 @@ const Alumni = () => {
     }
 
     return (
-        <div className={`min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 py-16 px-4 `}>
+        <div className={`min-h-screen ${
+            mode === "dark" 
+                ? "bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" 
+                : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
+        }`}>
+            <Navbar />
+            <div className="pt-36 pb-16 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mb-6">
@@ -1508,17 +1518,25 @@ const Alumni = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                         </svg>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight">
+                    <h1 className={`text-5xl md:text-6xl font-extrabold mb-6 tracking-tight ${
+                        mode === "dark" ? "text-white" : "text-gray-900"
+                    }`}>
                         Our <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Alumni</span>
                     </h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    <p className={`text-xl max-w-4xl mx-auto leading-relaxed ${
+                        mode === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}>
                         Meet the brilliant minds who have been part of IEEE MSB and are now making their mark in the world of technology and innovation
                     </p>
                 </div>
 
                 <div className="space-y-16">
                     {alumniData.map((yearData) => (
-                        <div key={yearData.year} className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div key={yearData.year} className={`rounded-2xl shadow-xl border overflow-hidden hover:shadow-2xl transition-all duration-300 ${
+                            mode === "dark" 
+                                ? "bg-gray-900 border-gray-800" 
+                                : "bg-white border-gray-100"
+                        }`}>
                           
                             <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-8 py-8 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-black opacity-10"></div>
@@ -1545,7 +1563,11 @@ const Alumni = () => {
                                 {yearData.members.map((alumni, index) => (
                                     <div 
                                         key={index}
-                                        className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.01]"
+                                        className={`rounded-xl p-5 border hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.01] ${
+                                            mode === "dark" 
+                                                ? "bg-gradient-to-r from-gray-800 to-gray-900 border-gray-700" 
+                                                : "bg-gradient-to-r from-gray-50 to-white border-gray-200"
+                                        }`}
                                     >
                                         <div className="flex items-center space-x-4">
                                             <div className="flex-shrink-0">
@@ -1562,16 +1584,22 @@ const Alumni = () => {
                                                 </div>
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white truncate">
+                                                <h3 className={`text-lg font-bold truncate ${
+                                                    mode === "dark" ? "text-white" : "text-gray-900"
+                                                }`}>
                                                     {alumni.name}
                                                 </h3>
                                                 <p className="text-sm text-blue-600 font-semibold truncate">
                                                     {alumni.post}
                                                 </p>
-                                                <p className="text-sm text-gray-600 dark:text-gray-300 truncate">
+                                                <p className={`text-sm truncate ${
+                                                    mode === "dark" ? "text-gray-300" : "text-gray-600"
+                                                }`}>
                                                     {alumni.branch}
                                                 </p>
-                                                <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-1 leading-relaxed">
+                                                <p className={`text-xs truncate mt-1 leading-relaxed ${
+                                                    mode === "dark" ? "text-gray-400" : "text-gray-500"
+                                                }`}>
                                                     {alumni.currentDesignation}
                                                 </p>
                                             </div>
@@ -1594,33 +1622,57 @@ const Alumni = () => {
 
                             <div className="hidden sm:block w-full">
                                 <table className="w-full table-fixed">
-                                    <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
+                                    <thead className={`bg-gradient-to-r ${
+                                        mode === "dark" 
+                                            ? "from-gray-800 to-gray-700" 
+                                            : "from-gray-50 to-gray-100"
+                                    }`}>
                                         <tr>
-                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Photo
                                             </th>
-                                            <th className="w-40 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-40 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Name
                                             </th>
-                                            <th className="w-36 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-36 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Post
                                             </th>
-                                            <th className="w-20 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Branch
                                             </th>
-                                            <th className="w-48 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-48 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Current Role
                                             </th>
-                                            <th className="w-32 px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                                            <th className={`w-32 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider ${
+                                                mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                            }`}>
                                                 Action
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tbody className={`divide-y ${
+                                        mode === "dark" 
+                                            ? "bg-gray-900 divide-gray-800" 
+                                            : "bg-white divide-gray-100"
+                                    }`}>
                                         {yearData.members.map((alumni, index) => (
                                             <tr 
                                                 key={index}
-                                                className="hover:bg-gradient-to-r hover:bg-gray-700 transition-all duration-300 group"
+                                                className={`transition-all duration-300 group ${
+                                                    mode === "dark" 
+                                                        ? "hover:bg-gradient-to-r hover:bg-gray-700" 
+                                                        : "hover:bg-gradient-to-r hover:bg-blue-50"
+                                                }`}
                                             >
                                                 <td className="px-6 py-4">
                                                     <div className="h-20 w-20 relative">
@@ -1636,7 +1688,9 @@ const Alumni = () => {
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-base font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-900 dark:group-hover:text-blue-300 transition-colors duration-300">
+                                                    <div className={`text-base font-bold truncate group-hover:text-blue-900 dark:group-hover:text-blue-300 transition-colors duration-300 ${
+                                                        mode === "dark" ? "text-white" : "text-gray-900"
+                                                    }`}>
                                                         {alumni.name}
                                                     </div>
                                                 </td>
@@ -1646,12 +1700,16 @@ const Alumni = () => {
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-sm text-gray-700 dark:text-gray-300 font-medium truncate">
+                                                    <div className={`text-sm font-medium truncate ${
+                                                        mode === "dark" ? "text-gray-300" : "text-gray-700"
+                                                    }`}>
                                                         {alumni.branch}
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-sm text-gray-600 dark:text-gray-400 truncate leading-relaxed">
+                                                    <div className={`text-sm truncate leading-relaxed ${
+                                                        mode === "dark" ? "text-gray-400" : "text-gray-600"
+                                                    }`}>
                                                         {alumni.currentDesignation}
                                                     </div>
                                                 </td>
@@ -1676,10 +1734,16 @@ const Alumni = () => {
                     ))}
                 </div>
             </div>
+            </div>
+            <Footer />
 
             {showModal && selectedAlumni && (
                 <div className="fixed inset-0 backdrop-blur-md backdrop-blur-2xl flex items-center justify-center p-4 z-50">
-                    <div className="bg-white dark:bg-gray-900 rounded-2xl w-full max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] flex flex-col shadow-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden">
+                    <div className={`rounded-2xl w-full max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] flex flex-col shadow-2xl border relative overflow-hidden ${
+                        mode === "dark" 
+                            ? "bg-gray-900 border-gray-700" 
+                            : "bg-white border-gray-200"
+                    }`}>
                         
                         <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 relative">
                             <div className="absolute inset-0 bg-black opacity-10"></div>
