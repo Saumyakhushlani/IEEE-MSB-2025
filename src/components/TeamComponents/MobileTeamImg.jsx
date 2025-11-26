@@ -1,7 +1,7 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
-const MobileTeamImg = ({ img, name, post }) => {
+const MobileTeamImg = ({ img, name, post, membershipNumber }) => {
 
  const mode = useSelector((state) => state.theme.mode);
 return (
@@ -23,6 +23,15 @@ return (
       >
         {post}
       </p>
+      {membershipNumber && (
+        <p
+          className={`text-[0.4rem] sm:text-[0.8rem] font-medium ${
+            mode === "dark" ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
+          Membership No - {membershipNumber}
+        </p>
+      )}
     </div>
   </div>
 );

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { div } from "framer-motion/client";
 import {useSelector} from 'react-redux'
 
-const TeamImg = ({ img, name, post }) => {
+const TeamImg = ({ img, name, post, membershipNumber }) => {
   const [isHovered, setIsHovered] = useState(false);
 
 const width = 330;
@@ -128,6 +128,18 @@ return (
     >
       {post}
     </motion.h1>
+    {membershipNumber && (
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 100, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className={`text-[0.7rem] font-medium text-center mt-1 ${
+          mode === "dark" ? "text-gray-400" : "text-gray-600"
+        }`}
+      >
+        Membership No - {membershipNumber}
+      </motion.p>
+    )}
   </div>
 );
 
