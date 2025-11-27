@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast'
 import { useForm } from "react-hook-form"
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import ContactUsimage from '../assets/images/ContactUsImage.jpg'
+import ContactUsimage from '../assets/Images/ContactUsImage.jpg'
 import { MapPin, Mail } from 'lucide-react'
 import {useSelector} from 'react-redux'
 
