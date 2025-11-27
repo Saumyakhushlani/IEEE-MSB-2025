@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import MobileAndTab from "./MobileAndTab";
-import msbLogo from "../../assets/images/msb-logo.png";
+import msbLogo from "../../assets/Images/msb-logo.png";
 import { useEffect } from "react";
 import ThemeBtn from "../ThemeBtn";
 import {NavLink} from 'react-router-dom'

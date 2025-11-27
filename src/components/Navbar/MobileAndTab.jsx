@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import msbLogo from "../../assets/images/msb-logo.png";
+import msbLogo from "../../assets/Images/msb-logo.png";
 import ThemeBtn from "../ThemeBtn";
 import { NavLink } from 'react-router-dom'
 import {useSelector} from 'react-redux'
