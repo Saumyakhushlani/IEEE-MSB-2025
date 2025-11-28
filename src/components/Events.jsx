@@ -33,7 +33,7 @@ const testimonials = [
   return(
 <section>
     <div
-      className={`text-6xl text-center font-bold pt-6 ${
+      className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold pt-4 sm:pt-6 px-4 ${
         mode === "dark" ? "bg-[#060507] text-white" : "bg-white text-gray-900"
       }`}
     >

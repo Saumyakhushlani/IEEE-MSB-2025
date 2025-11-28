@@ -114,7 +114,7 @@ const Aarambh = () => {
                     {paragraphs.map((paragraph, index) => (
                       <motion.p
                         key={index}
-                        className={`sm:text-[11px] lg:text-sm text-left ${theme === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
+                        className={`text-sm sm:text-base md:text-lg text-left ${theme === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{
@@ -202,7 +202,7 @@ const Aarambh = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <h1 className={`text-2xl sm:text-4xl md:text-7xl font-bold tracking-widest mb-6 ${theme === 'light' ? 'text-black' : 'text-white'}`}>Aarambh</h1>
+                <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-widest mb-6 ${theme === 'light' ? 'text-black' : 'text-white'}`}>Aarambh</h1>
                 <motion.div
                   className="h-1 bg-blue-600"
                   initial={{ scaleX: 0 }}
@@ -219,7 +219,7 @@ const Aarambh = () => {
                     {paragraphs.map((paragraph, index) => (
                       <motion.p
                         key={index}
-                        className={`text-[8px] text-center ${theme === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
+                        className={`text-sm sm:text-base text-center ${theme === 'light' ? 'text-gray-800' : 'text-gray-300'}`}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{
