@@ -52,19 +52,19 @@ const EventVideoCarousel = ({ eventVideos = [] }) => {
   const mode = useSelector((state) => state.theme.mode);
 
   return (
-    <section className="relative w-full bg-black overflow-hidden">
-      <div>
+    <section className="relative w-full bg-black overflow-hidden py-4 md:py-8">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           key={activeVideo.id}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center items-center overflow-hidden mx-2"
+          className="flex justify-center items-center overflow-hidden"
         >
           <video
             ref={mainVideoRef}
-            className="w-full h-full object-contain sm:object-cover rounded-2xl"
+            className="w-full max-w-5xl max-h-[50vh] md:max-h-[60vh] object-contain rounded-2xl"
             loop
             muted={isMuted}
             playsInline

@@ -68,6 +68,7 @@ export const CircularTestimonials = ({
   const [hoverPrev, setHoverPrev] = useState(false);
   const [hoverNext, setHoverNext] = useState(false);
   const [containerWidth, setContainerWidth] = useState(1200);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -82,7 +83,11 @@ export const CircularTestimonials = ({
   useEffect(() => {
     function handleResize() {
       if (imageContainerRef.current) {
-        setContainerWidth(imageContainerRef.current.offsetWidth);
+        const width = imageContainerRef.current.offsetWidth;
+        setContainerWidth(width);
+        // Enable circular effect on desktop/laptop (>= 1024px)
+        // Mobile/tablet (< 1024px) shows only single image
+        setIsDesktop(width >= 1024);
       }
     }
     handleResize();
@@ -123,15 +128,38 @@ export const CircularTestimonials = ({
     if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [testimonialsLength]);
 
-  // Compute transforms for each image (always show 3: left, center, right)
+  // Compute transforms for each image
+  // On mobile: show only active image
+  // On desktop: show circular carousel with 3 images (left, center, right)
   function getImageStyle(index: number): React.CSSProperties {
+    const isActive = index === activeIndex;
+    
+    // Mobile: only show active image
+    if (!isDesktop) {
+      if (isActive) {
+        return {
+          zIndex: 3,
+          opacity: 1,
+          pointerEvents: "auto",
+          transform: `translateX(0px) translateY(0px) scale(1) rotateY(0deg)`,
+          transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        };
+      }
+      // Hide all other images on mobile
+      return {
+        zIndex: 1,
+        opacity: 0,
+        pointerEvents: "none",
+        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+      };
+    }
+    
+    // Desktop: circular carousel with 3 images
     const gap = calculateGap(containerWidth);
     const maxStickUp = gap * 0.8;
-    const offset = (index - activeIndex + testimonialsLength) % testimonialsLength;
-    // const zIndex = testimonialsLength - Math.abs(offset);
-    const isActive = index === activeIndex;
     const isLeft = (activeIndex - 1 + testimonialsLength) % testimonialsLength === index;
     const isRight = (activeIndex + 1) % testimonialsLength === index;
+    
     if (isActive) {
       return {
         zIndex: 3,
@@ -285,7 +313,7 @@ export const CircularTestimonials = ({
         .image-container {
           position: relative;
           width: 100%;
-          height: 24rem;
+          height: 16rem;
           perspective: 1000px;
         }
         .testimonial-image {
@@ -330,12 +358,20 @@ export const CircularTestimonials = ({
         .word {
           display: inline-block;
         }
+        @media (min-width: 640px) {
+          .image-container {
+            height: 20rem;
+          }
+        }
         @media (min-width: 768px) {
           .testimonial-grid {
             grid-template-columns: 1fr 1fr;
           }
           .arrow-buttons {
             padding-top: 0;
+          }
+          .image-container {
+            height: 24rem;
           }
         }
       `}</style>
