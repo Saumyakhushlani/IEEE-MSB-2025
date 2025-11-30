@@ -91,16 +91,16 @@ const Footer = () => {
             >
               <h4 className="text-lg font-semibold">Connect With Us</h4>
               <div className="flex space-x-5 text-2xl">
-                <a href="/" aria-label="Instagram" className="hover:text-pink-400 transition">
+                <a href="https://www.instagram.com/ieee_manit/" aria-label="Instagram" className="hover:text-pink-400 transition">
                   <FaInstagram />
                 </a>
-                <a href="/" aria-label="Twitter" className="hover:text-sky-400 transition">
+                <a href="https://twitter.com/ieeemsb" aria-label="Twitter" className="hover:text-sky-400 transition">
                   <FaTwitter />
                 </a>
-                <a href="/" aria-label="LinkedIn" className="hover:text-blue-400 transition">
+                <a href="https://www.linkedin.com/company/ieeenitb/mycompany/" aria-label="LinkedIn" className="hover:text-blue-400 transition">
                   <FaLinkedin />
                 </a>
-                <a href="/" aria-label="Facebook" className="hover:text-blue-500 transition">
+                <a href="https://www.facebook.com/IEEEMANIT/" aria-label="Facebook" className="hover:text-blue-500 transition">
                   <FaFacebook />
                 </a>
               </div>
