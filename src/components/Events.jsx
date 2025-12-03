@@ -31,7 +31,7 @@ const testimonials = [
  const Events = () => {
   const mode = useSelector((state) => state.theme.mode);
   return(
-<section>
+<section id="events">
     <div
       className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold pt-4 sm:pt-6 px-4 ${
         mode === "dark" ? "bg-[#060507] text-white" : "bg-white text-gray-900"
