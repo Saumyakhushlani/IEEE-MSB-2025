@@ -14,6 +14,9 @@ import Sceecs from "./pages/Sceecs";
 import Samwad from "./pages/Samwad";
 import Team from './pages/Team'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
+import RefundPolicy from './pages/RefundPolicy'
 import ThemeBtn from "./components/ThemeBtn";
 import ShuffleHero from "./components/ShuffleHero";
 import Alumni from "./components/Alumni";
@@ -253,6 +256,27 @@ const router = createBrowserRouter([
     element:<div>
       <Navbar/>
       <Samwad/>
+    </div>
+  },
+  {
+    path:'privacy-policy',
+    element:<div>
+      <Navbar/>
+      <PrivacyPolicy/>
+    </div>
+  },
+  {
+    path:'terms-conditions',
+    element:<div>
+      <Navbar/>
+      <TermsConditions/>
+    </div>
+  },
+  {
+    path:'refund-policy',
+    element:<div>
+      <Navbar/>
+      <RefundPolicy/>
     </div>
   }
 ])

@@ -45,9 +45,9 @@ const Footer = () => {
               <ul className="space-y-2 text-white/80">
                 <li><a href="/" className={linkHover}>Home</a></li>
                 <li><a href="/about" className={linkHover}>About</a></li>
-                <li><a href="/" className={linkHover}>Events</a></li>
+                <li><a href="/#events" className={linkHover}>Events</a></li>
                 <li><a href="/team" className={linkHover}>Team</a></li>
-                <li><a href="/" className={linkHover}>Alumni</a></li>
+                <li><a href="/alumni" className={linkHover}>Alumni</a></li>
                 <li><a href="/contact" className={linkHover}>Contact Us</a></li>
               </ul>
             </motion.div>
@@ -61,26 +61,13 @@ const Footer = () => {
             >
               <h4 className="text-lg font-semibold">Events</h4>
               <ul className="space-y-2 text-white/80">
-                <li><a href="/" className={linkHover}>Aarambh</a></li>
-                <li><a href="/" className={linkHover}>Samwaad</a></li>
-                <li><a href="/" className={linkHover}>SCEECS</a></li>
+                <li><a href="/aarambh" className={linkHover}>Aarambh</a></li>
+                <li><a href="/samwad" className={linkHover}>Samwaad</a></li>
+                <li><a href="/sceecs" className={linkHover}>SCEECS</a></li>
               </ul>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="space-y-4"
-            >
-              <h4 className="text-lg font-semibold">Legal</h4>
-              <ul className="space-y-2 text-white/80">
-                <li><a href="/" className={linkHover}>Privacy Policy</a></li>
-                <li><a href="/" className={linkHover}>Terms & Conditions</a></li>
-                <li><a href="/" className={linkHover}>Refund Policy</a></li>
-              </ul>
-            </motion.div>
+            
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
