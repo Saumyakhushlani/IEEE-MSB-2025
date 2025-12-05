@@ -175,7 +175,7 @@ const Team = () => {
                         <motion.div variants={item}><TeamImg img='/public/team/pratham.jpeg' name="Pratham Raghav" post="Logistics & Operations Secretary" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Abhishek.jpg' name="Abhishek Yadav" post="Logistics & Operations Secretary" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/hemant.jpg' name="Hemant Rajput" post="Media & Publicity Secretary Design Secretary" membershipNumber="101837609"/></motion.div>
-                        <motion.div variants={item}><TeamImg img='/public/team/akshita.jpeg' name="Akshita Sahu" post="Content & Communication Secretary" /></motion.div>
+                        {/* <motion.div variants={item}><TeamImg img='/public/team/akshita.jpeg' name="Akshita Sahu" post="Content & Communication Secretary" /></motion.div> */}
                         <motion.div variants={item}><TeamImg img='/public/team/prachi.jpg' name="Prachi Soni" post="Technical Secretary CSE" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/amanchoudhary.jpg' name="Aman Choudhary" post="Joint Secretary CSE" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/nitin.jpg' name="Nitin Jangid" post="Technical Secretary ECE" membershipNumber="101833591"/></motion.div>
@@ -208,7 +208,7 @@ const Team = () => {
                         <motion.div variants={item}><MobileTeamImg img='/public/team/pratham.jpeg' name="Pratham Raghav" post="Logistics & Operations Secretary" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Abhishek.jpg' name="Abhishek Yadav" post="Logistics & Operations Secretary" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/hemant.jpg' name="Hemant Rajput" post="Media & Publicity Secretary Design Secretary" membershipNumber="101837609"/></motion.div>
-                        <motion.div variants={item}><MobileTeamImg img='/public/team/akshita.jpeg' name="Akshita Sahu" post="Content & Communication Secretary" /></motion.div>
+                        {/* <motion.div variants={item}><MobileTeamImg img='/public/team/akshita.jpeg' name="Akshita Sahu" post="Content & Communication Secretary" /></motion.div> */}
                         <motion.div variants={item}><MobileTeamImg img='/public/team/prachi.jpg' name="Prachi Soni" post="Technical Secretary CSE" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/amanchoudhary.jpg' name="Aman Choudhary" post="Joint Secretary CSE" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/nitin.jpg' name="Nitin Jangid" post="Technical Secretary ECE" membershipNumber="101833591"/></motion.div>

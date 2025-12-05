@@ -5,7 +5,7 @@ const MobileTeamImg = ({ img, name, post, membershipNumber }) => {
 
  const mode = useSelector((state) => state.theme.mode);
 return (
-  <div className="flex flex-col gap-5 mx-4">
+  <div className="flex flex-col justify-center items-center gap-1 mx-4">
     <img
       className={`w-24 h-24 sm:w-55 sm:h-55 rounded-full p-1 
         transition duration-500 ease-in-out
@@ -15,9 +15,9 @@ return (
       alt={`${name} - ${post}`}
     />
     <div className="flex flex-col justify-start gap-1.5">
-      <p className="font-bold text-[0.7rem] sm:text-[1.3rem] text-blue-500">{name}</p>
+      <p className="font-bold text-[0.7rem] sm:text-[1.3rem] text-blue-500 text-center">{name}</p>
       <p
-        className={`text-[0.5rem] sm:text-[1rem] ${
+        className={`text-[0.5rem] sm:text-[1rem] text-center ${
           mode === "dark" ? "text-white" : "text-black"
         }`}
       >
@@ -25,7 +25,7 @@ return (
       </p>
       {membershipNumber && (
         <p
-          className={`text-[0.4rem] sm:text-[0.8rem] font-medium ${
+          className={`text-[0.4rem] sm:text-[0.8rem] font-medium text-center ${
             mode === "dark" ? "text-gray-400" : "text-gray-600"
           }`}
         >

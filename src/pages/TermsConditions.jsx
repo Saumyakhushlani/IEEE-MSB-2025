@@ -32,3 +32,6 @@ const TermsConditions = () => {
 
 export default TermsConditions;
 
+
+
+
