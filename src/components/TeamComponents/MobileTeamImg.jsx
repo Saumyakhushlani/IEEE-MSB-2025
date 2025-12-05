@@ -5,7 +5,7 @@ const MobileTeamImg = ({ img, name, post, membershipNumber }) => {
 
  const mode = useSelector((state) => state.theme.mode);
 return (
-  <div className="flex flex-col justify-center items-center gap-5 mx-4">
+  <div className="flex flex-col justify-center items-center gap-1 mx-4">
     <img
       className={`w-24 h-24 sm:w-55 sm:h-55 rounded-full p-1 
         transition duration-500 ease-in-out
