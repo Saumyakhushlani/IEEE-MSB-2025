@@ -316,7 +316,7 @@ return (
               <p
                 className={mode === "dark" ? "text-gray-300" : "text-gray-700"}
               >
-                ieeentib@gmail.com
+                ieeemanitstudentbranch@gmail.com
               </p>
             </div>
           </div>

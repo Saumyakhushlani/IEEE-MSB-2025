@@ -25,20 +25,16 @@ const ShuffleHero = () => {
           professional development, and innovative solutions that address global challenges.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className={`text-white font-semibold py-3 px-6 rounded-lg transition-all hover:shadow-lg active:scale-95 ${
-            mode === "dark" 
-              ? "bg-indigo-500 hover:bg-indigo-600" 
-              : "bg-indigo-600 hover:bg-indigo-700"
-          }`}>
-            Join Our Community
-          </button>
-          <button className={`font-semibold py-3 px-6 rounded-lg transition-all active:scale-95 ${
+         
+         <a href="#events">
+           <button className={`font-semibold py-3 px-6 rounded-lg transition-all active:scale-95 ${
             mode === "dark"
               ? "border-2 border-indigo-400 text-indigo-400 hover:bg-indigo-900/20"
               : "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50"
           }`}>
             Explore Events
           </button>
+         </a>
         </div>
       </div>
       <ShuffleGrid />
