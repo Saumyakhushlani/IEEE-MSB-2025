@@ -257,27 +257,6 @@ const router = createBrowserRouter([
       <Navbar/>
       <Samwad/>
     </div>
-  },
-  {
-    path:'privacy-policy',
-    element:<div>
-      <Navbar/>
-      <PrivacyPolicy/>
-    </div>
-  },
-  {
-    path:'terms-conditions',
-    element:<div>
-      <Navbar/>
-      <TermsConditions/>
-    </div>
-  },
-  {
-    path:'refund-policy',
-    element:<div>
-      <Navbar/>
-      <RefundPolicy/>
-    </div>
   }
 ])
 
