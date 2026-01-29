@@ -159,6 +159,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
+                        
                         className="hidden md:grid grid-cols-4 gap-6">
                         <motion.div variants={item}><TeamImg img='/public/team/saurabh.jpg' name="Saurabh Yadav" post="General Secretary" membershipNumber="101832648"/></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Ayush.jpg' name="Ayush Kumar" post="Finance Secretary" membershipNumber="101641565"/></motion.div>
