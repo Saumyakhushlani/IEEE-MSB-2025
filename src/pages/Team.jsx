@@ -86,14 +86,14 @@ const Team = () => {
                         viewport={{ once: true, amount: 0.2 }}
                         className="hidden md:grid grid-cols-4 gap-6 justify-items-center">
                         <motion.div variants={item}><TeamImg img='/public/team/vedant.jpg' name="Vedant Jaiswal" post="Chairperson" membershipNumber="101392018" /></motion.div>
-                        <motion.div variants={item}><TeamImg img='/public/team/Yashika.jpg' name="Yashika Lawani" post="Vice Chair Admin" membershipNumber="101217691" /></motion.div>
+                        <motion.div variants={item}><TeamImg img='/public/team/Yashika.jpeg' name="Yashika Lawani" post="Vice Chair Admin" membershipNumber="101217691" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/vvk.jpg' name="Vivek Kumar" post="Vice Chair Finance" membershipNumber="101295401" /></motion.div>
-                        <motion.div variants={item}><TeamImg img='/public/team/Prachi Agarwal.jpg' name="Prachi Agarwal" post="WIE Chair" /></motion.div>
+                        <motion.div variants={item}><TeamImg img='/public/team/prachi.jpeg' name="Prachi Agarwal" post="WIE Chair" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/ARYAN.jpg' name="Aryan Saxena" post="Aarambh Coordinator" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/priyanshi_khandelwal.jpg' name="Priyanshi Khandelwal" post="Student's Convener" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Tanushree.jpg' name="Tanushree Dhote" post="Event Coordinator" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/PriyanshiRana.jpg' name="Priyanshi Rana" post="Head-General Affairs" /></motion.div>
-                        <motion.div variants={item}><TeamImg img='/public/team/shivanimam.jpg' name="Shivani Gupta" post="Head-Management" /></motion.div>
+                        <motion.div variants={item}><TeamImg img='/public/team/shivani.jpeg' name="Shivani Gupta" post="Head-Management" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/anshul.jpg' name="Anshul Sharma" post="Head-Student Engagement & Welfare" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/amanmittal.jpg' name="Aman Mittal" post="Head-Sponsorship & Marketing" /></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Deependra.jpg' name="Deependra Yadav" post="Head-PR & Promotions" /></motion.div>
@@ -118,14 +118,14 @@ const Team = () => {
                         viewport={{ once: true, amount: 0.2 }}
                         className="grid grid-cols-2 justify-items-center gap-4 md:hidden">
                         <motion.div variants={item}><MobileTeamImg img='/public/team/vedant.jpg' name="Vedant Jaiswal" post="Chairperson" membershipNumber=" 101392018" /></motion.div>
-                        <motion.div variants={item}><MobileTeamImg img='/public/team/Yashika.jpg' name="Yashika Lawani" post="Vice Chair Admin" membershipNumber="101217691" /></motion.div>
+                        <motion.div variants={item}><MobileTeamImg img='/public/team/Yashika.jpeg' name="Yashika Lawani" post="Vice Chair Admin" membershipNumber="101217691" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/vvk.jpg' name="Vivek Kumar" post="Vice Chair Finance" membershipNumber="101295401" /></motion.div>
-                        <motion.div variants={item}><MobileTeamImg img='/public/team/Prachi Agarwal.jpg' name="Prachi Agarwal" post="WIE Chair" /></motion.div>
+                        <motion.div variants={item}><MobileTeamImg img='/public/team/prachi.jpeg' name="Prachi Agarwal" post="WIE Chair" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/ARYAN.jpg' name="Aryan Saxena" post="Aarambh Coordinator" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/priyanshi_khandelwal.jpg' name="Priyanshi Khandelwal" post="Student's Convener" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Tanushree.jpg' name="Tanushree Dhote" post="Event Coordinator" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/PriyanshiRana.jpg' name="Priyanshi Rana" post="Head-General Affairs" /></motion.div>
-                        <motion.div variants={item}><MobileTeamImg img='/public/team/shivanimam.jpg' name="Shivani Gupta" post="Head-Management" /></motion.div>
+                        <motion.div variants={item}><MobileTeamImg img='/public/team/shivani.jpeg' name="Shivani Gupta" post="Head-Management" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/anshul.jpg' name="Anshul Sharma" post="Head-Student Engagement & Welfare" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/amanmittal.jpg' name="Aman Mittal" post="Head-Sponsorship & Marketing" /></motion.div>
                         <motion.div variants={item}><MobileTeamImg img='/public/team/Deependra.jpg' name="Deependra Yadav" post="Head-PR & Promotions" /></motion.div>
@@ -159,7 +159,7 @@ const Team = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.2 }}
-                        
+
                         className="hidden md:grid grid-cols-4 gap-6">
                         <motion.div variants={item}><TeamImg img='/public/team/saurabh.jpg' name="Saurabh Yadav" post="General Secretary" membershipNumber="101832648"/></motion.div>
                         <motion.div variants={item}><TeamImg img='/public/team/Ayush.jpg' name="Ayush Kumar" post="Finance Secretary" membershipNumber="101641565"/></motion.div>
