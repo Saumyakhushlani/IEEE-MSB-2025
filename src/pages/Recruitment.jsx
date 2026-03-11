@@ -1,0 +1,702 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Cpu,
+  CircuitBoard,
+  Sparkles,
+  MessageCircle,
+  CheckCircle2,
+  ArrowRight,
+  Terminal,
+  User,
+  Mail,
+  Phone,
+  Link,
+  Info,
+  ChevronRight,
+  X,
+  Camera,
+  Video,
+  Palette,
+  Share2,
+} from "lucide-react";
+import toast from "react-hot-toast";
+import { supabase } from "../lib/supabaseClient";
+
+// --- CONSTANTS ---
+const BRANCH_OPTIONS = [
+  "Computer Science & Engineering",
+  "Mathematics & Data Science",
+  "Electronics & Communication Engineering",
+  "Electrical Engineering",
+  "Mechanical Engineering",
+  "Energy & Electric Vehicle Engineering",
+  "Engineering & Computational Mechanics",
+  "Chemical Engineering",
+  "Civil Engineering",
+  "Materials & Metallurgical Engineering",
+  "B Architecture",
+  "B Planning",
+];
+
+const SECTION_OPTIONS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "B Arch 1", "B Arch 2", "B Plan"];
+
+const VERTICAL_OPTIONS = [
+  {
+    id: "Core Team Member",
+    icon: User,
+    description: "Coordinate teams, events, logistics and execution across IEEE MSB.",
+  },
+  {
+    id: "Web Developer",
+    icon: Terminal,
+    description: "Build and maintain IEEE web properties, dashboards and tooling.",
+  },
+  {
+    id: "Photographer",
+    icon: Camera,
+    description: "Capture events, speaker sessions and IEEE MSB culture visually.",
+  },
+  {
+    id: "Video Editor",
+    icon: Video,
+    description: "Edit recap films, promos and social media reels for our events.",
+  },
+  {
+    id: "Graphic Designer",
+    icon: Palette,
+    description: "Design posters, carousels and brand assets for IEEE campaigns.",
+  },
+  {
+    id: "Social Media Manager",
+    icon: Share2,
+    description: "Strategise and publish content across IEEE MSB social handles.",
+  },
+];
+
+const CORE_ELIGIBLE_BRANCHES = new Set([
+  "Computer Science & Engineering",
+  "Mathematics & Data Science",
+  "Electronics & Communication Engineering",
+  "Electrical Engineering",
+]);
+
+const FAQ_ITEMS = [
+  {
+    question: "Who can apply for IEEE MSB recruitment?",
+    answer: "First and second year students from all branches at MANIT Bhopal are welcome to apply. We look for curiosity, consistency and a genuine interest in teamwork.",
+  },
+  {
+    question: "Is IEEE membership compulsory before applying?",
+    answer: "No. You can apply even if you are not currently an IEEE member. Details will be shared with shortlisted candidates.",
+  },
+  {
+    question: "Can I apply for more than one vertical?",
+    answer: "Yes, you can select up to three verticals. Please prioritize roles where you can actively contribute.",
+  },
+  {
+    question: "Is a portfolio mandatory?",
+    answer: "Yes, for Photographer, Video Editor and Graphic Designer. For other roles, it is optional but recommended.",
+  },
+];
+
+// --- MAIN COMPONENT ---
+function Recruitment() {
+  const [showLoader, setShowLoader] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [activeFaq, setActiveFaq] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    scholar: "",
+    branch: "",
+    section: "",
+    email: "",
+    contact: "",
+    portfolio: "",
+    why: "",
+  });
+
+  const [selectedVerticals, setSelectedVerticals] = useState([]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLoader(false), 2200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const toggleVertical = (vertical) => {
+    if (selectedVerticals.includes(vertical)) {
+      setSelectedVerticals((prev) => prev.filter((v) => v !== vertical));
+      return;
+    }
+
+    if (selectedVerticals.length >= 3) {
+      toast.error("Maximum 3 verticals allowed");
+      return;
+    }
+
+    if (vertical === "Core Team Member" && formData.branch && !CORE_ELIGIBLE_BRANCHES.has(formData.branch)) {
+      toast.error("Core Team is only for CSE, MDS, ECE and EE branches.");
+      return;
+    }
+
+    setSelectedVerticals((prev) => [...prev, vertical]);
+  };
+
+  const requiresPortfolioSelection = selectedVerticals.some((v) =>
+    ["Photographer", "Video Editor", "Graphic Designer"].includes(v)
+  );
+
+  const validateStep1 = () => {
+    if (!formData.name.trim()) return toast.error("Name is required");
+    if (!formData.scholar.trim()) return toast.error("Scholar number is required");
+    if (!formData.branch) return toast.error("Select your branch");
+    if (!formData.section) return toast.error("Select your section");
+    if (!formData.email.trim()) return toast.error("Email is required");
+    if (!formData.contact.trim()) return toast.error("Contact number is required");
+
+    return true;
+  };
+
+  const validateStep2 = () => {
+    if (selectedVerticals.length === 0) return toast.error("Select at least one vertical");
+    if (requiresPortfolioSelection && !formData.portfolio.trim()) {
+      return toast.error("Portfolio (Drive Link) is mandatory for selected roles");
+    }
+    return true;
+  };
+
+  const validateStep3 = () => {
+    if (!formData.why.trim()) return toast.error("Please explain why you wish to join");
+    return true;
+  };
+
+  const validateForm = () => {
+    return validateStep1() && validateStep2() && validateStep3();
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    const loadingToast = toast.loading("Syncing with Mainframe...");
+
+    try {
+      const { error } = await supabase.from("students").insert({
+        Name: formData.name.trim(),
+        Scholar: formData.scholar.trim(),
+        Branch: formData.branch,
+        Section: formData.section,
+        Vertical1: selectedVerticals[0] || null,
+        Vertical2: selectedVerticals[1] || null,
+        Vertical3: selectedVerticals[2] || null,
+        Email: formData.email.trim(),
+        Contact: formData.contact.trim(),
+        Portfolio: formData.portfolio.trim() || null,
+        Why: formData.why.trim(),
+      });
+
+      if (error) throw error;
+
+      toast.success("Data Transmitted Successfully", { id: loadingToast });
+      setIsSubmitted(true);
+    } catch (err) {
+      toast.error("Transmission Failed. Try again.", { id: loadingToast });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div 
+      className="min-h-screen text-black font-mono selection:bg-yellow-300 overflow-x-hidden"
+      style={{
+        backgroundColor: "#f8fafc",
+        backgroundImage: `linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px)`,
+        backgroundSize: "30px 30px"
+      }}
+    >
+      <AnimatePresence mode="wait">
+        {showLoader ? (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#f8fafc]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)",
+              backgroundSize: "26px 26px",
+            }}
+          >
+            <div className="relative w-full max-w-xl px-4 sm:px-6">
+              {/* Card-style loader */}
+              <div className="relative border-[4px] sm:border-[5px] border-black bg-white px-4 py-5 sm:px-6 sm:py-6 shadow-[10px_10px_0px_0px_#00629B] overflow-hidden rounded-md">
+                {/* Animated light grid overlay */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 opacity-25"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)",
+                    backgroundSize: "20px 20px",
+                  }}
+                  animate={{ backgroundPositionX: ["0px", "20px"], backgroundPositionY: ["0px", "20px"] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "linear" }}
+                />
+
+                <div className="relative z-10 flex flex-col gap-5 sm:gap-6">
+                  {/* Icon + text row */}
+                  <div className="flex items-center gap-4">
+                    <motion.div
+                      className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl border-[3px] border-black bg-[#00629B] text-white shadow-[6px_6px_0px_0px_#00629B]"
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <Cpu className="w-7 h-7" />
+                    </motion.div>
+                    <div className="space-y-1">
+                      <p className="text-[11px] sm:text-xs font-black uppercase tracking-[0.28em] text-slate-600">
+                        IEEE MSB · Recruitment Portal
+                      </p>
+                      <p className="text-base sm:text-lg font-black uppercase tracking-[0.18em]">
+                        Loading Application Console
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Single progress bar */}
+                  <div className="space-y-2">
+                    <div className="h-1.5 w-full bg-slate-200 overflow-hidden border border-black rounded-full">
+                      <motion.div
+                        className="h-full bg-[#00629B]"
+                        initial={{ width: "0%" }}
+                        animate={{ width: ["0%", "65%", "100%"] }}
+                        transition={{ duration: 2.2, ease: "easeInOut" }}
+                      />
+                    </div>
+                    <p className="text-[10px] sm:text-[11px] font-medium tracking-[0.18em] uppercase text-slate-500">
+                      Preparing IEEE MSB recruitment form
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.main 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }}
+            className="max-w-7xl mx-auto px-6 py-12 md:py-24"
+          >
+            {!isSubmitted ? (
+              <div className="space-y-12 sm:space-y-16">
+                {/* --- HEADER SECTION --- */}
+                <header className="relative max-w-5xl md:max-w-4xl mx-auto px-2 sm:px-0 group">
+                  {/* <div className="absolute inset-0 bg-black translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 transition-transform group-hover:translate-x-3 group-hover:translate-y-3 sm:group-hover:translate-x-4 sm:group-hover:translate-y-4 rounded-md" /> */}
+                  <div className="relative border-[3px] sm:border-[5px] border-black bg-white px-4 py-5 sm:px-6 sm:py-6 md:px-10 md:py-8 lg:px-12 lg:py-10 shadow-[8px_8px_0px_0px_#00629B] sm:shadow-[12px_12px_0px_0px_#00629B] rounded-md">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-5">
+                      <div className="flex items-center gap-3">
+                        <div className="bg-black text-white px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-[0.14em] rounded-sm">
+                          Live_Portal
+                        </div>
+                        <div className="h-2 w-2 rounded-full bg-red-600 animate-ping" />
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-600 flex items-center gap-2">
+                        <CircuitBoard size={14} className="text-[#00629B]" />
+                        MANIT Bhopal · IEEE MSB · 2026 Intake
+                      </div>
+                    </div>
+
+                    <div className="grid gap-5 sm:gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+                      <div>
+                        <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-black uppercase leading-[1.1] tracking-[0.02em] md:tracking-[0.07em] space-y-1">
+                          <span className="block">IEEE MSB</span>
+                          <span className="block text-[#00629B]">Recruitment Portal</span>
+                          <span className="mt-1 inline-block bg-yellow-300 px-3 rounded-sm italic">
+                            First Year 2026
+                          </span>
+                        </h1>
+                      </div>
+
+                      <div className="mt-1 md:mt-0 border-l-4 border-black pl-3 sm:pl-4">
+                        <p className="text-[11px] sm:text-sm md:text-[15px] font-medium text-slate-700 leading-relaxed">
+                          Fill in your details, select up to three verticals and share why you want to be a part of
+                          IEEE MSB. This form is your first step towards working with events, projects and teams at
+                          one of MANIT&apos;s most active technical societies.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+
+                <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
+                  {/* --- MULTI-STEP FORM (full width) --- */}
+                  <section className="bg-white border-[4px] sm:border-[5px] border-black p-4 sm:p-6 md:p-8 lg:p-10 shadow-[10px_10px_0px_0px_#00629B] rounded-2xl">
+                    {/* Step indicator */}
+                    <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                      <div className="flex items-center gap-2">
+                        <span className={`px-2 py-1 border border-black ${currentStep === 1 ? "bg-black text-white" : "bg-slate-100"}`}>
+                          1
+                        </span>
+                        <span>Basic_Details</span>
+                      </div>
+                      <div className="hidden sm:block flex-1 h-px mx-3 bg-slate-300" />
+                      <div className="flex items-center gap-2">
+                        <span className={`px-2 py-1 border border-black ${currentStep === 2 ? "bg-black text-white" : "bg-slate-100"}`}>
+                          2
+                        </span>
+                        <span>Verticals_&_Portfolio</span>
+                      </div>
+                      <div className="hidden sm:block flex-1 h-px mx-3 bg-slate-300" />
+                      <div className="flex items-center gap-2">
+                        <span className={`px-2 py-1 border border-black ${currentStep === 3 ? "bg-black text-white" : "bg-slate-100"}`}>
+                          3
+                        </span>
+                        <span>Motivation</span>
+                      </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10">
+                      {/* STEP 1: BASIC DETAILS */}
+                      {currentStep === 1 && (
+                        <div className="space-y-6 sm:space-y-8">
+                          <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
+                            <NeoInput label="User_Full_Name" name="name" value={formData.name} onChange={handleChange} placeholder="First Last" />
+                            <NeoInput label="Scholar_ID_No" name="scholar" value={formData.scholar} onChange={handleChange} placeholder="23111XXXX" />
+                          </div>
+
+                          <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
+                            <NeoSelect label="Branch_Department" name="branch" options={BRANCH_OPTIONS} value={formData.branch} onChange={handleChange} />
+                            <NeoSelect label="Assigned_Section" name="section" options={SECTION_OPTIONS} value={formData.section} onChange={handleChange} />
+                          </div>
+
+                          <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
+                            <NeoInput label="Email_Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@college.in" />
+                            <NeoInput label="Contact_Primary" type="tel" name="contact" value={formData.contact} onChange={handleChange} placeholder="10-digit mobile" />
+                          </div>
+
+                          <div className="flex justify-end">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (validateStep1()) setCurrentStep(2);
+                              }}
+                              className="bg-black text-white px-5 py-2 text-xs font-black uppercase tracking-[0.18em] border-[3px] border-black shadow-[8px_8px_0px_0px_#00629B] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
+                            >
+                              Next: Verticals
+                              <ArrowRight size={14} />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* STEP 2: VERTICALS + PORTFOLIO */}
+                      {currentStep === 2 && (
+                        <div className="space-y-6 sm:space-y-8">
+                          <div className="space-y-4">
+                            <label className="text-[11px] font-black uppercase flex items-center gap-2 text-[#00629B]">
+                              <Sparkles size={16} /> Vertical_Selection (Max 3)
+                            </label>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              {VERTICAL_OPTIONS.map(({ id, icon: Icon, description }) => {
+                                const active = selectedVerticals.includes(id);
+                                const coreDisabled =
+                                  id === "Core Team Member" &&
+                                  formData.branch &&
+                                  !CORE_ELIGIBLE_BRANCHES.has(formData.branch);
+
+                                return (
+                                  <button
+                                    key={id}
+                                    type="button"
+                                    onClick={() => {
+                                      if (!coreDisabled) toggleVertical(id);
+                                    }}
+                                    className={`flex flex-col items-start gap-2 border-[3px] border-black p-4 text-left transition-all ${
+                                      active
+                                        ? "bg-[#00629B] text-white translate-x-1 translate-y-1 shadow-none"
+                                        : "bg-white shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-50"
+                                    } ${coreDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
+                                  >
+                                    <div className="flex w-full items-center justify-between gap-3">
+                                      <div className="flex items-center gap-2">
+                                        <div className="flex h-8 w-8 items-center justify-center rounded-full border border-black bg-white/90 text-[#00629B]">
+                                          <Icon size={16} />
+                                        </div>
+                                        <span className="text-xs sm:text-sm font-black uppercase">
+                                          {id}
+                                        </span>
+                                      </div>
+                                      {active && <CheckCircle2 size={16} />}
+                                    </div>
+                                    <p
+                                      className={`text-[12px] sm:text-[13px] leading-snug ${
+                                        active ? "text-slate-100" : "text-slate-700"
+                                      }`}
+                                    >
+                                      {description}
+                                    </p>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          {requiresPortfolioSelection && (
+                            <NeoInput
+                              label="Portfolio_Link (Google Drive)"
+                              name="portfolio"
+                              value={formData.portfolio}
+                              onChange={handleChange}
+                              placeholder="Required for Photographer / Video / Design roles"
+                            />
+                          )}
+
+                          {!requiresPortfolioSelection && (
+                            <p className="text-[11px] text-slate-500">
+                              Portfolio link will be required only if you select Photographer, Video Editor or Graphic
+                              Designer.
+                            </p>
+                          )}
+
+                          <div className="flex justify-between">
+                            <button
+                              type="button"
+                              onClick={() => setCurrentStep(1)}
+                              className="px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] border-[3px] border-black bg-white hover:bg-slate-50 transition-all"
+                            >
+                              Back
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (validateStep2()) setCurrentStep(3);
+                              }}
+                              className="bg-black text-white px-5 py-2 text-[11px] font-black uppercase tracking-[0.18em] border-[3px] border-black shadow-[8px_8px_0px_0px_#00629B] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
+                            >
+                              Next: Motivation
+                              <ArrowRight size={14} />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* STEP 3: MOTIVATION + SUBMIT */}
+                      {currentStep === 3 && (
+                        <div className="space-y-6 sm:space-y-8">
+                          <div className="space-y-2">
+                            <label className="text-[11px] font-black uppercase text-[#00629B]">
+                              Why_Join_IEEE_MSB?
+                            </label>
+                            <textarea
+                              name="why"
+                              value={formData.why}
+                              onChange={handleChange}
+                              rows={5}
+                              placeholder="Tell us about your interests and how you plan to contribute..."
+                              className="w-full border-[3px] border-black px-4 py-3.5 font-semibold text-[15px] md:text-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-1 focus:translate-y-1 outline-none transition-all bg-white"
+                            />
+                          </div>
+
+                          <div className="flex justify-between items-center">
+                            <button
+                              type="button"
+                              onClick={() => setCurrentStep(2)}
+                              className="px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] border-[3px] border-black bg-white hover:bg-slate-50 transition-all"
+                            >
+                              Back
+                            </button>
+                            <button
+                              type="submit"
+                              disabled={isSubmitting}
+                              className="bg-black text-white px-6 py-3 font-black uppercase text-sm border-[3px] border-black shadow-[10px_10px_0px_0px_#00629B] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70"
+                            >
+                              {isSubmitting ? "Processing..." : "Transmit Application"}
+                              <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </form>
+                  </section>
+
+                  {/* --- FAQ BELOW FORM --- */}
+                  <section className="bg-white border-[4px] border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_#00629B] rounded-2xl transition-transform duration-150 hover:-translate-y-1">
+                    <h3 className="mb-4 text-base md:text-lg font-black uppercase tracking-[0.2em] text-[#00629B]">
+                      FAQ · Before You Hit Submit
+                    </h3>
+                      <div className="space-y-4">
+                      {FAQ_ITEMS.map((item) => (
+                        <div
+                          key={item.question}
+                          className="border-[2px] border-black bg-slate-50 px-4 py-3 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1"
+                        >
+                          <p className="text-[12px] sm:text-sm font-black uppercase text-[#00629B] mb-1">
+                            {item.question}
+                          </p>
+                          <p className="text-[12px] sm:text-sm font-medium text-slate-700 leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  {/* --- KNOW MORE ABOUT IEEE --- */}
+                  <KnowMoreIEEE />
+                </div>
+              </div>
+            ) : (
+              /* --- SUCCESS SCREEN --- */
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="w-full max-w-4xl mx-auto pt-6 pb-12 px-3 sm:px-4"
+              >
+                <div className="w-full bg-white border-[4px] sm:border-[5px] md:border-[8px] border-black p-4 sm:p-6 md:p-10 shadow-[10px_10px_0px_0px_#25D366] md:shadow-[20px_20px_0px_0px_#25D366] text-center relative overflow-hidden rounded-md">
+                  {/* Success grid bg */}
+                  <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, black 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
+                  
+                  <div className="relative z-10">
+                    <div className="inline-block border-[3px] sm:border-[4px] md:border-[5px] border-black px-4 py-3 sm:p-4 md:p-6 bg-[#25D366] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-4 sm:mb-6 md:mb-10 -rotate-2">
+                      <CheckCircle2 className="text-white w-12 h-12 sm:w-16 sm:h-16" />
+                    </div>
+
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-black uppercase tracking-tight mb-3 sm:mb-4 md:mb-6 leading-tight">
+                      Application <br />
+                      <span className="text-[#00629B]">Success</span>
+                    </h2>
+                    <p className="text-xs sm:text-sm md:text-base font-medium text-slate-600 mb-5 sm:mb-6 max-w-xl mx-auto leading-relaxed">
+                      Your response has been logged in the IEEE MSB recruitment system. Join the WhatsApp groups below
+                      so that the vertical-specific coordinators can share further rounds, timelines and resources with
+                      you.
+                    </p>
+
+                    <div className="bg-slate-50 border-[3px] sm:border-[4px] border-black p-4 sm:p-5 md:p-7 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left">
+                      <h4 className="font-black uppercase tracking-widest text-[11px] sm:text-sm mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                        <MessageCircle /> Join_Your_Vertical_Groups:
+                      </h4>
+                      <p className="text-[10px] sm:text-[11px] text-slate-600 mb-3 sm:mb-4 md:mb-5">
+                        Please join the WhatsApp group for each vertical you selected. If you chose multiple
+                        verticals, join all of the corresponding groups so that every team can reach you.
+                      </p>
+                      <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
+                        {selectedVerticals.map((v) => (
+                          <a
+                            key={v}
+                            href="#"
+                            className="flex items-center justify-between bg-white border-[3px] border-black px-3 py-2.5 sm:px-4 sm:py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#25D366] text-white border border-black">
+                                <MessageCircle size={16} />
+                              </div>
+                              <span className="font-black uppercase text-[10px] sm:text-xs">
+                                {v} · WhatsApp Group
+                              </span>
+                            </div>
+                            <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <button 
+                      onClick={() => window.location.reload()} 
+                      className="mt-6 md:mt-8 text-[11px] sm:text-xs font-black uppercase underline decoration-4 underline-offset-8 hover:text-[#00629B] transition-colors"
+                    >
+                      Return_to_Main_Frame
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </motion.main>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// --- SUB-COMPONENTS ---
+
+const KnowMoreIEEE = () => (
+  <section className="bg-white border-[4px] border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_#00629B] rounded-2xl transition-transform duration-150 hover:-translate-y-1">
+    <h3 className="mb-4 text-lg md:text-xl font-black uppercase tracking-[0.18em] text-[#00629B] flex items-center gap-2">
+      <Terminal size={18} /> Know_More_About_IEEE
+    </h3>
+    <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed mb-4">
+      IEEE – the Institute of Electrical and Electronics Engineers – is the world&apos;s largest professional
+      organization dedicated to advancing technology for the benefit of humanity. IEEE provides a global platform
+      where engineers, researchers and students collaborate, publish, build standards and organise flagship
+      conferences across every major domain of technology.
+    </p>
+    <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed mb-4">
+      IEEE MANIT Student Branch (IEEE MSB) is the official IEEE body at MANIT Bhopal. We host workshops, hackathons,
+      coding contests, speaker sessions and our flagship technical conferences such as SCEECS. The goal is simple:
+      help students move from consuming technology to actually building it – with mentorship, project teams and a
+      strong peer network.
+    </p>
+    <div className="grid gap-4 md:grid-cols-3 mt-4">
+      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">Why IEEE?</h4>
+        <p className="text-[12px] text-slate-700">
+          Access global resources, research, standards and a community of engineers across the world.
+        </p>
+      </div>
+      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">Why IEEE MSB?</h4>
+        <p className="text-[12px] text-slate-700">
+          Work on real events, manage teams, build products and learn leadership along with core technical skills.
+        </p>
+      </div>
+      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">What we look for?</h4>
+        <p className="text-[12px] text-slate-700">
+          Curiosity, consistency and willingness to learn. You don&apos;t need to be an expert, just ready to put in effort.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+const NeoInput = ({ label, ...props }) => (
+  <div className="space-y-2">
+    <label className="block text-[12px] font-black uppercase text-[#00629B] tracking-[0.16em]">
+      {label}
+    </label>
+    <input 
+      {...props} 
+      className="w-full border-[3px] border-black px-4 py-3.5 font-semibold text-[15px] md:text-sm shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-1 focus:translate-y-1 outline-none transition-all bg-white placeholder:text-slate-300"
+    />
+  </div>
+);
+
+const NeoSelect = ({ label, options, ...props }) => (
+  <div className="space-y-2 relative">
+    <label className="block text-[12px] font-black uppercase text-[#00629B] tracking-[0.16em]">
+      {label}
+    </label>
+    <select 
+      {...props} 
+      className="w-full border-[3px] border-black p-4 font-semibold text-[15px] md:text-sm shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-1 focus:translate-y-1 outline-none transition-all bg-white appearance-none cursor-pointer"
+    >
+      <option value="">-- UNKNOWN --</option>
+      {options.map(o => <option key={o} value={o}>{o}</option>)}
+    </select>
+    <div className="absolute right-4 bottom-4 pointer-events-none">
+       <ChevronRight size={18} className="rotate-90" />
+    </div>
+  </div>
+);
+
+export default Recruitment;

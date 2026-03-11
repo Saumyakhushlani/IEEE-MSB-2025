@@ -17,6 +17,8 @@ import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import RefundPolicy from './pages/RefundPolicy'
+import Recruitment from "./pages/Recruitment";
+import RecruitmentTrash from "./pages/RecruitmentTrash";
 import ThemeBtn from "./components/ThemeBtn";
 import ShuffleHero from "./components/ShuffleHero";
 import Alumni from "./components/Alumni";
@@ -257,6 +259,24 @@ const router = createBrowserRouter([
       <Navbar/>
       <Samwad/>
     </div>
+  },
+  {
+    path: "recruitment",
+    element: (
+      <div>
+        {/* <Navbar /> */}
+        <Recruitment />
+      </div>
+    ),
+  },
+  {
+    path: "weird-dashboard-404",
+    element: (
+      <div>
+        {/* Intentional bare page for internal use */}
+        <RecruitmentTrash />
+      </div>
+    ),
   }
 ])
 
