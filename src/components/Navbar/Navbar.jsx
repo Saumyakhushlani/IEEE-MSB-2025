@@ -22,6 +22,7 @@ const navItems = [
     { name: "Team", to: "/team" },
     { name: "Alumni", to: "/alumni" },
     { name: "Contact Us", to: "/contact" },
+    { name: "Recruitment", to: "/recruitment" },
 ];
 
 export default function Navbar() {
