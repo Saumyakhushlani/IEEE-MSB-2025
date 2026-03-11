@@ -102,7 +102,7 @@ function RecruitmentTrash() {
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-[0.18em] leading-tight">
             Recruitment
-            <span className="text-[#00629B]"> Garbage View</span>
+            {/* <span className="text-[#00629B]"> Garbage View</span> */}
           </h1>
           <p className="mt-3 text-[12px] sm:text-sm text-slate-700 leading-relaxed">
             Internal-only snapshot of applications received via the IEEE MSB recruitment form. Use this to
