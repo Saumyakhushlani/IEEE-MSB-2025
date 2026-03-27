@@ -106,7 +106,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is a portfolio mandatory?",
-    answer: "Yes, for Photographer, Video Editor and Graphic Designer. For other roles, it is optional but recommended.",
+    answer: "No, it is optional for all roles. If you are applying for Photographer, Video Editor or Graphic Designer, sharing your work link is strongly recommended.",
   },
 ];
 
@@ -202,10 +202,6 @@ function Recruitment() {
   const validateStep2 = () => {
     if (selectedVerticals.length === 0) {
       toast.error("Select at least one vertical");
-      return false;
-    }
-    if (requiresPortfolioSelection && !formData.portfolio.trim()) {
-      toast.error("Portfolio (Drive Link) is mandatory for selected roles");
       return false;
     }
     return true;
@@ -421,7 +417,7 @@ function Recruitment() {
                           </div>
 
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-                            <NeoInput label="Email_Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@college.in" />
+                            <NeoInput label="Email_Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@gmail.com" />
                             <NeoInput label="Contact_Primary" type="tel" name="contact" value={formData.contact} onChange={handleChange} placeholder="10-digit mobile" />
                           </div>
 
@@ -500,14 +496,13 @@ function Recruitment() {
                               name="portfolio"
                               value={formData.portfolio}
                               onChange={handleChange}
-                              placeholder="Required for Photographer / Video / Design roles"
+                              placeholder="Optional, but recommended for Photographer / Video / Design roles"
                             />
                           )}
 
                           {!requiresPortfolioSelection && (
                             <p className="text-[11px] text-slate-500">
-                              Portfolio link will be required only if you select Photographer, Video Editor or Graphic
-                              Designer.
+                              Portfolio link is optional. Add it if you want to showcase your work.
                             </p>
                           )}
 
