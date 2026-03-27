@@ -81,6 +81,16 @@ const CORE_ELIGIBLE_BRANCHES = new Set([
   "Electrical Engineering",
 ]);
 
+/** Replace each URL with your real WhatsApp group invite link (keys must match vertical names exactly). */
+const WHATSAPP_LINKS = {
+  "Core Team Member": "https://chat.whatsapp.com/DipN6G5bvnj7L3NA1s0tKs",
+  "Web Developer": "https://chat.whatsapp.com/Ct4qYVxkGhALbovbGCyX33",
+  "Photographer": "https://chat.whatsapp.com/H1C0HFGUKqn0ofNG239LZB",
+  "Video Editor": "https://chat.whatsapp.com/JQWvllxXTxtC3jC6QvEjPe",
+  "Graphic Designer": "https://chat.whatsapp.com/KLleov5EY3zInea9arpOKi",
+  "Social Media Manager": "https://chat.whatsapp.com/EVePytlB1ESFKWUPiuZOL8",
+};
+
 const FAQ_ITEMS = [
   {
     question: "Who can apply for IEEE MSB recruitment?",
@@ -155,26 +165,57 @@ function Recruitment() {
   );
 
   const validateStep1 = () => {
-    if (!formData.name.trim()) return toast.error("Name is required");
-    if (!formData.scholar.trim()) return toast.error("Scholar number is required");
-    if (!formData.branch) return toast.error("Select your branch");
-    if (!formData.section) return toast.error("Select your section");
-    if (!formData.email.trim()) return toast.error("Email is required");
-    if (!formData.contact.trim()) return toast.error("Contact number is required");
+    if (!formData.name.trim()) {
+      toast.error("Name is required");
+      return false;
+    }
+    if (!formData.scholar.trim()) {
+      toast.error("Scholar number is required");
+      return false;
+    }
+    if (!formData.branch) {
+      toast.error("Select your branch");
+      return false;
+    }
+    if (!formData.section) {
+      toast.error("Select your section");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      toast.error("Email is required");
+      return false;
+    }
+    if (!formData.contact.trim()) {
+      toast.error("Contact number is required");
+      return false;
+    }
+
+    const digitsOnly = formData.contact.replace(/\D/g, "");
+    if (digitsOnly.length !== 10) {
+      toast.error("Contact number must be exactly 10 digits");
+      return false;
+    }
 
     return true;
   };
 
   const validateStep2 = () => {
-    if (selectedVerticals.length === 0) return toast.error("Select at least one vertical");
+    if (selectedVerticals.length === 0) {
+      toast.error("Select at least one vertical");
+      return false;
+    }
     if (requiresPortfolioSelection && !formData.portfolio.trim()) {
-      return toast.error("Portfolio (Drive Link) is mandatory for selected roles");
+      toast.error("Portfolio (Drive Link) is mandatory for selected roles");
+      return false;
     }
     return true;
   };
 
   const validateStep3 = () => {
-    if (!formData.why.trim()) return toast.error("Please explain why you wish to join");
+    if (!formData.why.trim()) {
+      toast.error("Please explain why you wish to join");
+      return false;
+    }
     return true;
   };
 
@@ -388,7 +429,9 @@ function Recruitment() {
                             <button
                               type="button"
                               onClick={() => {
-                                if (validateStep1()) setCurrentStep(2);
+                                const ok = validateStep1();
+                                if (!ok) return;
+                                setCurrentStep(2);
                               }}
                               className="bg-black text-white px-5 py-2 text-xs font-black uppercase tracking-[0.18em] border-[3px] border-black shadow-[8px_8px_0px_0px_#00629B] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
                             >
@@ -479,7 +522,9 @@ function Recruitment() {
                             <button
                               type="button"
                               onClick={() => {
-                                if (validateStep2()) setCurrentStep(3);
+                                const ok = validateStep2();
+                                if (!ok) return;
+                                setCurrentStep(3);
                               }}
                               className="bg-black text-white px-5 py-2 text-[11px] font-black uppercase tracking-[0.18em] border-[3px] border-black shadow-[8px_8px_0px_0px_#00629B] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
                             >
@@ -593,7 +638,9 @@ function Recruitment() {
                         {selectedVerticals.map((v) => (
                           <a
                             key={v}
-                            href="#"
+                            href={WHATSAPP_LINKS[v] ?? "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-between bg-white border-[3px] border-black px-3 py-2.5 sm:px-4 sm:py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group"
                           >
                             <div className="flex items-center gap-3">
