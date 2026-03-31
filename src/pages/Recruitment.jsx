@@ -41,6 +41,9 @@ const BRANCH_OPTIONS = [
 
 const SECTION_OPTIONS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "B Arch 1", "B Arch 2", "B Plan"];
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^\d{10}$/;
+
 const VERTICAL_OPTIONS = [
   {
     id: "Core Team Member",
@@ -174,6 +177,9 @@ function Recruitment() {
   );
 
   const validateStep1 = () => {
+    const trimmedEmail = formData.email.trim();
+    const trimmedContact = formData.contact.trim();
+
     if (!formData.name.trim()) {
       toast.error("Name is required");
       return false;
@@ -190,17 +196,19 @@ function Recruitment() {
       toast.error("Select your section");
       return false;
     }
-    if (!formData.email.trim()) {
+    if (!trimmedEmail) {
       toast.error("Email is required");
       return false;
     }
-    if (!formData.contact.trim()) {
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
+      toast.error("Enter a valid email address");
+      return false;
+    }
+    if (!trimmedContact) {
       toast.error("Contact number is required");
       return false;
     }
-
-    const digitsOnly = formData.contact.replace(/\D/g, "");
-    if (digitsOnly.length !== 10) {
+    if (!PHONE_REGEX.test(trimmedContact)) {
       toast.error("Contact number must be exactly 10 digits");
       return false;
     }
@@ -427,7 +435,16 @@ function Recruitment() {
 
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
                             <NeoInput label="Email Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@gmail.com" />
-                            <NeoInput label="Contact Number" type="tel" name="contact" value={formData.contact} onChange={handleChange} placeholder="10-digit mobile" />
+                            <NeoInput
+                              label="Contact Number"
+                              type="tel"
+                              name="contact"
+                              value={formData.contact}
+                              onChange={handleChange}
+                              placeholder="10-digit mobile"
+                              inputMode="numeric"
+                              maxLength={10}
+                            />
                           </div>
 
                           <div className="flex justify-end">
