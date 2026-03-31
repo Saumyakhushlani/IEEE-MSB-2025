@@ -94,7 +94,7 @@ const WHATSAPP_LINKS = {
 const FAQ_ITEMS = [
   {
     question: "Who can apply for IEEE MSB recruitment?",
-    answer: "First and second year students from all branches at MANIT Bhopal are welcome to apply. We look for curiosity, consistency and a genuine interest in teamwork.",
+    answer: "First students from all branches at MANIT Bhopal are welcome to apply. We look for curiosity, consistency and a genuine interest in teamwork.",
   },
   {
     question: "Is IEEE membership compulsory before applying?",
@@ -107,6 +107,10 @@ const FAQ_ITEMS = [
   {
     question: "Is a portfolio mandatory?",
     answer: "No, it is optional for all roles. If you are applying for Photographer, Video Editor or Graphic Designer, sharing your work link is strongly recommended.",
+  },
+  {
+    question: "How will I be notified about the selection process?",
+    answer: "Shortlisted candidates will be notified via email and WhatsApp. Please ensure your contact information is up to date.",
   },
 ];
 
@@ -407,18 +411,18 @@ function Recruitment() {
                       {currentStep === 1 && (
                         <div className="space-y-6 sm:space-y-8">
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-                            <NeoInput label="User_Full_Name" name="name" value={formData.name} onChange={handleChange} placeholder="First Last" />
-                            <NeoInput label="Scholar_ID_No" name="scholar" value={formData.scholar} onChange={handleChange} placeholder="23111XXXX" />
+                            <NeoInput label="Full Name" name="name" value={formData.name} onChange={handleChange} placeholder="First Last" />
+                            <NeoInput label="Scholar ID" name="scholar" value={formData.scholar} onChange={handleChange} placeholder="23111XXXX" />
                           </div>
 
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-                            <NeoSelect label="Branch_Department" name="branch" options={BRANCH_OPTIONS} value={formData.branch} onChange={handleChange} />
-                            <NeoSelect label="Assigned_Section" name="section" options={SECTION_OPTIONS} value={formData.section} onChange={handleChange} />
+                            <NeoSelect label="Branch" name="branch" options={BRANCH_OPTIONS} value={formData.branch} onChange={handleChange} />
+                            <NeoSelect label="Section" name="section" options={SECTION_OPTIONS} value={formData.section} onChange={handleChange} />
                           </div>
 
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-                            <NeoInput label="Email_Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@gmail.com" />
-                            <NeoInput label="Contact_Primary" type="tel" name="contact" value={formData.contact} onChange={handleChange} placeholder="10-digit mobile" />
+                            <NeoInput label="Email Address" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@gmail.com" />
+                            <NeoInput label="Contact Number" type="tel" name="contact" value={formData.contact} onChange={handleChange} placeholder="10-digit mobile" />
                           </div>
 
                           <div className="flex justify-end">
@@ -492,7 +496,7 @@ function Recruitment() {
 
                           {requiresPortfolioSelection && (
                             <NeoInput
-                              label="Portfolio_Link (Google Drive)"
+                              label="Portfolio Link (Google Drive)"
                               name="portfolio"
                               value={formData.portfolio}
                               onChange={handleChange}
@@ -535,7 +539,7 @@ function Recruitment() {
                         <div className="space-y-6 sm:space-y-8">
                           <div className="space-y-2">
                             <label className="text-[11px] font-black uppercase text-[#00629B]">
-                              Why_Join_IEEE_MSB?
+                              Why Join IEEE MSB?
                             </label>
                             <textarea
                               name="why"
