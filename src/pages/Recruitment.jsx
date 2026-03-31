@@ -45,32 +45,32 @@ const VERTICAL_OPTIONS = [
   {
     id: "Core Team Member",
     icon: User,
-    description: "Coordinate teams, events, logistics and execution across IEEE MSB.",
+    description: "Work on planning and execution of events, coordination, and overall operations.",
   },
   {
     id: "Web Developer",
     icon: Terminal,
-    description: "Build and maintain IEEE web properties, dashboards and tooling.",
+    description: "Develop and maintain websites, dashboards, and technical tools for IEEE MSB.",
   },
   {
     id: "Photographer",
     icon: Camera,
-    description: "Capture events, speaker sessions and IEEE MSB culture visually.",
+    description: "Capture events, sessions, and moments that represent IEEE MSB.",
   },
   {
     id: "Video Editor",
     icon: Video,
-    description: "Edit recap films, promos and social media reels for our events.",
+    description: "Create event aftermovies, promotional videos, and social media content.",
   },
   {
     id: "Graphic Designer",
     icon: Palette,
-    description: "Design posters, carousels and brand assets for IEEE campaigns.",
+    description: "Design posters, social media creatives, and branding materials.",
   },
   {
     id: "Social Media Manager",
     icon: Share2,
-    description: "Strategise and publish content across IEEE MSB social handles.",
+    description: "Plan and manage content across IEEE MSB social platforms.",
   },
 ];
 
@@ -94,23 +94,28 @@ const WHATSAPP_LINKS = {
 const FAQ_ITEMS = [
   {
     question: "Who can apply for IEEE MSB recruitment?",
-    answer: "First students from all branches at MANIT Bhopal are welcome to apply. We look for curiosity, consistency and a genuine interest in teamwork.",
+    answer:
+      "First-year students from all branches at MANIT Bhopal are eligible to apply. We look for students who are curious, consistent, and interested in learning and teamwork.",
   },
   {
-    question: "Is IEEE membership compulsory before applying?",
-    answer: "No. You can apply even if you are not currently an IEEE member. Details will be shared with shortlisted candidates.",
+    question: "Is IEEE membership required before applying?",
+    answer:
+      "No, IEEE membership is not required at this stage. Details will be shared with shortlisted candidates.",
   },
   {
-    question: "Can I apply for more than one vertical?",
-    answer: "Yes, you can select up to three verticals. Please prioritize roles where you can actively contribute.",
+    question: "Can I apply for multiple verticals?",
+    answer:
+      "Yes, you can choose up to three verticals. Please select roles where you can actively contribute.",
   },
   {
     question: "Is a portfolio mandatory?",
-    answer: "No, it is optional for all roles. If you are applying for Photographer, Video Editor or Graphic Designer, sharing your work link is strongly recommended.",
+    answer:
+      "No, it is optional. However, for roles like Photographer, Video Editor, Graphic Designer, and Social Media Manager, sharing your work is recommended.",
   },
   {
-    question: "How will I be notified about the selection process?",
-    answer: "Shortlisted candidates will be notified via email and WhatsApp. Please ensure your contact information is up to date.",
+    question: "How will I receive updates about the process?",
+    answer:
+      "Shortlisted candidates will be informed through email and WhatsApp. Please ensure your contact details are correct.",
   },
 ];
 
@@ -257,7 +262,7 @@ function Recruitment() {
   };
 
   return (
-    <div 
+    <div
       className="min-h-screen text-black font-mono selection:bg-yellow-300 overflow-x-hidden"
       style={{
         backgroundColor: "#f8fafc",
@@ -333,8 +338,8 @@ function Recruitment() {
             </div>
           </motion.div>
         ) : (
-          <motion.main 
-            initial={{ opacity: 0 }} 
+          <motion.main
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="max-w-7xl mx-auto px-6 py-12 md:py-24"
           >
@@ -370,9 +375,9 @@ function Recruitment() {
 
                       <div className="mt-1 md:mt-0 border-l-4 border-black pl-3 sm:pl-4">
                         <p className="text-[11px] sm:text-sm md:text-[15px] font-medium text-slate-700 leading-relaxed">
-                          Fill in your details, select up to three verticals and share why you want to be a part of
-                          IEEE MSB. This form is your first step towards working with events, projects and teams at
-                          one of MANIT&apos;s most active technical societies.
+                          Fill in your details, select up to three verticals, and briefly explain why you want to join IEEE MSB.
+                          This is your first step towards working on events, projects, and teams in one of MANIT’s most active technical societies.
+
                         </p>
                       </div>
                     </div>
@@ -464,11 +469,10 @@ function Recruitment() {
                                     onClick={() => {
                                       if (!coreDisabled) toggleVertical(id);
                                     }}
-                                    className={`flex flex-col items-start gap-2 border-[3px] border-black p-4 text-left transition-all ${
-                                      active
+                                    className={`flex flex-col items-start gap-2 border-[3px] border-black p-4 text-left transition-all ${active
                                         ? "bg-[#00629B] text-white translate-x-1 translate-y-1 shadow-none"
                                         : "bg-white shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-50"
-                                    } ${coreDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
+                                      } ${coreDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
                                   >
                                     <div className="flex w-full items-center justify-between gap-3">
                                       <div className="flex items-center gap-2">
@@ -482,9 +486,8 @@ function Recruitment() {
                                       {active && <CheckCircle2 size={16} />}
                                     </div>
                                     <p
-                                      className={`text-[12px] sm:text-[13px] leading-snug ${
-                                        active ? "text-slate-100" : "text-slate-700"
-                                      }`}
+                                      className={`text-[12px] sm:text-[13px] leading-snug ${active ? "text-slate-100" : "text-slate-700"
+                                        }`}
                                     >
                                       {description}
                                     </p>
@@ -578,7 +581,7 @@ function Recruitment() {
                     <h3 className="mb-4 text-base md:text-lg font-black uppercase tracking-[0.2em] text-[#00629B]">
                       FAQ · Before You Hit Submit
                     </h3>
-                      <div className="space-y-4">
+                    <div className="space-y-4">
                       {FAQ_ITEMS.map((item) => (
                         <div
                           key={item.question}
@@ -609,7 +612,7 @@ function Recruitment() {
                 <div className="w-full bg-white border-[4px] sm:border-[5px] md:border-[8px] border-black p-4 sm:p-6 md:p-10 shadow-[10px_10px_0px_0px_#25D366] md:shadow-[20px_20px_0px_0px_#25D366] text-center relative overflow-hidden rounded-md">
                   {/* Success grid bg */}
                   <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, black 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
-                  
+
                   <div className="relative z-10">
                     <div className="inline-block border-[3px] sm:border-[4px] md:border-[5px] border-black px-4 py-3 sm:p-4 md:p-6 bg-[#25D366] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-4 sm:mb-6 md:mb-10 -rotate-2">
                       <CheckCircle2 className="text-white w-12 h-12 sm:w-16 sm:h-16" />
@@ -656,8 +659,8 @@ function Recruitment() {
                       </div>
                     </div>
 
-                    <button 
-                      onClick={() => window.location.reload()} 
+                    <button
+                      onClick={() => window.location.reload()}
                       className="mt-6 md:mt-8 text-[11px] sm:text-xs font-black uppercase underline decoration-4 underline-offset-8 hover:text-[#00629B] transition-colors"
                     >
                       Return_to_Main_Frame
@@ -680,36 +683,32 @@ const KnowMoreIEEE = () => (
     <h3 className="mb-4 text-lg md:text-xl font-black uppercase tracking-[0.18em] text-[#00629B] flex items-center gap-2">
       <Terminal size={18} /> Know_More_About_IEEE
     </h3>
-    <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed mb-4">
-      IEEE – the Institute of Electrical and Electronics Engineers – is the world&apos;s largest professional
-      organization dedicated to advancing technology for the benefit of humanity. IEEE provides a global platform
-      where engineers, researchers and students collaborate, publish, build standards and organise flagship
-      conferences across every major domain of technology.
-    </p>
-    <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed mb-4">
-      IEEE MANIT Student Branch (IEEE MSB) is the official IEEE body at MANIT Bhopal. We host workshops, hackathons,
-      coding contests, speaker sessions and our flagship technical conferences such as SCEECS. The goal is simple:
-      help students move from consuming technology to actually building it – with mentorship, project teams and a
-      strong peer network.
-    </p>
-    <div className="grid gap-4 md:grid-cols-3 mt-4">
-      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
-        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">Why IEEE?</h4>
-        <p className="text-[12px] text-slate-700">
-          Access global resources, research, standards and a community of engineers across the world.
+    <div className="space-y-4">
+      <div>
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">About IEEE</h4>
+        <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed">
+          IEEE (Institute of Electrical and Electronics Engineers) is the world&apos;s largest professional organization
+          focused on advancing technology for the benefit of society. It provides a global platform for engineers,
+          researchers, and students to collaborate, publish research, and work on innovations.
         </p>
       </div>
-      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
-        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">Why IEEE MSB?</h4>
-        <p className="text-[12px] text-slate-700">
-          Work on real events, manage teams, build products and learn leadership along with core technical skills.
+      <div>
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">About IEEE MSB</h4>
+        <p className="text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed">
+          IEEE MANIT Student Branch is the official IEEE body at MANIT Bhopal. We organize workshops, hackathons,
+          coding contests, speaker sessions, and major conferences like SCEECS. Our aim is to help students move from
+          learning technology to building it through practical exposure and teamwork.
         </p>
       </div>
-      <div className="border-[3px] border-black bg-slate-50 p-4 shadow-[8px_8px_0px_0px_#00629B] rounded-xl transition-transform duration-150 hover:-translate-y-1">
-        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">What we look for?</h4>
-        <p className="text-[12px] text-slate-700">
-          Curiosity, consistency and willingness to learn. You don&apos;t need to be an expert, just ready to put in effort.
-        </p>
+      <div>
+        <h4 className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-[#00629B]">Why Join IEEE?</h4>
+        <ul className="list-disc pl-5 text-[13px] sm:text-sm md:text-base font-medium text-slate-700 leading-relaxed space-y-1">
+          <li>Access global resources, research, and technical communities</li>
+          <li>Learn from a worldwide network of engineers and innovators</li>
+          <li>Work on real events and projects</li>
+          <li>Develop leadership and teamwork skills</li>
+          <li>Gain hands-on technical and practical experience</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -720,8 +719,8 @@ const NeoInput = ({ label, ...props }) => (
     <label className="block text-[12px] font-black uppercase text-[#00629B] tracking-[0.16em]">
       {label}
     </label>
-    <input 
-      {...props} 
+    <input
+      {...props}
       className="w-full border-[3px] border-black px-4 py-3.5 font-semibold text-[15px] md:text-sm shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-1 focus:translate-y-1 outline-none transition-all bg-white placeholder:text-slate-300"
     />
   </div>
@@ -732,15 +731,15 @@ const NeoSelect = ({ label, options, ...props }) => (
     <label className="block text-[12px] font-black uppercase text-[#00629B] tracking-[0.16em]">
       {label}
     </label>
-    <select 
-      {...props} 
+    <select
+      {...props}
       className="w-full border-[3px] border-black p-4 font-semibold text-[15px] md:text-sm shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-1 focus:translate-y-1 outline-none transition-all bg-white appearance-none cursor-pointer"
     >
       <option value="">-- UNKNOWN --</option>
       {options.map(o => <option key={o} value={o}>{o}</option>)}
     </select>
     <div className="absolute right-4 bottom-4 pointer-events-none">
-       <ChevronRight size={18} className="rotate-90" />
+      <ChevronRight size={18} className="rotate-90" />
     </div>
   </div>
 );
