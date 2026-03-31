@@ -86,8 +86,8 @@ const CORE_ELIGIBLE_BRANCHES = new Set([
 
 /** Replace each URL with your real WhatsApp group invite link (keys must match vertical names exactly). */
 const WHATSAPP_LINKS = {
-  "Core Team Member": "https://chat.whatsapp.com/DipN6G5bvnj7L3NA1s0tKs",
-  "Web Developer": "https://chat.whatsapp.com/Ct4qYVxkGhALbovbGCyX33",
+  "Core Team Member": "https://chat.whatsapp.com/BhL4H2aegM7G6Sq912aJCe",
+  "Web Developer": "https://chat.whatsapp.com/IrJ92n3BqFEAqmn0U6AzHH",
   "Photographer": "https://chat.whatsapp.com/H1C0HFGUKqn0ofNG239LZB",
   "Video Editor": "https://chat.whatsapp.com/JQWvllxXTxtC3jC6QvEjPe",
   "Graphic Designer": "https://chat.whatsapp.com/KLleov5EY3zInea9arpOKi",
