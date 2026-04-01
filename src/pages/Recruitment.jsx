@@ -43,6 +43,7 @@ const SECTION_OPTIONS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "B Ar
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\d{10}$/;
+const SCHOLAR_REGEX = /^\d{10,11}$/;
 
 const VERTICAL_OPTIONS = [
   {
@@ -177,6 +178,7 @@ function Recruitment() {
   );
 
   const validateStep1 = () => {
+    const trimmedScholar = formData.scholar.trim();
     const trimmedEmail = formData.email.trim();
     const trimmedContact = formData.contact.trim();
 
@@ -184,8 +186,16 @@ function Recruitment() {
       toast.error("Name is required");
       return false;
     }
-    if (!formData.scholar.trim()) {
+    if (!trimmedScholar) {
       toast.error("Scholar number is required");
+      return false;
+    }
+    if (!trimmedScholar.startsWith("25")) {
+      toast.error("Scholar number must start with 25");
+      return false;
+    }
+    if (!SCHOLAR_REGEX.test(trimmedScholar)) {
+      toast.error("Scholar number must be 10 or 11 digits");
       return false;
     }
     if (!formData.branch) {
@@ -425,7 +435,15 @@ function Recruitment() {
                         <div className="space-y-6 sm:space-y-8">
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
                             <NeoInput label="Full Name" name="name" value={formData.name} onChange={handleChange} placeholder="First Last" />
-                            <NeoInput label="Scholar ID" name="scholar" value={formData.scholar} onChange={handleChange} placeholder="23111XXXX" />
+                            <NeoInput
+                              label="Scholar ID"
+                              name="scholar"
+                              value={formData.scholar}
+                              onChange={handleChange}
+                              placeholder="25XXXXXXXX"
+                              inputMode="numeric"
+                              maxLength={11}
+                            />
                           </div>
 
                           <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
