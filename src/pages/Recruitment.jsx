@@ -45,6 +45,8 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\d{10}$/;
 const SCHOLAR_REGEX = /^\d{10,11}$/;
 
+const RECRUITMENT_CLOSED = true;
+
 const VERTICAL_OPTIONS = [
   {
     id: "Core Team Member",
@@ -248,6 +250,10 @@ function Recruitment() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (RECRUITMENT_CLOSED) {
+      toast.error("Recruitment form has been closed.");
+      return;
+    }
     if (!validateForm()) return;
 
     setIsSubmitting(true);
@@ -361,7 +367,67 @@ function Recruitment() {
             animate={{ opacity: 1 }}
             className="max-w-7xl mx-auto px-6 py-12 md:py-24"
           >
-            {!isSubmitted ? (
+            {RECRUITMENT_CLOSED ? (
+              <div className="space-y-12 sm:space-y-16">
+                <header className="relative max-w-5xl md:max-w-4xl mx-auto px-2 sm:px-0">
+                  <div className="relative border-[3px] sm:border-[5px] border-black bg-white px-4 py-5 sm:px-6 sm:py-6 md:px-10 md:py-8 lg:px-12 lg:py-10 shadow-[8px_8px_0px_0px_#00629B] sm:shadow-[12px_12px_0px_0px_#00629B] rounded-md">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-5">
+                      <div className="flex items-center gap-3">
+                        <div className="bg-black text-white px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-[0.14em] rounded-sm">
+                          Portal_Closed
+                        </div>
+                        <div className="h-2 w-2 rounded-full bg-red-600" />
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-600 flex items-center gap-2">
+                        <CircuitBoard size={14} className="text-[#00629B]" />
+                        MANIT Bhopal · IEEE MSB · 2026 Intake
+                      </div>
+                    </div>
+
+                    <div className="grid gap-5 sm:gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+                      <div>
+                        <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-black uppercase leading-[1.1] tracking-[0.02em] md:tracking-[0.07em] space-y-1">
+                          <span className="block">IEEE MSB</span>
+                          <span className="block text-[#00629B]">Recruitment Portal</span>
+                          <span className="mt-1 inline-block bg-yellow-300 px-3 rounded-sm italic">
+                            First Year 2026
+                          </span>
+                        </h1>
+                      </div>
+
+                      <div className="mt-1 md:mt-0 border-l-4 border-black pl-3 sm:pl-4">
+                        <p className="text-[11px] sm:text-sm md:text-[15px] font-medium text-slate-700 leading-relaxed">
+                          The recruitment form has been closed. Applications are no longer being accepted.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+
+                <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
+                  <section className="bg-white border-[4px] sm:border-[5px] border-black p-4 sm:p-6 md:p-8 lg:p-10 shadow-[10px_10px_0px_0px_#00629B] rounded-2xl">
+                    <div className="flex items-start gap-3">
+                      <div className="shrink-0 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl border-[2px] sm:border-[3px] border-black bg-black text-white shadow-[4px_4px_0px_0px_#00629B] sm:shadow-[6px_6px_0px_0px_#00629B]">
+                        <Info className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-sm sm:text-base font-black uppercase tracking-[0.14em]">
+                          Applications_Closed
+                        </p>
+                        <p className="text-[12px] sm:text-sm font-medium text-slate-700 leading-relaxed">
+                          The recruitment form has been closed.
+                        </p>
+                        <p className="text-[11px] text-slate-500">
+                          If you missed the deadline, keep an eye on IEEE MSB announcements for the next intake.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <KnowMoreIEEE />
+                </div>
+              </div>
+            ) : !isSubmitted ? (
               <div className="space-y-12 sm:space-y-16">
                 {/* --- HEADER SECTION --- */}
                 <header className="relative max-w-5xl md:max-w-4xl mx-auto px-2 sm:px-0 group">
