@@ -469,6 +469,7 @@ const Team = () => {
                 img="/team/anjaliM.png"
                 name="Anjali Meena"
                 post="Aarambh Secretary"
+                objectPosition="center 4%"
               />
             </motion.div>
             <motion.div variants={item}>
@@ -483,6 +484,7 @@ const Team = () => {
                 img="/team/nikitaV.webp"
                 name="Nikita Verma"
                 post="General Affairs Secretary"
+                objectPosition="center 70%"
               />
             </motion.div>
             <motion.div variants={item}>
@@ -581,6 +583,7 @@ const Team = () => {
                 img="/team/sushantD.jpg"
                 name="Sushant Dwivedi"
                 post="Joint Secretary ECE"
+                objectPosition="center 70%"
               />
             </motion.div>
             <motion.div variants={item}>
