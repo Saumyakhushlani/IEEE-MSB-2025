@@ -87,29 +87,28 @@ return (
       </motion.div>
 
       {/* Inner Image */}
-      <motion.div
-        className={`absolute rounded-full overflow-hidden shadow-lg border-4 flex justify-center items-center ${
-          mode === "dark" ? "border-background" : "border-gray-200"
-        }`}
-        style={{
-          width: circleSize - borderWidth,
-          height: circleSize - borderWidth,
-          top: borderWidth / 2,
-          left: borderWidth / 2,
-        }}
-        whileHover={{ scale: 0.95 }}
-      >
-        <motion.img
-          src={img}
-          alt={`${name} - ${post}`}
-          className={`w-[340px] h-[340px] transition duration-500 rounded-full ${
-            isHovered
-              ? "brightness-125 contrast-110 saturate-125"
-              : "brightness-100"
-          }`}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        />
-      </motion.div>
+    <motion.div
+     className={`absolute rounded-full overflow-hidden shadow-lg border-4 flex justify-center items-center ${
+     mode === "dark" ? "border-background" : "border-gray-200"
+     }`}
+    style={{
+    width: circleSize - borderWidth,
+    height: circleSize - borderWidth,
+    top: borderWidth / 2,
+    left: borderWidth / 2,
+    }}
+    whileHover={{ scale: 0.95 }}
+    >
+  <motion.img
+    src={img}
+    alt={`${name} - ${post}`}
+    className={`w-full h-full object-cover transition duration-500 ${
+      isHovered ? "brightness-125" : ""
+    }`}
+    style={{ objectPosition: objectPosition || "center" }} 
+    transition={{ duration: 0.4, ease: "easeInOut" }}
+  />
+</motion.div>
     </motion.div>
 
     <motion.h1
