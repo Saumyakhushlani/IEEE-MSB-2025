@@ -469,6 +469,7 @@ const Team = () => {
                 img="/team/anjaliM.png"
                 name="Anjali Meena"
                 post="Aarambh Secretary"
+                objectPosition="center 30%"
               />
             </motion.div>
             <motion.div variants={item}>

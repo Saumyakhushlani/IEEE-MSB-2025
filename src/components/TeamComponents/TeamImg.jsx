@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { div } from "framer-motion/client";
 import {useSelector} from 'react-redux'
 
-const TeamImg = ({ img, name, post, membershipNumber }) => {
+// const TeamImg = ({ img, name, post, membershipNumber }) => {
+  const TeamImg = ({ img, name, post, membershipNumber, objectPosition = "center top" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
 const width = 330;
@@ -24,6 +25,7 @@ const textString = baseText.repeat(repetitions);
 const uniqueId = `textCircle-${Math.random().toString(36).substr(2, 9)}`;
 
 const mode = useSelector((state) => state.theme.mode);
+
 
 return (
   <div>
