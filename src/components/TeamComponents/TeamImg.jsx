@@ -7,9 +7,9 @@ import {useSelector} from 'react-redux'
   const TeamImg = ({ img, name, post, membershipNumber, objectPosition = "center top" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-const width = 330;
-const height = 330;
-const circleSize = Math.min(width, height);
+const circleSize = 260;
+const height = circleSize;
+const width = circleSize;
 const borderWidth = circleSize * 0.1;
 const centerX = circleSize / 2;
 const centerY = circleSize / 2;
@@ -28,7 +28,7 @@ const mode = useSelector((state) => state.theme.mode);
 
 
 return (
-  <div>
+  <div className="flex flex-col items-center justify-center w-full">
     <motion.div
       className={`relative cursor-pointer group mb-4 hover:border-transparent duration-125 rounded-full border-2 ${
         mode === "dark" ? "border-gray-600" : "border-gray-300"
@@ -113,7 +113,7 @@ return (
 
     <motion.h1
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 100, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="font-semibold text-[1.3rem] text-blue-500 text-center"
     >
@@ -121,7 +121,7 @@ return (
     </motion.h1>
     <motion.h1
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 100, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`text-[0.8rem] font-normal text-center ${
         mode === "dark" ? "text-white" : "text-black"
@@ -132,7 +132,7 @@ return (
     {membershipNumber && (
       <motion.p
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 100, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         className={`text-[0.7rem] font-medium text-center mt-1 ${
           mode === "dark" ? "text-gray-400" : "text-gray-600"
