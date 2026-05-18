@@ -65,15 +65,15 @@ const Samwad = () => {
     ];
 
     const images = [
-        "/Events/samwaad/Samwaad25_first.jpg",
-        "/Events/samwaad/Samwaad25_second.jpg",
-        "/Events/samwaad/Samwaad25_third.jpg",
-        "/Events/samwaad/Samwad25_fourth.jpg",
-        "/Events/samwaad/Samwad25_fifth.jpg",
-        "/Events/samwaad/Samwad25_sixth.jpg",
+        "/Events/samwaad/samwad4.webp",
+        "/Events/samwaad/samwad5.webp",
+        "/Events/samwaad/samwad1.webp",
+        "/Events/samwaad/samwad3.webp",
+        "/Events/samwaad/samwad6.webp",
         "/Events/samwaad/Samwad25_seventh.jpg",
+        "/Events/samwaad/Samwad25_sixth.jpg",
         "/Events/samwaad/Samwad25_eighth.jpg",
-        "/Events/samwaad/Samwad25_ninth.jpg",
+        "/Events/samwaad/samwad2.webp",
     ]
 
     const paragraphs = [
@@ -105,7 +105,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-gray-500 duration-300 rounded-xl"
-              src="/eventPage/samwad/eventpage-1.JPG"
+              src="/eventPage/samwad/samwad1.webp"
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -113,7 +113,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-blue-500 duration-300 rounded-xl relative sm:left-[1rem] lg:left-[5rem]"
-              src="/eventPage/samwad/eventpage-5.jpg"
+              src="/eventPage/samwad/samwad2.webp"
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[250px] lg:h-[450px] hover:border-4 hover:border-green-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[12rem] bottom-[3rem]"
-              src="/eventPage/samwad/eventpage-7.jpg"
+              src="/eventPage/samwad/samwad7.webp"
             />
           </div>
 
@@ -226,7 +226,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[180px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl"
-              src="/eventPage/samwad/eventpage-1.JPG"
+              src="/eventPage/samwad/samwad1.webp"
             />
           </div>
 
