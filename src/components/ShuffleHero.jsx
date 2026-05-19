@@ -62,27 +62,27 @@ const shuffle = (array) => {
 const squareData = [
   {
     id: 1,
-    src: "/Events/aarambh/Aarambh24_first.jpg",
+    src: "/Events/aarambh/Aarambh25_sixth.JPG",
   },
   {
     id: 2,
-    src: "/Events/samwaad/Samwaad25_first.jpg",
+    src: "/Events/samwaad/samwad11.webp",
   },
   {
     id: 3,
-    src: "/Events/sceecs/SCEECS24_1.JPG",
+    src: "/Events/sceecs/sceecs26_8.webp",
   },
   {
     id: 4,
-    src: "/Events/aarambh/Aarambh24_second.jpg",
+    src: "/Events/aarambh/Aarambh25_seventh.JPG",
   },
   {
     id: 5,
-    src: "/Events/samwaad/Samwaad25_second.jpg",
+    src: "/Events/samwaad/samwad1.webp",
   },
   {
     id: 6,
-    src: "/Events/sceecs/SCEECS24_2.JPG",
+    src: "/Events/sceecs/sceecs26_17.webp",
   },
 ];
 

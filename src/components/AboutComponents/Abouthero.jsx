@@ -8,7 +8,7 @@ const AboutHero = () => {
     <section
       className="relative h-[70vh] sm:h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white"
       style={{
-        backgroundImage: `url("/Events/sceecs/SCEECS24_1.JPG")`,
+        backgroundImage: `url("/Events/sceecs/sceecs26_23.webp")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

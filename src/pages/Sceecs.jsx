@@ -68,12 +68,12 @@ const Sceecs = () => {
     ]
 
     const images=[
-     "/Events/sceecs/SCEECS24_1.JPG",
+     "/Events/sceecs/sceecs26_22.webp",
         "/Events/sceecs/sceecs26_8.webp",
         "/Events/sceecs/sceecs26_13.webp",
         "/Events/sceecs/sceecs26_9.webp",
         "/Events/sceecs/sceecs26_10.webp",
-        "/Events/sceecs/SCEECS24_6.JPG",
+        "/Events/sceecs/sceecs26_21.webp",
         "/Events/sceecs/sceecs26_11.webp",
         "/Events/sceecs/sceecs26_6.webp",
         "/Events/sceecs/sceecs26_15.webp",   
@@ -201,7 +201,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-red-500 duration-300 rounded-xl relative sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/sceecs/eventpage-6.jpg"
+              src="/eventPage/sceecs/sceecs26_18.webp"
             />
 
             <motion.img
@@ -210,7 +210,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-yellow-500 duration-300 rounded-xl relative sm:left-[4rem] lg:left-[9rem] sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/sceecs/eventpage-4.JPG"
+              src="/eventPage/sceecs/sceecs26_19.webp"
             />
 
             <motion.img
@@ -297,7 +297,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px]hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative bottom-[6rem]"
-              src="/eventPage/sceecs/eventpage-6.jpg"
+              src="/eventPage/sceecs/sceecs26_18.webp"
             />
           </div>
         </div>

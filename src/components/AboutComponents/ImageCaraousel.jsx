@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import aboutWrapper_1 from '../../assets/Images/aboutWrapper_1.jpg';
-import aboutWrapper_2 from '../../assets/Images/aboutWrapper_2.jpg';
-import aboutWrapper_3 from '../../assets/Images/aboutWrapper_3.jpg';
+import aboutWrapper_1 from '../../assets/Images/aboutWrapper_6.webp';
+import aboutWrapper_2 from '../../assets/Images/aboutWrapper_4.webp';
+import aboutWrapper_3 from '../../assets/Images/aboutWrapper_5.webp';
 
 const images = [
   { src: aboutWrapper_1, alt: 'Mountain landscape at sunset' },

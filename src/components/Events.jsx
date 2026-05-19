@@ -8,21 +8,21 @@ const testimonials = [
       "A social outreach initiative bringing science and technology to under-resourced students, inspiring curiosity, creativity, and continuous learning at the grassroots level through engaging workshops and real-world experiments.",
     name: "AARAMBH",
     designation: " ",
-    src: "/Events/aarambh/Aarambh24_first.jpg",
+    src: "/Events/aarambh/Aarambh25_sixth.JPG",
   },
   {
     quote:
       "A vibrant WIE event celebrating women in STEM through interactive talks, debates, and a creative ideathon, empowering participants to connect, share experiences, and build confidence in technical leadership roles.",
     name: "SAMWAD",
     designation: " ",
-    src: "/Events/samwaad/Samwaad25_first.jpg",
+    src: "/Events/samwaad/samwad11.webp",
   },
   {
     quote:
       "IEEE-MSB’s flagship student conference fostering impactful research via paper presentations, technical workshops, and insightful expert lectures across ECE, EE, and CS domains, encouraging collaboration and professional development opportunities.",
     name: "SCEECS",
     designation: " ",
-    src: "/Events/sceecs/SCEECS24_1.JPG",
+    src: "/Events/sceecs/sceecs26_8.webp",
   },
 ];
 
