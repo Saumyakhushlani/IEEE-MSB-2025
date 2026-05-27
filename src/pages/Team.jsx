@@ -150,149 +150,169 @@ const Team = () => {
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 justify-items-center">
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/Ayush.jpg"
-                    name="Ayush Kumar"
+                    img="/team/vedant.jpg"
+                    name="Vedant Jaiswal"
                     post="Chairperson"
-                    membershipNumber="101641565"
+                    membershipNumber="101392018"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/RahulAgarwal.jpg"
-                    name="Rahul Agarwal"
+                    img="/team/Yashika.jpg"
+                    name="Yashika Lawani"
                     post="Vice Chair Admin"
-                    membershipNumber="101833521"
+                    membershipNumber="101217691"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/tanvi.jpg"
-                    name="Tanvi Sundarkar"
+                    img="/team/vvk.jpg"
+                    name="Vivek Kumar"
                     post="Vice Chair Finance"
-                    membershipNumber="101833618"
+                    membershipNumber="101295401"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/surbhi.jpg"
-                    name="Surabhi Sreejith"
+                    img="/team/Prachi Agarwal.jpg"
+                    name="Prachi Agarwal"
                     post="WIE Chair"
-                    membershipNumber="101833685"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/arunima.jpg"
-                    name="Arunima Pathak"
-                    post="Aarambh Coordinator, Head-Content"
-                    membershipNumber="101837200"
+                    img="/team/ARYAN.jpg"
+                    name="Aryan Saxena"
+                    post="Aarambh Coordinator"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/hemant.jpg"
-                    name="Hemant Singh Rajput"
+                    img="/team/priyanshi_khandelwal.jpg"
+                    name="Priyanshi Khandelwal"
                     post="Student's Convener"
-                    membershipNumber="101837609"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/prerna.jpeg"
-                    name="Prerna Chaurasiya"
+                    img="/team/Tanushree.jpg"
+                    name="Tanushree Dhote"
                     post="Event Coordinator"
-                    membershipNumber="101835115"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/nitin.jpg"
-                    name="Nitin Jangid"
+                    img="/team/PriyanshiRana.jpg"
+                    name="Priyanshi Rana"
                     post="Head-General Affairs"
-                    membershipNumber="101833591"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/dhanvi.jpg"
-                    name="Dhanvi Shah"
+                    img="/team/shivani.jpeg"
+                    name="Shivani Gupta"
                     post="Head-Management"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/priyansh.jpg"
-                    name="Priyansh Mathur"
-                    post="Head-Student Management & Welfare"
+                    img="/team/anshul.jpg"
+                    name="Anshul Sharma"
+                    post="Head-Student Engagement & Welfare"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/akash.jpg"
-                    name="Akash Anand"
+                    img="/team/amanmittal.jpg"
+                    name="Aman Mittal"
                     post="Head-Sponsorship & Marketing"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/prachi.jpg"
-                    name="Prachi Soni"
-                    post="Student Coordinator"
+                    img="/team/Deependra.jpg"
+                    name="Deependra Yadav"
+                    post="Head-PR & Promotions"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/Suryansh.jpg"
-                    name="Suryansh Sarathe"
+                    img="/team/jatin.jpg"
+                    name="Jatin Chandel"
                     post="Head-Web Developement"
-                    membershipNumber="101837872"
+                    membershipNumber="98765435"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/Abhishek.jpg"
-                    name="Abhishek Yadav"
+                    img="/team/Grv.jpg"
+                    name="Gaurav Barwal"
                     post="Head-Logistics and Operations"
                   />
                 </motion.div>
 
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <TeamImg
-                    img="/team/rishab.jpg"
-                    name="Rishabh Sonkar"
-                    post="Head-Pr & Publicity"
-                    membershipNumber="101878276"
+                    img="/team/naincy priya.jpg"
+                    name="Naincy Priya"
+                    post="Head-Media & Publicity"
                   />
                 </motion.div>
-                <div className="md:col-span-3 lg:col-span-3 xl:col-span-1 flex justify-center xl:block">
+
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Shristi .jpg"
+                    name="Shristi Saxena"
+                    post="Head-Content & Communication"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/vivek.jpg"
+                    name="Vivek Kumar More"
+                    post="Head-Video Editing & Photography"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Padmasri.JPG"
+                    name="Pallagani Padamsri"
+                    post="Technical Coordinator-CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/saurya.jpg"
+                    name="Saurya Singh"
+                    post="Technical Coordinator-ECE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Shivashish .jpg"
+                    name="Shivashish Chaurasiya"
+                    post="Technical Coordinator-EE"
+                  />
+                </motion.div>
+                <div className="xl:col-start-2 xl:col-span-2 xl:justify-self-center">
                   <motion.div variants={item} className="w-full max-w-[18rem]">
                     <TeamImg
-                      img="/team/nidhi.jpg"
-                      name="Nidhi Meshram"
-                      post="Head-Media & Communications"
-                    />
-                  </motion.div>
-                </div>
-                <div className="md:col-span-3 lg:col-span-3 xl:col-span-4 flex justify-center">
-                  <motion.div variants={item} className="w-full max-w-[18rem]">
-                    <TeamImg
-                      img="/team/aaditya.jpg"
-                      name="Aaditya Jain"
-                      post="Head-Video Editing & Photography"
-                      membershipNumber="101862726"
+                      img="/team/Soumya .jpg"
+                      name="Soumya Sridhi"
+                      post="Head-Membership Drive"
                     />
                   </motion.div>
                 </div>
@@ -312,133 +332,154 @@ const Team = () => {
               <div className="grid grid-cols-2 gap-x-2 gap-y-12 justify-items-center">
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/Ayush.jpg"
-                    name="Ayush Kumar"
+                    img="/team/vedant.jpg"
+                    name="Vedant Jaiswal"
                     post="Chairperson"
-                    membershipNumber="101641565"
+                    membershipNumber="101392018"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/RahulAgarwal.jpg"
-                    name="Rahul Agarwal"
+                    img="/team/Yashika.jpg"
+                    name="Yashika Lawani"
                     post="Vice Chair Admin"
-                    membershipNumber="101833521"
+                    membershipNumber="101217691"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/tanvi.jpg"
-                    name="Tanvi Sundarkar"
+                    img="/team/vvk.jpg"
+                    name="Vivek Kumar"
                     post="Vice Chair Finance"
-                    membershipNumber="101833618"
+                    membershipNumber="101295401"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/surbhi.jpg"
-                    name="Surabhi Sreejith"
+                    img="/team/Prachi Agarwal.jpg"
+                    name="Prachi Agarwal"
                     post="WIE Chair"
-                    membershipNumber="101833685"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/arunima.jpg"
-                    name="Arunima Pathak"
-                    post="Aarambh Coordinator, Head-Content"
-                    membershipNumber="101837200"
+                    img="/team/ARYAN.jpg"
+                    name="Aryan Saxena"
+                    post="Aarambh Coordinator"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/hemant.jpg"
-                    name="Hemant Singh Rajput"
+                    img="/team/priyanshi_khandelwal.jpg"
+                    name="Priyanshi Khandelwal"
                     post="Student's Convener"
-                    membershipNumber="101837609"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/prerna.jpeg"
-                    name="Prerna Chaurasiya"
+                    img="/team/Tanushree.jpg"
+                    name="Tanushree Dhote"
                     post="Event Coordinator"
-                    membershipNumber="101835115"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/nitin.jpg"
-                    name="Nitin Jangid"
+                    img="/team/PriyanshiRana.jpg"
+                    name="Priyanshi Rana"
                     post="Head-General Affairs"
-                    membershipNumber="101833591"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/dhanvi.jpg"
-                    name="Dhanvi Shah"
+                    img="/team/shivani.jpeg"
+                    name="Shivani Gupta"
                     post="Head-Management"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/priyansh.jpg"
-                    name="Priyansh Mathur"
-                    post="Head-Student Management & Welfare"
+                    img="/team/anshul.jpg"
+                    name="Anshul Sharma"
+                    post="Head-Student Engagement & Welfare"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/akash.jpg"
-                    name="Akash Anand"
+                    img="/team/amanmittal.jpg"
+                    name="Aman Mittal"
                     post="Head-Sponsorship & Marketing"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/prachi.jpg"
-                    name="Prachi Soni"
-                    post="Student Coordinator"
+                    img="/team/Deependra.jpg"
+                    name="Deependra Yadav"
+                    post="Head-PR & Promotions"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/Suryansh.jpg"
-                    name="Suryansh Sarathe"
+                    img="/team/jatin.jpg"
+                    name="Jatin Chandel"
                     post="Head-Web Developement"
-                    membershipNumber="101837872"
+                    membershipNumber="98765435"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/Abhishek.jpg"
-                    name="Abhishek Yadav"
+                    img="/team/Grv.jpg"
+                    name="Gaurav Barwal"
                     post="Head-Logistics and Operations"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/rishab.jpg"
-                    name="Rishabh Sonkar"
-                    post="Head-Pr & Publicity"
-                    membershipNumber="101878276"
+                    img="/team/naincy priya.jpg"
+                    name="Naincy Priya"
+                    post="Head-Media & Publicity"
                   />
                 </motion.div>
                 <motion.div variants={item} className="w-full max-w-[18rem]">
                   <MobileTeamImg
-                    img="/team/nidhi.jpg"
-                    name="Nidhi Meshram"
-                    post="Head-Media & Communications"
+                    img="/team/Shristi .jpg"
+                    name="Shristi Saxena"
+                    post="Head-Content & Communication"
                   />
                 </motion.div>
-                <div className="col-span-2 flex justify-center">
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/vivek.jpg"
+                    name="Vivek Kumar More"
+                    post="Head-Video Editing & Photography"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/Padmasri.JPG"
+                    name="Pallagani Padamsri"
+                    post="Technical Coordinator-CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/saurya.jpg"
+                    name="Saurya Singh"
+                    post="Technical Coordinator-ECE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/Shivashish .jpg"
+                    name="Shivashish Chaurasiya"
+                    post="Technical Coordinator-EE"
+                  />
+                </motion.div>
+                <div className="col-span-2">
                   <motion.div variants={item} className="w-full max-w-[18rem]">
                     <MobileTeamImg
-                      img="/team/aaditya.jpg"
-                      name="Aaditya Jain"
-                      post="Head-Video Editing & Photography"
-                      membershipNumber="101862726"
+                      img="/team/Soumya .jpg"
+                      name="Soumya Sridhi"
+                      post="Head-Membership Drive"
                     />
                   </motion.div>
                 </div>
@@ -460,6 +501,406 @@ const Team = () => {
         <section className="w-full">
           {/* Desktop grid */}
           <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="hidden md:block w-full"
+          >
+            <div className="w-full max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 justify-items-center">
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/saurabh.jpg"
+                    name="Saurabh Yadav"
+                    post="General Secretary"
+                    membershipNumber="101832648"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Ayush.jpg"
+                    name="Ayush Kumar"
+                    post="Finance Secretary"
+                    membershipNumber="101641565"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/dhanvi.jpg"
+                    name="Dhanvi Shah"
+                    post="WIE Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/arunima.jpg"
+                    name="Arunima Pathak"
+                    post="Aarambh Secretary"
+                    membershipNumber="101837200"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/RahulAgarwal.jpg"
+                    name="Rahul Agarwal"
+                    post="Event Secretary"
+                    membershipNumber="101833521"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/prerna.jpeg"
+                    name="Prerna Chaurasiya"
+                    post="General Affairs Secretary"
+                    membershipNumber="101835115"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/surbhi.jpg"
+                    name="Surbhi Sreejith"
+                    post="Management Secretary"
+                    membershipNumber="101833685"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/rishab.jpg"
+                    name="Rishabh Sonkar"
+                    post="Student Engagement and Welfare Secretary"
+                    membershipNumber="101878276"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/akash.jpg"
+                    name="Akash Anand"
+                    post="Sponsorship & Marketing Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/gouravM.jpg"
+                    name="Gourav Mishra"
+                    post="Sponsorship & Marketing Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/parth.jpg"
+                    name="Parth Arora"
+                    post="Pr & Promotion Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/nishant.jpg"
+                    name="Nishant Tiwari"
+                    post="Pr & Promotion Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/pratham.jpeg"
+                    name="Pratham Raghav"
+                    post="Logistics & Operations Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Abhishek.jpg"
+                    name="Abhishek Yadav"
+                    post="Logistics & Operations Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/hemant.jpg"
+                    name="Hemant Rajput"
+                    post="Media & Publicity Secretary Design Secretary"
+                    membershipNumber="101837609"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/akshita.jpeg"
+                    name="Akshita Sahu"
+                    post="Content & Communication Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/prachi.jpg"
+                    name="Prachi Soni"
+                    post="Technical Secretary CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/amanchoudhary.jpg"
+                    name="Aman Choudhary"
+                    post="Joint Secretary CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/nitin.jpg"
+                    name="Nitin Jangid"
+                    post="Technical Secretary ECE"
+                    membershipNumber="101833591"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/nidhi.jpg"
+                    name="Nidhi Meshram"
+                    post="Joint Secretary ECE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/jinisha.jpg"
+                    name="Jinisha Jain"
+                    post="Technical Secretary EE Joint Secretary EE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/priyansh.jpg"
+                    name="Priyansh Mathur"
+                    post="Membership Drive Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/Suryansh.jpg"
+                    name="Suryansh Sarathe"
+                    post="Web Developement Secretary"
+                    membershipNumber="101837872"
+                  />
+                </motion.div>
+
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <TeamImg
+                    img="/team/aaditya.jpg"
+                    name="Aaditya Jain"
+                    post="Photography & Video Editing Secretary"
+                    membershipNumber="101862726"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Mobile + Tablet grid */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="md:hidden w-full"
+          >
+            <div className="w-full max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-2 gap-x-2 gap-y-12 justify-items-center">
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/saurabh.jpg"
+                    name="Saurabh Yadav"
+                    post="General Secretary"
+                    membershipNumber="101832648"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/Ayush.jpg"
+                    name="Ayush Kumar"
+                    post="Finance Secretary"
+                    membershipNumber="101641565"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/dhanvi.jpg"
+                    name="Dhanvi Shah"
+                    post="WIE Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/arunima.jpg"
+                    name="Arunima Pathak"
+                    post="Aarambh Secretary"
+                    membershipNumber="101837200"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/RahulAgarwal.jpg"
+                    name="Rahul Agarwal"
+                    post="Event Secretary"
+                    membershipNumber="101833521"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/prerna.jpeg"
+                    name="Prerna Chaurasiya"
+                    post="General Affairs Secretary"
+                    membershipNumber="101835115"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/surbhi.jpg"
+                    name="Surbhi Sreejith"
+                    post="Management Secretary"
+                    membershipNumber="101833685"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/rishab.jpg"
+                    name="Rishabh Sonkar"
+                    post="Student Engagement and Welfare Secretary"
+                    membershipNumber="101878276"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/akash.jpg"
+                    name="Akash Anand"
+                    post="Sponsorship & Marketing Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/gouravM.jpg"
+                    name="Gourav Mishra"
+                    post="Sponsorship & Marketing Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/parth.jpg"
+                    name="Parth Arora"
+                    post="Pr & Promotion Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/nishant.jpg"
+                    name="Nishant Tiwari"
+                    post="Pr & Promotion Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/pratham.jpeg"
+                    name="Pratham Raghav"
+                    post="Logistics & Operations Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/Abhishek.jpg"
+                    name="Abhishek Yadav"
+                    post="Logistics & Operations Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/hemant.jpg"
+                    name="Hemant Rajput"
+                    post="Media & Publicity Secretary Design Secretary"
+                    membershipNumber="101837609"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/akshita.jpeg"
+                    name="Akshita Sahu"
+                    post="Content & Communication Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/prachi.jpg"
+                    name="Prachi Soni"
+                    post="Technical Secretary CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/amanchoudhary.jpg"
+                    name="Aman Choudhary"
+                    post="Joint Secretary CSE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/nitin.jpg"
+                    name="Nitin Jangid"
+                    post="Technical Secretary ECE"
+                    membershipNumber="101833591"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/nidhi.jpg"
+                    name="Nidhi Meshram"
+                    post="Joint Secretary ECE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/jinisha.jpg"
+                    name="Jinisha Jain"
+                    post="Technical Secretary EE Joint Secretary EE"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/priyansh.jpg"
+                    name="Priyansh Mathur"
+                    post="Membership Drive Secretary"
+                  />
+                </motion.div>
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/Suryansh.jpg"
+                    name="Suryansh Sarathe"
+                    post="Web Developement Secretary"
+                    membershipNumber="101837872"
+                  />
+                </motion.div>
+
+                <motion.div variants={item} className="w-full max-w-[18rem]">
+                  <MobileTeamImg
+                    img="/team/aaditya.jpg"
+                    name="Aaditya Jain"
+                    post="Photography & Video Editing Secretary"
+                    membershipNumber="101862726"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+      </motion.div>
+
+      {/* Pre-final year team
+      <motion.div className="mt-[5rem] mb-[4rem]">
+        <motion.h1
+          className={`text-center mb-8 ${mode === "dark" ? "text-white" : "text-black"} font-bold text-2xl sm:text-4xl md:text-5xl`}
+        >
+          Pre-Final <span className="text-blue-500">Year</span>
+        </motion.h1> */}
+
+      {/* All the images */}
+      {/* <section className="w-full"> */}
+      {/* Desktop grid */}
+      {/* <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -650,10 +1091,10 @@ const Team = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* Mobile + Tablet grid */}
-          <motion.div
+      {/* Mobile + Tablet grid */}
+      {/* <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -843,7 +1284,7 @@ const Team = () => {
             </div>
           </motion.div>
         </section>
-      </motion.div>
+      </motion.div> */}
 
       <Footer />
     </motion.div>
