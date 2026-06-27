@@ -10,7 +10,7 @@ const TeamHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/Events/sceecs/SCEECS24_8.JPG"
+          src="/Events/samwaad/team.JPG"
           alt="IEEE Team Background"
           className="w-full h-full object-cover opacity-90"
         />

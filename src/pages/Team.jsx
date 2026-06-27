@@ -65,6 +65,7 @@ const Team = () => {
                 img="/team/VijayBhaskarSemwal.jpg"
                 name="Dr. Vijay Bhaskar Semwal"
                 post="Faculty Co-Coordinator (CSE)"
+                membershipNumber="92809398"
               />
             </motion.div>
             <motion.div variants={item}>
@@ -106,6 +107,7 @@ const Team = () => {
                 img="/team/VijayBhaskarSemwal.jpg"
                 name="Dr. Vijay Bhaskar Semwal"
                 post="Faculty Co-Coordinator (CSE)"
+                membershipNumber="92809398"
               />
             </motion.div>
             <motion.div variants={item}>
