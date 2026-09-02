@@ -18,7 +18,7 @@ const Alumni = () => {
           post: "Chairperson",
           currentDesignation: "Intern Analyst Tester at FNZ",
           linkedin: "https://www.linkedin.com/in/vedant-jaiswal-380798265/",
-          image: "/Alumni/2026_batch/vedant.jpg",
+          image: "/Alumini/2026_batch/vedant.jpg",
         },
         {
           name: "Yashika Lawani",
@@ -26,7 +26,7 @@ const Alumni = () => {
           post: "Vice Chair Admin",
           currentDesignation: "BTSA at ZS",
           linkedin: "https://www.linkedin.com/in/yashika-lawani-861457191/",
-          image: "/Alumni/2026_batch/Yashika.jpg",
+          image: "/Alumini/2026_batch/Yashika.jpg",
         },
         {
           name: "Vivek Kumar",
@@ -34,7 +34,7 @@ const Alumni = () => {
           post: "Vice Chair Finance",
           currentDesignation: "N/A",
           linkedin: "N/A",
-          image: "/Alumni/2026_batch/vvk.jpg",
+          image: "/Alumini/2026_batch/vvk.jpg",
         },
         {
           name: "Prachi Agarwal",
@@ -42,7 +42,7 @@ const Alumni = () => {
           post: "WIE Chair",
           currentDesignation: "SDE at Amazon",
           linkedin: "https://www.linkedin.com/in/prachi-agarwal-158bbb24b/",
-          image: "/Alumni/2026_batch/Prachi Agarwal.jpg",
+          image: "/Alumini/2026_batch/Prachi A.png",
         },
         {
           name: "Aryan Saxena",
@@ -50,7 +50,7 @@ const Alumni = () => {
           post: "Aarambh Coordinator",
           currentDesignation: "N/A",
           linkedin: "https://www.linkedin.com/in/aryan-s-543643203/",
-          image: "/Alumni/2026_batch/ARYAN.jpg",
+          image: "/Alumini/2026_batch/ARYAN.jpg",
         },
         {
           name: "Priyanshi Khandelwal",
@@ -58,7 +58,7 @@ const Alumni = () => {
           post: "Student's Convener",
           currentDesignation: "SDE at Piramal",
           linkedin: "https://www.linkedin.com/in/priyanshi-khandelwal-b56380276/",
-          image: "/Alumni/2026_batch/priyanshi_khandelwal.jpg",
+          image: "/Alumini/2026_batch/priyanshi_khandelwal.jpg",
         },
         {
           name: "Tanushree Dhote",
@@ -66,7 +66,7 @@ const Alumni = () => {
           post: "Event Coordinator",
           currentDesignation: "SDE intern at UKG",
           linkedin: "https://www.linkedin.com/in/tanushreedhote06/",
-          image: "/Alumni/2026_batch/Tanushree.jpg",
+          image: "/Alumini/2026_batch/Tanushree.jpg",
         },
         {
           name: "Priyanshi Rana",
@@ -74,7 +74,7 @@ const Alumni = () => {
           post: "Head-General Affairs",
           currentDesignation: "N/A",
           linkedin: "https://www.linkedin.com/in/priyanshi-rana-37a872288/",
-          image: "/Alumni/2026_batch/PriyanshiRana.jpg",
+          image: "/Alumini/2026_batch/PriyanshiRana.jpg",
         },
         {
           name: "Shivani Gupta",
@@ -82,7 +82,7 @@ const Alumni = () => {
           post: "Head-Management",
           currentDesignation: "Associate Software Engineer at RxBenefits",
           linkedin: "https://www.linkedin.com/in/shivani-gupta-103524259/",
-          image: "/Alumni/2026_batch/shivani.jpeg",
+          image: "/Alumini/2026_batch/shivani.jpeg",
         },
         {
           name: "Anshul Sharma",
@@ -90,7 +90,7 @@ const Alumni = () => {
           post: "Head-Student Engagement & Welfare",
           currentDesignation: "SDE-1 at Cashfree payments",
           linkedin: "https://www.linkedin.com/in/anshul-sharma-917141253/",
-          image: "/Alumni/2026_batch/anshul.jpg",
+          image: "/Alumini/2026_batch/anshul.jpg",
         },
         {
           name: "Aman Mittal",
@@ -98,7 +98,7 @@ const Alumni = () => {
           post: "Head-Sponsorship & Marketing",
           currentDesignation: "SDE Intern at Finny",
           linkedin: "https://www.linkedin.com/in/aman-mittal-9a2809257/",
-          image: "/Alumni/2026_batch/amanmittal.jpg",
+          image: "/Alumini/2026_batch/amanmittal.jpg",
         },
         {
           name: "Deependra Yadav",
@@ -106,7 +106,7 @@ const Alumni = () => {
           post: "Head-PR & Promotions",
           currentDesignation: "Data Scientist Intern at Piramal Finance",
           linkedin: "https://www.linkedin.com/in/deependra-yadav-2519b6226/",
-          image: "/Alumni/2026_batch/Deependra.jpg",
+          image: "/Alumini/2026_batch/Deependra Y.png",
         },
         {
           name: "Jatin Chandel",
@@ -114,7 +114,7 @@ const Alumni = () => {
           post: "Head-Web Developement",
           currentDesignation: "SDE Intern at Rakuten Symphony",
           linkedin: "https://www.linkedin.com/in/jatin-chandel-703a7b1ab/",
-          image: "/Alumni/2026_batch/jatin.jpg",
+          image: "/Alumini/2026_batch/jatin.jpg",
         },
         {
           name: "Gaurav Barwal",
@@ -122,7 +122,7 @@ const Alumni = () => {
           post: "Head-Logistics and Operations",
           currentDesignation: "SDE at Piramal",
           linkedin: "https://www.linkedin.com/in/gaurav-barwal-988ba5288/",
-          image: "/Alumni/2026_batch/Grv.jpg",
+          image: "/Alumini/2026_batch/Grv.jpg",
         },
         {
           name: "Naincy Priya",
@@ -130,7 +130,7 @@ const Alumni = () => {
           post: "Head-Media & Publicity",
           currentDesignation: "Data Engineer at Juniper Green Energy",
           linkedin: "https://www.linkedin.com/in/naincy-priya-521390259/",
-          image: "/Alumni/2026_batch/naincy priya.jpg",
+          image: "/Alumini/2026_batch/Naincy.jpg",
         },
         {
           name: "Shristi Saxena",
@@ -138,7 +138,7 @@ const Alumni = () => {
           post: "Head-Content & Communication",
           currentDesignation: "Associate Engineer at Caterpillar",
           linkedin: "https://www.linkedin.com/in/shristi-saxena-13a420263/",
-          image: "/Alumni/2026_batch/Shristi .jpg",
+          image: "/Alumini/2026_batch/Shristi .jpg",
         },
         {
           name: "Vivek Kumar More",
@@ -146,7 +146,7 @@ const Alumni = () => {
           post: "Head-Video Editing & Photography",
           currentDesignation: "N/A",
           linkedin: "https://www.linkedin.com/in/vivek-kumar-more-53807b257/",
-          image: "/Alumni/2026_batch/vivek.jpg",
+          image: "/Alumini/2026_batch/vivek.jpg",
         },
         {
           name: "Pallagani Padmasri",
@@ -154,7 +154,7 @@ const Alumni = () => {
           post: "Technical Coordinator-CSE",
           currentDesignation: "SDE Intern at Rakuten Symphony",
           linkedin: "https://www.linkedin.com/in/pallagani-padmasri-71a1a7277/",
-          image: "/Alumni/2026_batch/Padmasri.JPG",
+          image: "/Alumini/2026_batch/Padmasri.JPG",
         },
         {
           name: "Saurya Singh",
@@ -162,7 +162,7 @@ const Alumni = () => {
           post: "Technical Coordinator-ECE",
           currentDesignation: "Software Engineer at Typeface",
           linkedin: "https://www.linkedin.com/in/saurya-singh-08747b26a/",
-          image: "/Alumni/2026_batch/saurya.jpg",
+          image: "/Alumini/2026_batch/saurya.jpg",
         },
         {
           name: "Shivashish Chaurasia",
@@ -170,7 +170,7 @@ const Alumni = () => {
           post: "Technical Coordinator-EE",
           currentDesignation: "N/A",
           linkedin: "https://www.linkedin.com/in/shivashish-chaurasia-17b315259/",
-          image: "/Alumni/2026_batch/Shivashish .jpg",
+          image: "/Alumini/2026_batch/Shivashish .jpg",
         },
         {
           name: "Soumya Sridhi",
@@ -178,7 +178,7 @@ const Alumni = () => {
           post: "Head-Membership Drive",
           currentDesignation: "BTSA at ZS associates",
           linkedin: "https://www.linkedin.com/in/soumya-sridhi-2a4477309/",
-          image: "/Alumni/2026_batch/Soumya .jpg",
+          image: "/Alumini/2026_batch/Soumya .jpg",
         },
       ],
     },
@@ -1820,7 +1820,7 @@ const Alumni = () => {
                         <div className="flex-shrink-0">
                           <div className="relative">
                             <img
-                              className="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+                              className="h-20 w-20 rounded-full object-cover object-top border-4 border-white dark:border-gray-900 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
                               src={alumni.image}
                               alt={alumni.name}
                               onError={(e) => {
