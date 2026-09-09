@@ -77,7 +77,7 @@ const Samwad = () => {
     ]
 
     const paragraphs = [
-        "Commemorating the role of women in the fields of sciences, technology, engineering and mathematics (STEM), IEEE celebrates the eternal legacy of the women’s role in engineering by organising an event called Samwad'23, a WIE (Women in Engineering) initiative. Our event aims to foster discussions, share experiences, and provide guidance to young women pursuing engineering careers.",
+        "Commemorating the role of women in the fields of sciences, technology, engineering and mathematics (STEM), IEEE celebrates the eternal legacy of the women’s role in engineering by organising an event called Samwad'25, a WIE (Women in Engineering) initiative. Our event aims to foster discussions, share experiences, and provide guidance to young women pursuing engineering careers.",
         "SAMWAD, an engaging and vibrant space that goes beyond the ordinary, where we joyfully acknowledge the accomplishments of women in technology, takes center stage in actively nurturing a culture that propels women in engineering (WIE). IEEE-MSB, the central India's largest technical professional organization, is dedicated to the advancement of technology for the betterment and to praise and promote the significant contribution of women.",
         "SAMWAD is like a dynamic collage, a gathering of young tech enthusiasts fervently exchanging ideas, especially focusing on solutions to empower women. It's more than just an event—it's where professionals share their invaluable experiences and dreams, coming together to shape the rising generation."
     ]

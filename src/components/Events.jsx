@@ -8,7 +8,7 @@ const testimonials = [
       "A social outreach initiative bringing science and technology to under-resourced students, inspiring curiosity, creativity, and continuous learning at the grassroots level through engaging workshops and real-world experiments.",
     name: "AARAMBH",
     designation: " ",
-    src: "/Events/aarambh/Aarambh25_sixth.JPG",
+    src: "/Events/aarambh/Aarambh25_eighth.jpg",
   },
   {
     quote:
