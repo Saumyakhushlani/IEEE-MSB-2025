@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import MobileAndTab from "./MobileAndTab";
-import msbLogo from "../../assets/Images/msb-logo.png";
 import { useEffect } from "react";
 import ThemeBtn from "../ThemeBtn";
 import {NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
+import { getCloudinaryImage } from "../../utils/cloudinary";
 
 const navItems = [
     { name: "Home", to: "/" },
@@ -77,7 +77,7 @@ export default function Navbar() {
                     className="flex items-center cursor-pointer"
                 >
                     <img
-                        src={msbLogo}
+                        src={getCloudinaryImage("HomePageImages/msb-logo")}
                         alt="Logo"
                         className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain"
                     />

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { getCloudinaryImage } from "../utils/cloudinary";
 
 const ShuffleHero = () => {
   const mode = useSelector((state) => state.theme.mode);
@@ -62,27 +63,27 @@ const shuffle = (array) => {
 const squareData = [
   {
     id: 1,
-    src: "/Events/aarambh/Aarambh25_eighth.jpg",
+    src: getCloudinaryImage("Events/Aarambh/Aarambh25_eighth"),
   },
   {
     id: 2,
-    src: "/Events/samwaad/samwad11.webp",
+    src: getCloudinaryImage("Events/Samwad/samwad11"),
   },
   {
     id: 3,
-    src: "/Events/sceecs/sceecs26_8.webp",
+    src: getCloudinaryImage("Events/SCEECS/sceecs26_8"),
   },
   {
     id: 4,
-    src: "/Events/aarambh/Aarambh25_seventh.JPG",
+    src: getCloudinaryImage("Events/Aarambh/Aarambh25_seventh"),
   },
   {
     id: 5,
-    src: "/Events/samwaad/samwad1.webp",
+    src: getCloudinaryImage("Events/Samwad/samwad1"),
   },
   {
     id: 6,
-    src: "/Events/sceecs/sceecs26_17.webp",
+    src: getCloudinaryImage("Events/SCEECS/sceecs26_17"),
   },
 ];
 

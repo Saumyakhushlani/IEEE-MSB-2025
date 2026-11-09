@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import { getCloudinaryImage } from "../../utils/cloudinary";
 
 const TeamHero = () => {
   const mode = useSelector((state) => state.theme.mode);
@@ -10,7 +11,7 @@ const TeamHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/Events/samwaad/samwad1.webp"
+          src={getCloudinaryImage("Events/Samwad/samwad1")}
           alt="IEEE Team Background"
           className="w-full h-full object-cover opacity-90"
         />

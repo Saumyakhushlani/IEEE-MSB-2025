@@ -5,12 +5,9 @@ import InfoCard from '../components/AboutComponents/InfoCard'
 import { ImageCarousel } from '../components/AboutComponents/ImageCaraousel'
 import Footer from '../components/Footer'
 import { useRef, useEffect, useState } from 'react'
-import infoCardLogo1 from '../assets/Images/infoCardLogo_1.png'
-import infoCardLogo2 from '../assets/Images/infoCardLogo_2.png'
-import infoCardLogo3 from '../assets/Images/infoCardLogo_3.png'
-import infoCardLogo4 from '../assets/Images/infoCardLogo_4.png'
 import {useSelector} from 'react-redux'
 import { i } from 'framer-motion/client'
+import { getCloudinaryImage } from '../utils/cloudinary'
 
 const About = () => {
     // For line animation when in view
@@ -21,22 +18,22 @@ const About = () => {
     // InfoCard data
     const data = [
         {
-            logo: infoCardLogo1,
+            logo: getCloudinaryImage("HomePageImages/infoCardLogo_1"),
             heading: "IEEE-MSB",
             text: "The Institute is successfully meeting the objective of producing skilled Technocrats of the highest quality who are able to take up the challenges of the industries and Research organizations of the country. MANIT offers various undergraduate and post graduate courses and research programs.",
         },
         {
-            logo: infoCardLogo2,
+            logo: getCloudinaryImage("HomePageImages/infoCardLogo_2"),
             heading: "IEEE MP - Subsection",
             text: "Formed under the Bombay Section, in the year 2001, under the able guidance of Dr. S. Kher of Indore, IEEE MP Subsection is being currently chaired by Dr. GS Tomar. Established with the aim of enhancing the nexus between professional members and student members within the state of Madhya Pradesh, IEEE MP Subsection is committed to the advancing technological innovation and excellence for the benefit of humanity.",
         },
         {
-            logo: infoCardLogo3,
+            logo: getCloudinaryImage("HomePageImages/infoCardLogo_3"),
             heading: "IEEE Region 10",
             text: "IEEE an institute of like-minded individuals, who harmoniously concord on the ideology of technological innovations and incessant growth in technology and sciences for betterment of humanity , is a worldwide umbrella organization Divided into 10 proliferating regions, IEEE encompasses the whole world.",
         },
         {
-            logo:infoCardLogo4,
+            logo: getCloudinaryImage("HomePageImages/infoCardLogo_4"),
             heading: "IEEE Bombay Section",
             text: "IEEE in our country is a proliferating labyrinthine network of members, colleges and universities, divided into regions, unified by a unanimous intention. India is fragmented into 11 IEEE sections which are further divided into subsections, for optimum functioning. Bombay section is one the most dynamic sections of our country and works efficaciously towards the constructive growth of its members.",
         },

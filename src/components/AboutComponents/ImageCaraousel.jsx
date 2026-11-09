@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import aboutWrapper_1 from '../../assets/Images/aboutWrapper_6.webp';
-import aboutWrapper_2 from '../../assets/Images/aboutWrapper_4.webp';
-import aboutWrapper_3 from '../../assets/Images/aboutWrapper_5.webp';
+import { getCloudinaryImage } from '../../utils/cloudinary';
 
 const images = [
-  { src: aboutWrapper_1, alt: 'Mountain landscape at sunset' },
-  { src: aboutWrapper_2, alt: 'Tropical beach paradise' },
-  { src: aboutWrapper_3, alt: 'Enchanted forest' }
+  { src: getCloudinaryImage("HomePageImages/aboutWrapper_1"), alt: 'Mountain landscape at sunset' },
+  { src: getCloudinaryImage("HomePageImages/aboutWrapper_2"), alt: 'Tropical beach paradise' },
+  { src: getCloudinaryImage("HomePageImages/aboutWrapper_3"), alt: 'Enchanted forest' }
 ];
 
 export const ImageCarousel = () => {

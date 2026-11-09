@@ -30,8 +30,6 @@ const Aarambh = () => {
   const tiles = Array.from({ length: gridCols * gridRows }, (_, i) => i);
   const tilesMobile = Array.from({ length: gridColsMobile * gridRowsMobile }, (_, i) => i);
 
-
-
   const aarambh25 = [
     getCloudinaryImage("Events/Aarambh/Aarambh25_first"),
     getCloudinaryImage("Events/Aarambh/Aarambh25_second"),

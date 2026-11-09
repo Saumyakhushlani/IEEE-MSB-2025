@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import { getCloudinaryImage } from "../../utils/cloudinary";
 
 const AboutHero = () => {
   const mode = useSelector((state) => state.theme.mode);
-  
   return (
     <section
       className="relative h-[70vh] sm:h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white"
       style={{
-        backgroundImage: `url("/Events/sceecs/sceecs26_23.webp")`,
+        backgroundImage: `url(${getCloudinaryImage("Events/SCEECS/sceecs26_23")})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

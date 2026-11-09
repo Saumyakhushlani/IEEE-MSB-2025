@@ -25,6 +25,7 @@ import Alumni from "./components/Alumni";
 import { useState } from "react";
 import {useSelector} from 'react-redux'
 import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
+import { getCloudinaryVideo } from "./utils/cloudinary";
 
 
 
@@ -164,7 +165,7 @@ return (
           <div className={`relative rounded-2xl overflow-hidden shadow-xl ${mode === 'dark' ? 'bg-[#060507]' : 'bg-white'}`}>
             <video
               ref={videoRef}
-              src={recapVideo}
+              src={getCloudinaryVideo("HomePageVideos/recap-2025")}
               muted={isMuted}
               loop
               playsInline
