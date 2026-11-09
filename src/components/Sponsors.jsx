@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import { getCloudinaryImage } from "../utils/cloudinary";
 
 const sponsors = [
-  { id: 1, src: "/sponsors/kadam.jpg", alt: "Kadam" },
+  { id: 1, src: getCloudinaryImage("Sponsors/kadam"), alt: "Kadam" },
 
-  { id: 7, src: "/sponsors/ieee-jobsite.png", alt: "IEEE Job Site" },
-  { id: 3, src: "/sponsors/ieee-spectrum.png", alt: "IEEE Spectrum" },
-  { id: 4, src: "/sponsors/ieee.png", alt: "IEEE" },
-  { id: 5, src: "/sponsors/ieee-tv.png", alt: "IEEE TV" },
-  { id: 6, src: "/sponsors/ieee-xplore.png", alt: "IEEE Xplore" },
+  { id: 7, src: getCloudinaryImage("Sponsors/ieee-jobsite"), alt: "IEEE Job Site" },
+  { id: 3, src: getCloudinaryImage("Sponsors/ieee-spectrum"), alt: "IEEE Spectrum" },
+  { id: 4, src: getCloudinaryImage("Sponsors/ieee"), alt: "IEEE" },
+  { id: 5, src: getCloudinaryImage("Sponsors/ieee-tv"), alt: "IEEE TV" },
+  { id: 6, src: getCloudinaryImage("Sponsors/ieee-xplore"), alt: "IEEE Xplore" },
 
-  { id: 2, src: "/sponsors/ieee-region10.png", alt: "IEEE Region 10" },
-  { id: 8, src: "/sponsors/ieee-standards.png", alt: "IEEE Standards Association" },
-  { id: 9, src: "/sponsors/ieee-tech-navigator.png", alt: "IEEE Technology Navigator" },
-  { id: 10, src: "/sponsors/coding-ninjas.png", alt: "Coding Ninjas" },
-  { id: 11, src: "/sponsors/hitbullseye.png", alt: "Hitbullseye" },
-  { id: 12, src: "/sponsors/ed-times.png", alt: "ED Times" },
-  { id: 13, src: "/sponsors/ibuddy2.png", alt: "Interview Buddy" },
-  { id: 14, src: "/sponsors/balsamiq2.png", alt: "Balsamiq" },
-  { id: 15, src: "/sponsors/RagaAI.png", alt: "RagaAI" },
-  { id: 16, src: "/sponsors/coding-thinker-logo.png", alt: "Coding-thinker" },
+  { id: 2, src: getCloudinaryImage("Sponsors/ieee-region10"), alt: "IEEE Region 10" },
+  { id: 8, src: getCloudinaryImage("Sponsors/ieee-standards"), alt: "IEEE Standards Association" },
+  { id: 9, src: getCloudinaryImage("Sponsors/ieee-tech-navigator"), alt: "IEEE Technology Navigator" },
+  { id: 10, src: getCloudinaryImage("Sponsors/coding-ninjas"), alt: "Coding Ninjas" },
+  { id: 11, src: getCloudinaryImage("Sponsors/hitbullseye"), alt: "Hitbullseye" },
+  { id: 12, src: getCloudinaryImage("Sponsors/ed-times"), alt: "ED Times" },
+  { id: 13, src: getCloudinaryImage("Sponsors/ibuddy2"), alt: "Interview Buddy" },
+  { id: 14, src: getCloudinaryImage("Sponsors/balsamiq2"), alt: "Balsamiq" },
+  { id: 15, src: getCloudinaryImage("Sponsors/RagaAI"), alt: "RagaAI" },
+  { id: 16, src: getCloudinaryImage("Sponsors/coding-thinker-logo"), alt: "Coding-thinker" },
 ];
 
 const Sponsors = () => {

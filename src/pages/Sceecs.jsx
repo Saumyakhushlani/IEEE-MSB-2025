@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Lottie from 'lottie-react'
 import sceecsOne from '../../Sceecs-1.json'
 import sceecsTwo from '../../Sceecs-2.json'
+import { getCloudinaryImage } from "../utils/cloudinary";
 
 const Sceecs = () => {
 
@@ -40,43 +41,43 @@ const Sceecs = () => {
 
     // Dummy speaker images from Unsplash
     const speakerImages = [
-        "/Events/sceecs/SCEECS24_1.JPG",
-        "/Events/sceecs/SCEECS24_2.JPG",
-        "/Events/sceecs/SCEECS24_3.JPG",
-        "/Events/sceecs/SCEECS24_4.JPG",
-        "/Events/sceecs/SCEECS24_5.JPG",
-        "/Events/sceecs/SCEECS24_6.JPG",
-        "/Events/sceecs/SCEECS24_7.JPG",
-        "/Events/sceecs/SCEECS24_8.JPG",
-        "/Events/sceecs/SCEECS24_9.JPG",
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_1"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_2"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_3"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_4"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_5"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_6"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_7"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_8"),
+        getCloudinaryImage("Event Page/SCEECS/SCEECS24_9"),
     ];
 
     const pastSpeakers=[
-        {id:1,name:'Kamran Ali',designation:'Sr. Engineering Manager | Atlassian',src:'/kamran_ali.jpeg'},
-        {id:2,name:'Sunchit Dudeja',designation:'SDE | Adobe',src:'/sanchit_dudeja.jpeg'},
-        {id:3,name:'Love Babbar',designation:'Founder of Codehelp',src:'/love_babbar.jpg'},
-        {id:4,name:'Lakshya Kumar',designation:'Instructor at Codehelp',src:'/lakshya_kumar.jpeg'},
-        {id:5,name:'Kshitij Kumar',designation:'Chief Data Officer at OneFootball',src:'/kshitiz_kumar.png'},
-        {id:6,name:'Sandeep Jain',designation:'Founder and CEO - Geeksforgeeks',src:'/Sandeep_jain.jpg'},
-        {id:7,name:'Pushyamitra Bhargav',designation:'Additional Advocate General, Indore Bench (MP Govt)',src:'/pushyamitra.jpg'},
-        {id:8,name:'Subhash Khare',designation:'Vice President of Wipro',src:'Subhash_khare.jpg'},
-        {id:9,name:'Sunil K. Prasad',designation:'Chief Technology Officer at Leidos',src:'/Sunil_prasad.jpg'},
-        {id:10,name:'Tomy Sebastian',designation:'Director, Motor Drive Systems at Halla Mechatronics',src:'/tomy.jpg'},
-        {id:11,name:'Abhas Mitra',designation:'Astrophysicist',src:'/Abhas_mitra.jpg'},
-        {id:12,name:'Anima Patil-Sabale',designation:'Scientist-Astronaut',src:'/Anima_patil.jpg'},
+        {id:1,name:'Kamran Ali',designation:'Sr. Engineering Manager | Atlassian',src:getCloudinaryImage("Past Speakers/kamran_ali")},
+        {id:2,name:'Sunchit Dudeja',designation:'SDE | Adobe',src:getCloudinaryImage("Past Speakers/sanchit_dudeja")},
+        {id:3,name:'Love Babbar',designation:'Founder of Codehelp',src:getCloudinaryImage("Past Speakers/love_babbar")},
+        {id:4,name:'Lakshya Kumar',designation:'Instructor at Codehelp',src:getCloudinaryImage("Past Speakers/lakshya_kumar")},
+        {id:5,name:'Kshitij Kumar',designation:'Chief Data Officer at OneFootball',src:getCloudinaryImage("Past Speakers/kshitiz_kumar")},
+        {id:6,name:'Sandeep Jain',designation:'Founder and CEO - Geeksforgeeks',src:getCloudinaryImage("Past Speakers/Sandeep_jain")},
+        {id:7,name:'Pushyamitra Bhargav',designation:'Additional Advocate General, Indore Bench (MP Govt)',src:getCloudinaryImage("Past Speakers/pushyamitra")},
+        {id:8,name:'Subhash Khare',designation:'Vice President of Wipro',src:getCloudinaryImage("Past Speakers/Subhash_khare")},
+        {id:9,name:'Sunil K. Prasad',designation:'Chief Technology Officer at Leidos',src:getCloudinaryImage("Past Speakers/Sunil_prasad")},
+        {id:10,name:'Tomy Sebastian',designation:'Director, Motor Drive Systems at Halla Mechatronics',src:getCloudinaryImage("Past Speakers/tomy")},
+        {id:11,name:'Abhas Mitra',designation:'Astrophysicist',src:getCloudinaryImage("Past Speakers/Abhas_mitra")},
+        {id:12,name:'Anima Patil-Sabale',designation:'Scientist-Astronaut',src:getCloudinaryImage("Past Speakers/Anima_patil")},
         
     ]
 
     const images=[
-     "/Events/sceecs/sceecs26_22.webp",
-        "/Events/sceecs/sceecs26_8.webp",
-        "/Events/sceecs/sceecs26_13.webp",
-        "/Events/sceecs/sceecs26_9.webp",
-        "/Events/sceecs/sceecs26_10.webp",
-        "/Events/sceecs/sceecs26_21.webp",
-        "/Events/sceecs/sceecs26_11.webp",
-        "/Events/sceecs/sceecs26_6.webp",
-        "/Events/sceecs/sceecs26_15.webp",   
+     getCloudinaryImage("Event Page/SCEECS/sceecs26_22"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_8"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_13"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_9"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_10"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_21"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_11"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_6"),
+        getCloudinaryImage("Event Page/SCEECS/sceecs26_15"),   
     ]
 
     const pastProceedings=[
@@ -119,7 +120,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-gray-500 duration-300 rounded-xl"
-              src="/eventPage/sceecs/sceecs26_5.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_5")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -127,7 +128,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-blue-500 duration-300 rounded-xl relative sm:left-[0.6rem] lg:left-[5rem]"
-              src="/eventPage/sceecs/sceecs26_11.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_11")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -135,7 +136,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative sm:left-[1.5rem] lg:left-[10rem]"
-              src="/eventPage/sceecs/sceecs26_14.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_14")}
             />
           </div>
 
@@ -190,7 +191,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[250px] lg:h-[450px] hover:border-4 hover:border-green-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[11rem] bottom-[3rem]"
-              src="/eventPage/sceecs/sceecs26_3.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_3")}
             />
           </div>
 
@@ -201,7 +202,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-red-500 duration-300 rounded-xl relative sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/sceecs/sceecs26_18.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_18")}
             />
 
             <motion.img
@@ -210,7 +211,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-yellow-500 duration-300 rounded-xl relative sm:left-[4rem] lg:left-[9rem] sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/sceecs/sceecs26_19.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_19")}
             />
 
             <motion.img
@@ -219,7 +220,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[350px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl relative sm:left-[9rem] lg:left-[18rem] sm:bottom-[17rem] lg:bottom-[6rem]"
-              src="/eventPage/sceecs/sceecs26_10.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_10")}
             />
           </div>
         </div>
@@ -240,7 +241,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[180px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl"
-              src="/eventPage/sceecs/sceecs26_5.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_5")}
             />
           </div>
 
@@ -297,7 +298,7 @@ const Sceecs = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px]hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative bottom-[6rem]"
-              src="/eventPage/sceecs/sceecs26_18.webp"
+              src={getCloudinaryImage("Event Page/SCEECS/sceecs26_18")}
             />
           </div>
         </div>

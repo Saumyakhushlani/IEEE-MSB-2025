@@ -1,6 +1,7 @@
 import React from "react";
 import CircularTestimonials from "./Circular-testimonial";
 import {useSelector} from 'react-redux'
+import { getCloudinaryImage } from "../utils/cloudinary";
 
 const testimonials = [
   {
@@ -8,21 +9,21 @@ const testimonials = [
       "A social outreach initiative bringing science and technology to under-resourced students, inspiring curiosity, creativity, and continuous learning at the grassroots level through engaging workshops and real-world experiments.",
     name: "AARAMBH",
     designation: " ",
-    src: "/Events/aarambh/Aarambh25_eighth.jpg",
+    src: getCloudinaryImage("Events/Aarambh/Aarambh25_eighth"),
   },
   {
     quote:
       "A vibrant WIE event celebrating women in STEM through interactive talks, debates, and a creative ideathon, empowering participants to connect, share experiences, and build confidence in technical leadership roles.",
     name: "SAMWAD",
     designation: " ",
-    src: "/Events/samwaad/samwad11.webp",
+    src: getCloudinaryImage("Events/Samwad/samwad11"),
   },
   {
     quote:
       "IEEE-MSB’s flagship student conference fostering impactful research via paper presentations, technical workshops, and insightful expert lectures across ECE, EE, and CS domains, encouraging collaboration and professional development opportunities.",
     name: "SCEECS",
     designation: " ",
-    src: "/Events/sceecs/sceecs26_8.webp",
+    src: getCloudinaryImage("Events/SCEECS/sceecs26_8"),
   },
 ];
 

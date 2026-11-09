@@ -6,6 +6,13 @@ import { useSelector } from 'react-redux'
 import Lottie from 'lottie-react'
 import aarambhOne from '../../Aarambh-1.json'
 import aarambhTwo from '../../Aarambh-2.json'
+import { getCloudinaryImage } from "../utils/cloudinary";
+
+const getCloudinaryVideo = (publicId) =>
+  `https://res.cloudinary.com/dkjiu9edq/video/upload/${publicId}`;
+
+const getCloudinaryPdf = (publicId) =>
+  `https://res.cloudinary.com/dkjiu9edq/image/upload/${publicId}.pdf`;
 
 
 const Aarambh = () => {
@@ -26,16 +33,16 @@ const Aarambh = () => {
 
 
   const aarambh25 = [
-    "/Events/aarambh/Aarambh25_first.JPG",
-    "/Events/aarambh/Aarambh25_second.JPG",
-    "/Events/aarambh/Aarambh25_third.JPG",
-    "/Events/aarambh/Aarambh25_fourth.JPG",
-    "/Events/aarambh/Aarambh25_fifth.JPG",
-    "/Events/aarambh/Aarambh25_sixth.JPG",
-    "/Events/aarambh/Aarambh25_seventh.JPG",
-    "/Events/aarambh/Aarambh25_eighth.jpg",
-    "/Events/aarambh/Aarambh25_ninth.JPG",
-    "/Events/aarambh/Aarambh25_tenth.JPG",
+    getCloudinaryImage("Events/Aarambh/Aarambh25_first"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_second"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_third"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_fourth"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_fifth"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_sixth"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_seventh"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_eighth"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_ninth"),
+    getCloudinaryImage("Events/Aarambh/Aarambh25_tenth"),
   ]
 
   const paragraphs = [
@@ -68,7 +75,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-gray-500 duration-300 rounded-xl"
-              src="/eventPage/aarambh/eventpage-1.JPG"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-1")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -76,7 +83,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-blue-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[9rem]"
-              src="/eventPage/aarambh/eventpage-7.jpg"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-7")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -84,7 +91,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative sm:left-[5rem] lg:left-[15rem]"
-              src="/eventPage/aarambh/eventpage-2.JPG"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-2")}
             />
           </div>
 
@@ -139,7 +146,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[250px] lg:h-[450px] hover:border-4 hover:border-green-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[12rem] bottom-[3rem]"
-              src="/eventPage/aarambh/eventpage-6.jpg"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-6")}
             />
           </div>
 
@@ -150,7 +157,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-red-500 duration-300 rounded-xl relative sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/aarambh/eventpage-3.JPG"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-3")}
             />
 
             <motion.img
@@ -159,7 +166,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-yellow-500 duration-300 rounded-xl relative sm:left-[4rem] lg:left-[12rem] sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/aarambh/eventpage-4.jpg"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-4")}
             />
 
             <motion.img
@@ -168,7 +175,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[350px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl relative sm:left-[9rem] lg:left-[22rem] sm:bottom-[14rem] lg:bottom-[6rem]"
-              src="/eventPage/aarambh/eventpage-5.jpg"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-5")}
             />
           </div>
         </div>
@@ -189,7 +196,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[180px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl"
-              src="/eventPage/aarambh/eventpage-1.JPG"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-1")}
             />
           </div>
 
@@ -246,7 +253,7 @@ const Aarambh = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px]hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative bottom-[6rem]"
-              src="/eventPage/aarambh/eventpage-3.JPG"
+              src={getCloudinaryImage("Event Page/Aarambh/eventpage-3")}
             />
           </div>
         </div>
@@ -323,7 +330,7 @@ const Aarambh = () => {
                 Government Sardar Patel High School
               </h3>
               <a
-                href="/pdfs/Sardar_patel_new.pdf"
+                href={getCloudinaryPdf("PDFs/Sardar_patel_new")}
                 download
                 className={`text-[13px] sm:text-lg font-semibold transition-colors ${theme === "light"
                   ? "text-blue-600 hover:text-blue-800"
@@ -343,7 +350,7 @@ const Aarambh = () => {
                 Government Higher Secondary School
               </h3>
               <a
-                href="/pdfs/hss_new.pdf"
+                href={getCloudinaryPdf("PDFs/hss_new")}
                 download
                 className={`text-[13px] sm:text-lg font-semibold transition-colors ${theme === "light"
                   ? "text-blue-600 hover:text-blue-800"
@@ -363,33 +370,33 @@ const Aarambh = () => {
             id: 1,
             title: "Aarambh'25",
             videoUrl:
-              "/vids/aarambh1.mp4",
+              getCloudinaryVideo("Vids/aarambh1"),
             thumbnailUrl:
-              "/vids/aarambh1_thumbnail.png",
+              getCloudinaryImage("Vids/aarambh1_thumbnail"),
           },
           {
             id: 2,
             title: "Aarambh'25",
             videoUrl:
-              "/vids/aarambh2.mp4",
+              getCloudinaryVideo("Vids/aarambh2"),
             thumbnailUrl:
-              "/vids/aarambh2_thumbnail.png",
+              getCloudinaryImage("Vids/aarambh2_thumbnail"),
           },
           {
             id: 3,
             title: "Aarambh'25",
             videoUrl:
-              "/vids/aarambh3.mp4",
+              getCloudinaryVideo("Vids/aarambh3"),
             thumbnailUrl:
-              "/vids/aarambh3_thumbnail.png",
+              getCloudinaryImage("Vids/aarambh3_thumbnail"),
           },
           {
             id: 4,
             title: "Aarambh'25",
             videoUrl:
-              "/vids/aarambh4.mp4",
+              getCloudinaryVideo("Vids/aarambh4"),
             thumbnailUrl:
-              "/vids/aarambh4_thumbnail.png",
+              getCloudinaryImage("Vids/aarambh4_thumbnail"),
           },
         ]} />
 

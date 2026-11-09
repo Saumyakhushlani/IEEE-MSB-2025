@@ -8,6 +8,10 @@ import { div } from "framer-motion/client";
 import Lottie from 'lottie-react'
 import samwadOne from '../../Samwad-1.json';
 import samwadTwo from '../../Samwad-2.json'
+import { getCloudinaryImage } from "../utils/cloudinary";
+
+const getCloudinaryVideo = (publicId) =>
+  `https://res.cloudinary.com/dkjiu9edq/video/upload/${publicId}`;
 
 const Samwad = () => {
 
@@ -40,40 +44,40 @@ const Samwad = () => {
     };
 
     const pastSpeakers=[
-        {id:1,name:'Mr Raj Vikramaditya',designation:'Founder, takeUforward',src:'/Striver.jpg'},
-        {id:2,name:'Mr Sanjeev Somasundaram',designation:'Director, Talent Acquisition at Google',src:'/Sanjeev Somasundaram.jpeg'},
-        {id:3,name:'Ms.Neha Agrawal',designation:'Founder of Mathematically Inclined',src:'/Neha Agrawal.jpg'},
-        {id:4,name:'Ms.Preeti Saran',designation:'Indian Foreign Service cadre',src:'/Preeti Saran.jpg'},
-        {id:5,name:'Ms.Jagrati Awasthi',designation:'AIR-2 UPSC CSE 2020',src:'/Jagrati Awasthi.jpg'},
-        {id:6,name:'Rania Lampou',designation:'STEM instructor at The Greek Astronomy',src:'/Rania Lampou.jpg'},
-        {id:7,name:'Bhakti Sharma',designation:'Sarpanch and Motivational Speaker',src:'/Bhakti Sharma.jpg'},
-        {id:8,name:'Suneha Gadpande',designation:'Master mariner',src:'/Suneha Gadpande.jpg'},
-        {id:9,name:'Prof. Anandi Giridharan',designation:'Principal Research Scientist',src:'/Anandi Giridharan.jpg'},
+        {id:1,name:'Mr Raj Vikramaditya',designation:'Founder, takeUforward',src:getCloudinaryImage("Past Speakers/Striver")},
+        {id:2,name:'Mr Sanjeev Somasundaram',designation:'Director, Talent Acquisition at Google',src:getCloudinaryImage("Past Speakers/Sanjeev_Somasundaram")},
+        {id:3,name:'Ms.Neha Agrawal',designation:'Founder of Mathematically Inclined',src:getCloudinaryImage("Past Speakers/Neha_Agrawal")},
+        {id:4,name:'Ms.Preeti Saran',designation:'Indian Foreign Service cadre',src:getCloudinaryImage("Past Speakers/Preeti_Saran")},
+        {id:5,name:'Ms.Jagrati Awasthi',designation:'AIR-2 UPSC CSE 2020',src:getCloudinaryImage("Past Speakers/Jagrati_Awasthi")},
+        {id:6,name:'Rania Lampou',designation:'STEM instructor at The Greek Astronomy',src:getCloudinaryImage("Past Speakers/Rania_Lampou")},
+        {id:7,name:'Bhakti Sharma',designation:'Sarpanch and Motivational Speaker',src:getCloudinaryImage("Past Speakers/Bhakti_Sharma")},
+        {id:8,name:'Suneha Gadpande',designation:'Master mariner',src:getCloudinaryImage("Past Speakers/Suneha_Gadpande")},
+        {id:9,name:'Prof. Anandi Giridharan',designation:'Principal Research Scientist',src:getCloudinaryImage("Past Speakers/Anandi_Giridharan")},
     ]
 
     // Dummy speaker images from Unsplash
     const speakerImages = [
-        "/Events/samwaad/Samwaad25_first.jpg",
-        "/Events/samwaad/Samwaad25_second.jpg",
-        "/Events/samwaad/Samwaad25_third.jpg",
-        "/Events/samwaad/Samwad25_fourth.jpg",
-        "/Events/samwaad/Samwad25_fifth.jpg",
-        "/Events/samwaad/Samwad25_sixth.jpg",
-        "/Events/samwaad/Samwad25_seventh.jpg",
-        "/Events/samwaad/Samwad25_eighth.jpg",
-        "/Events/samwaad/Samwad25_ninth.jpg",
+        getCloudinaryImage("Event Page/Samwad/Samwaad25_first"),
+        getCloudinaryImage("Event Page/Samwad/Samwaad25_second"),
+        getCloudinaryImage("Event Page/Samwad/Samwaad25_third"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_fourth"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_fifth"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_sixth"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_seventh"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_eighth"),
+        getCloudinaryImage("Event Page/Samwad/Samwad25_ninth"),
     ];
 
     const images = [
-        "/Events/samwaad/samwad4.webp",
-        "/Events/samwaad/samwad5.webp",
-        "/Events/samwaad/samwad1.webp",
-        "/Events/samwaad/samwad9.webp",
-        "/Events/samwaad/samwad13.webp",
-        "/Events/samwaad/samwad8.webp",
-        "/Events/samwaad/samwad12.webp",
-        "/Events/samwaad/samwad16.webp",
-        "/Events/samwaad/samwad2.webp",
+        getCloudinaryImage("Event Page/Samwad/samwad4"),
+        getCloudinaryImage("Event Page/Samwad/samwad5"),
+        getCloudinaryImage("Event Page/Samwad/samwad1"),
+        getCloudinaryImage("Event Page/Samwad/samwad9"),
+        getCloudinaryImage("Event Page/Samwad/samwad13"),
+        getCloudinaryImage("Event Page/Samwad/samwad8"),
+        getCloudinaryImage("Event Page/Samwad/samwad12"),
+        getCloudinaryImage("Event Page/Samwad/samwad16"),
+        getCloudinaryImage("Event Page/Samwad/samwad2"),
     ]
 
     const paragraphs = [
@@ -105,7 +109,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-gray-500 duration-300 rounded-xl"
-              src="/eventPage/samwad/samwad1.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad1")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -113,7 +117,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-blue-500 duration-300 rounded-xl relative sm:left-[1rem] lg:left-[5rem]"
-              src="/eventPage/samwad/samwad2.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad2")}
             />
             <motion.img
               initial={{ opacity: 0, y: 20 }}
@@ -121,7 +125,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[145px] lg:h-[300px] hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[10rem]"
-              src="/eventPage/samwad/samwad11.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad11")}
             />
           </div>
 
@@ -176,7 +180,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[250px] lg:h-[450px] hover:border-4 hover:border-green-500 duration-300 rounded-xl relative sm:left-[2rem] lg:left-[12rem] bottom-[3rem]"
-              src="/eventPage/samwad/samwad7.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad7")}
             />
           </div>
 
@@ -187,7 +191,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-red-500 duration-300 rounded-xl relative sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/samwad/samwad15.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad15")}
             />
 
             <motion.img
@@ -196,7 +200,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[300px] hover:border-4 hover:border-yellow-500 duration-300 rounded-xl relative sm:left-[4rem] lg:left-[12rem] sm:bottom-[12rem] lg:bottom-[6rem]"
-              src="/eventPage/samwad/samwad9.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad9")}
             />
 
             <motion.img
@@ -205,7 +209,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px] lg:h-[350px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl relative sm:left-[9rem] lg:left-[22rem] sm:bottom-[14rem] lg:bottom-[6rem]"
-              src="/eventPage/samwad/samwad13.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad13")}
             />
           </div>
         </div>
@@ -226,7 +230,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[180px] hover:border-4 hover:border-cyan-500 duration-300 rounded-xl"
-              src="/eventPage/samwad/samwad1.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad1")}
             />
           </div>
 
@@ -283,7 +287,7 @@ const Samwad = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
               className="h-[135px]hover:border-4 hover:border-pink-500 duration-300 rounded-xl relative bottom-[6rem]"
-              src="/eventPage/samwad/samwad11.webp"
+              src={getCloudinaryImage("Event Page/Samwad/samwad11")}
             />
           </div>
         </div>
@@ -295,34 +299,26 @@ const Samwad = () => {
   {
     id: 1,
     title: "Neha Agarwal",
-    videoUrl:
-      "/vids/samwad1.mp4",
-    thumbnailUrl:
-      "/vids/samwad1_thumbnail.png",
+    videoUrl: getCloudinaryVideo("Vids/samwad1"),
+    thumbnailUrl: getCloudinaryImage("Vids/samwad1_thumbnail"),
   },
   {
     id: 2,
     title: "Samwad'24",
-    videoUrl:
-      "/vids/samwad2.mp4",
-    thumbnailUrl:
-      "/vids/samwad2_thumbnail.png",
+    videoUrl: getCloudinaryVideo("Vids/samwad2"),
+    thumbnailUrl: getCloudinaryImage("Vids/samwad2_thumbnail"),
   },
   {
     id: 3,
     title: "Striver",
-    videoUrl:
-      "/vids/samwad3.mp4",
-    thumbnailUrl:
-      "/vids/samwad3_thumbnail.png",
+    videoUrl: getCloudinaryVideo("Vids/samwad3"),
+    thumbnailUrl: getCloudinaryImage("Vids/samwad3_thumbnail"),
   },
   {
     id: 4,
     title: "Striver",
-    videoUrl:
-      "/vids/samwad4.mp4",
-    thumbnailUrl:
-      "/vids/samwad4_thumbnail.png",
+    videoUrl: getCloudinaryVideo("Vids/samwad4"),
+    thumbnailUrl: getCloudinaryImage("Vids/samwad4_thumbnail"),
   },
 ]} />
 
